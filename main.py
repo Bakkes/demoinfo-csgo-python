@@ -33,18 +33,46 @@ Key type: 1, name: weapon'''
     weapon_name = data.keys[2].val_string
     print "%i bought %s" % (userid, weapon_name)
     
+class HighlightFinder(object):
+    def __init__(self, filename):
+        self.filename = filename
+        self.demo = DemoDump()
+        self.players = {}
+        
+    def parse(self):
+        if self.demo.open(filename):
+            print "Beginning parsing"
+            self.demo.register_on_gameevent(7, self.player_connected)
+            self.demo.register_on_gameevent(8, self.player_connected)
+            self.demo.dump()
+        else:
+            print "Demo unparsable"
+        pass
     
-
+    def player_connected(self, data):
+        print "Player found"
+        self.players[data.index] = (data.index, data.name, data.userid, data.networkid)
+        
+    def print_results(self):
+        print "%i players found" % len(self.players)
+        for player in self.players:
+            print vars(player)
+        pass
+    
 if __name__ == '__main__':
-    demo = DemoDump()
+    #demo = DemoDump()
     filename = sys.argv[1]
     
     if len(sys.argv) <= 1:
         print "main.py demofile.dem"
         sys.exit()
+        
+    hlfinder = HighlightFinder(filename)
+    hlfinder.parse()
+    hlfinder.print_results()
     
-    if demo.open(filename):
-        print "Beginning dump"
-        demo.register_on_gameevent(99, player_purchase)
-        demo.register_on_gameevent(151, flashbang_detonate)
-        demo.dump()
+    #if demo.open(filename):
+    #    print "Beginning dump"
+        #demo.register_on_gameevent(99, player_purchase)
+        #demo.register_on_gameevent(151, flashbang_detonate)
+        #demo.dump()

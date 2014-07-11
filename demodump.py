@@ -135,12 +135,16 @@ class DemoDump(object):
             for key in desc.keys:
                 self.descriptors[desc.eventid][3].append([key.type, key.name])
     
+    called = {}
     def handle_gameevent(self, cmd, data):
         '''
         handles the game events and fires the callback
         '''
         gameevent = CSVCMsg_GameEvent()
         gameevent.ParseFromString(data)
+        if gameevent.eventid not in self.called.keys():
+            self.called[gameevent.eventid] = 0
+        self.called[gameevent.eventid] += 1
         if gameevent.eventid in self.GAME_EVENTS:
             event = GameEvent(gameevent, self.descriptors[gameevent.eventid])
             for callback in self.GAME_EVENTS[event.raw.eventid]:
@@ -168,6 +172,9 @@ class DemoDump(object):
             elif cmd == DemoMessage.SIGNON or cmd == DemoMessage.PACKET:
                 #print "Packet found"
                 self.handle_demo_packet()
+        for k, v in self.called.items():
+            print str(self.descriptors[k][1]) + ": " + str(v)
+        print(self.called)
                 
     def handle_demo_packet(self):
         info = self.demofile.read_cmd_info()
