@@ -13,5 +13,6 @@ if __name__ == '__main__':
         print "main.py demofile.dem"
         sys.exit()
     
-    if(demo.open(filename)):
+    if demo.open(filename):
+        print "Beginning dump"
         demo.dump()
