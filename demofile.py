@@ -76,11 +76,11 @@ class DemoFile(object):
             
             
             if self.demoheader.demoprotocol != SUPPORTED_PROTOCOL:
-                print "This protocol is not supported"
+                #print "This protocol is not supported"
                 return False
         else:
             return False
-        print "Succesfully opened file"
+        #print "Succesfully opened file"
         return True
     
     def read_cmd_header(self):

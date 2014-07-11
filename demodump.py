@@ -7,13 +7,18 @@ from demofile import DemoFile, DemoMessage
 from netmessages_public_pb2 import *
 import struct
 
-def ignore(name):
+def ignore(name, data):
     '''
     '''
-    print "%i ignored" % name
+    ##print "%i ignored" % name
     
-def handle(id):
+def handle(id, data):
     print "Now doing %i" % id
+    if id == svc_UserMessage:
+        t = CSVCMsg_UserMessage()
+        t.ParseFromString(data)
+        print "Message type %i" % t.msg_type
+        
 
 class DemoDump(object):
     '''
@@ -46,7 +51,7 @@ class DemoDump(object):
                         svc_FixAngle: ignore,
                         svc_CrosshairAngle: ignore,
                         svc_BSPDecal: ignore,
-                        svc_UserMessage: ignore,
+                        svc_UserMessage: handle,
                         svc_GameEvent: handle,
                         svc_PacketEntities: ignore,
                         svc_TempEntities: ignore,
@@ -64,10 +69,10 @@ class DemoDump(object):
     
     def dump(self):
         finished = False
-        print "dumping"
+        #print "dumping"
         while not finished:
             cmd, tick, playerslot = self.demofile.read_cmd_header()
-            print "%i - %i - % i " % (cmd, tick, playerslot)
+            #print "%i - %i - % i " % (cmd, tick, playerslot)
             if cmd == DemoMessage.SYNCTICK:
                 continue
             elif cmd == DemoMessage.STOP:
@@ -82,7 +87,7 @@ class DemoDump(object):
             elif cmd == DemoMessage.USERCMD:
                 self.demofile.read_user_cmd()
             elif cmd == DemoMessage.SIGNON or cmd == DemoMessage.PACKET:
-                print "Packet found"
+                #print "Packet found"
                 self.handle_demo_packet()
                 
     def handle_demo_packet(self):
@@ -90,7 +95,7 @@ class DemoDump(object):
         self.demofile.read_sequence_info()#ignore result
         length, buf = self.demofile.read_raw_data()
         
-        print "length: %i|%i" % (length, len(buf))
+        #print "length: %i|%i" % (length, len(buf))
         if length > 0:
             self.dump_packet(buf, length)
          
@@ -102,11 +107,11 @@ class DemoDump(object):
             size, index = self.__read_int32(buf, index)
             #read data
             data = buf[index:index+size]
-            print cmd
+            #print cmd
             if cmd in self.NET_MSG:
-                self.NET_MSG[cmd](cmd)
-            else:
-                print "Unknown command: %i" % cmd
+                self.NET_MSG[cmd](cmd, data)
+            #else:
+                #print "Unknown command: %i" % cmd
             
             index = index + size
         
