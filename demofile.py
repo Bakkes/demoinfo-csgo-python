@@ -55,15 +55,14 @@ class DemoFile(object):
         Constructor
         '''
         self.demoheader = None
+        self.offset = 0
         
     def open(self, filename):
-        self.file = open(filename, "r")
+        self.file = open(filename, "rb")
         if self.file:
             
             self.file.seek(0, os.SEEK_END) #get file size
-            
-            length = self.file.tell()
-            print length
+            self.length = self.file.tell()
             self.file.seek(0, os.SEEK_SET) #get back to beginning
         
             #parse header
@@ -72,9 +71,9 @@ class DemoFile(object):
             struct_unpack = struct.Struct(struct_fmt)
             data = self.file.read(struct_len)
             read = struct_unpack.unpack_from(data, 0)
+            self.offset = struct_len
             self.demoheader = DemoHeader(*list(read))
             
-            length = length - struct_len
             
             if self.demoheader.demoprotocol != SUPPORTED_PROTOCOL:
                 print "This protocol is not supported"
@@ -91,32 +90,33 @@ class DemoFile(object):
             return cmd, 0, 0
         tick = self.read_struct_from_file("i")
         playerslot = self.read_struct_from_file("B")
-        print "Read header"
         return cmd, tick, playerslot
     
     def read_raw_data(self):
         size = self.read_struct_from_file("@i")
-        print "size: " + str(size)
         if size <= 0:
-            return 0
-        return self.file.read(size)
+            return 0, None
+        
+        data = self.file.read(size)
+        
+        self.offset = self.offset + size
+        self.file.seek(self.offset)
+        return size, data
         
     
     def read_cmd_info(self):
-        fmt = "@iffffffffffffffffff"
-        struct_len = struct.calcsize(fmt)
-        struct_unpack = struct.Struct(fmt)
-        data = self.file.read(struct_len)
-        read = struct_unpack.unpack_from(data, 0)
-        print read
-        return read
+        fmt = "@iffffffffffffffffffiffffffffffffffffff"#x2 because of splitscreen
+        return self.read_struct_from_file(fmt)
         
     def read_struct_from_file(self, fmt):
+        self.file.seek(self.offset)
         struct_len = struct.calcsize(fmt)
         struct_unpack = struct.Struct(fmt)
         data = self.file.read(struct_len)
-        read, = struct_unpack.unpack_from(data, 0)
-        return read
+        self.offset = self.offset + struct_len
+        self.file.seek(self.offset)
+        read = struct_unpack.unpack_from(data, 0)
+        return read[0]
     
     def read_sequence_info(self):
         seq_nr_in = self.read_struct_from_file("i")
