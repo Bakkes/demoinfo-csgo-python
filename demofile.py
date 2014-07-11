@@ -34,15 +34,15 @@ class DemoCMDInfo(object):
     '''
 
 class DemoMessage:
-    SIGNON = 1,
-    PACKET = 2,
-    SYNCTICK = 3,
-    CONSOLECMD = 4,
-    USERCMD = 5,
-    DATATABLES = 6,
-    STOP = 7,
-    CUSTOMDATA = 8,
-    STRINGTABLES = 9,
+    SIGNON = 1
+    PACKET = 2
+    SYNCTICK = 3
+    CONSOLECMD = 4
+    USERCMD = 5
+    DATATABLES = 6
+    STOP = 7
+    CUSTOMDATA = 8
+    STRINGTABLES = 9
     LASTCMD = STRINGTABLES
 
 class DemoFile(object):
@@ -91,11 +91,15 @@ class DemoFile(object):
             return cmd, 0, 0
         tick = self.read_struct_from_file("i")
         playerslot = self.read_struct_from_file("B")
+        print "Read header"
         return cmd, tick, playerslot
     
     def read_raw_data(self):
         size = self.read_struct_from_file("@i")
-        return self.file.read(size[0])
+        print "size: " + str(size)
+        if size <= 0:
+            return 0
+        return self.file.read(size)
         
     
     def read_cmd_info(self):
@@ -105,6 +109,7 @@ class DemoFile(object):
         data = self.file.read(struct_len)
         read = struct_unpack.unpack_from(data, 0)
         print read
+        return read
         
     def read_struct_from_file(self, fmt):
         struct_len = struct.calcsize(fmt)

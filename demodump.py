@@ -26,7 +26,7 @@ class DemoDump(object):
         finished = False
         print "dumping"
         while not finished:
-            cmd, tick, playerslot = self.demofile.read_cmd_info()
+            cmd, tick, playerslot = self.demofile.read_cmd_header()
             print "%i - %i - % i " % (cmd, tick, playerslot)
             if cmd == DemoMessage.SYNCTICK:
                 continue
@@ -50,8 +50,30 @@ class DemoDump(object):
         info = self.demofile.read_cmd_info()
         self.demofile.read_sequence_info()#ignore result
         length = self.demofile.read_raw_data()
+        print "length: " + str(length)
         if length > 0:
             self.dump_packet(length)
             
     def dump_packet(self, length):
+        index = 0
+        while index < length:
+            cmd = self.__read_int32()
+            size = self.__read_int32()
+            #read data
+            self.demofile.file.read(size)
+            
+    def __read_int32(self):
+        b = 0
+        count = 0
+        result = 0
         
+        cont = True
+        while cont:
+            if count == 5:
+                return result
+            b = self.demofile.file.read(1)
+            result |= (b & 0x7F) << (7 * count)
+            count = count + 1
+            cont = b & 0x80
+        return result
+            
