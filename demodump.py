@@ -9,11 +9,7 @@ from cstrike15_usermessages_public_pb2 import *
 import struct
 import sys
 
-TEAM_CT = 3
-TEAM_T = 2
-playerteam = {}
-for i in range(2, 14):
-    playerteam[i] = i + 4
+
 
 def ignore(name, data):
     '''
@@ -50,7 +46,6 @@ def handle(id, data):
         if t.eventid == 21: #teamchange pending, see info/gameevents.txt
             #print "done"
             #print t.keys[0]
-            playerteam[t.keys[0].val_short] = t.keys[1].val_byte
             print "Player %i to team %i" % (t.keys[0].val_short, t.keys[1].val_byte)
             #sys.exit()
     elif id == svc_GameEventList:
@@ -60,8 +55,29 @@ def handle(id, data):
             #print "ID: %i, name: %s" % (desc.eventid, desc.name)
             #for key in desc.keys:
                 #print "Key type: %i, name: %s" % (key.type, key.name)
+     
+GAMEEVENT_TYPES = {2:"val_string",
+                   3:"val_float",
+                   4:"val_long",
+                   5:"val_short",
+                   6:"val_byte",
+                   7:"val_bool",
+                   8:"val_uint64",
+                   9:"val_wstring"}
             
+class GameEvent(object):
+    def __init__(self, raw, descriptor):
+        self.raw = raw
+        self.descriptor = descriptor
+        
+        #convert the val_ stuff to actual property names
+        index = 0
+        for keyname in self.descriptor[3]:
+            setattr(self, keyname[1], getattr(self.raw.keys[index], GAMEEVENT_TYPES[keyname[0] + 1]))
+            index += 1
 
+            
+            
 class DemoDump(object):
     '''
     Dumps a CSGO demo
@@ -102,7 +118,9 @@ class DemoDump(object):
                         svc_GetCvarValue: []
                         }
         self.GAME_EVENTS = {}
+        self.descriptors = {}
         self.register_on_netmsg(svc_GameEvent, self.handle_gameevent)
+        self.register_on_netmsg(svc_GameEventList, self.handle_gameeventlist)
         
     def open(self, filename):
         self.demofile = DemoFile()
@@ -122,7 +140,15 @@ class DemoDump(object):
         if not msg in self.GAME_EVENTS:
             self.GAME_EVENTS[msg] = []
         self.GAME_EVENTS[msg].append(callback)
-        
+    
+    def handle_gameeventlist(self, cmd, data):
+        gameeventlist = CSVCMsg_GameEventList()
+        gameeventlist.ParseFromString(data)
+        for desc in gameeventlist.descriptors:
+            self.descriptors[desc.eventid] = (desc.eventid, desc.name, desc.keys, [])
+            for key in desc.keys:
+                self.descriptors[desc.eventid][3].append([key.type, key.name])
+    
     def handle_gameevent(self, cmd, data):
         '''
         handles the game events and fires the callback
@@ -130,9 +156,9 @@ class DemoDump(object):
         gameevent = CSVCMsg_GameEvent()
         gameevent.ParseFromString(data)
         if gameevent.eventid in self.GAME_EVENTS:
-            
-            for callback in self.GAME_EVENTS[gameevent.eventid]:
-                callback(gameevent)
+            event = GameEvent(gameevent, self.descriptors[gameevent.eventid])
+            for callback in self.GAME_EVENTS[event.raw.eventid]:
+                callback(event)
             
     
     def dump(self):
