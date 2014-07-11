@@ -7,6 +7,14 @@ from demofile import DemoFile, DemoMessage
 from netmessages_public_pb2 import *
 import struct
 
+def ignore(name):
+    '''
+    '''
+    print "%i ignored" % name
+    
+def handle(id):
+    print "Now doing %i" % id
+
 class DemoDump(object):
     '''
     Dumps a CSGO demo
@@ -16,6 +24,37 @@ class DemoDump(object):
         '''
         Constructor
         '''
+        self.NET_MSG = {
+                        net_NOP: ignore,
+                        net_Disconnect: ignore,
+                        net_File: ignore,
+                        net_Tick: ignore,
+                        net_StringCmd: ignore,
+                        net_SetConVar: ignore,
+                        net_SignonState: ignore,
+                        svc_ServerInfo: ignore,
+                        svc_SendTable: ignore,
+                        svc_ClassInfo: ignore,
+                        svc_SetPause: ignore,
+                        svc_CreateStringTable: ignore,
+                        svc_UpdateStringTable: ignore,
+                        svc_VoiceInit: ignore,
+                        svc_VoiceData: ignore,
+                        svc_Print: ignore,
+                        svc_Sounds: ignore,
+                        svc_SetView: ignore,
+                        svc_FixAngle: ignore,
+                        svc_CrosshairAngle: ignore,
+                        svc_BSPDecal: ignore,
+                        svc_UserMessage: ignore,
+                        svc_GameEvent: handle,
+                        svc_PacketEntities: ignore,
+                        svc_TempEntities: ignore,
+                        svc_Prefetch: ignore,
+                        svc_Menu: ignore,
+                        svc_GameEventList: ignore,
+                        svc_GetCvarValue: ignore
+                        }
         
     def open(self, filename):
         self.demofile = DemoFile()
@@ -40,8 +79,8 @@ class DemoDump(object):
                 self.demofile.read_raw_data()
             elif cmd == DemoMessage.STRINGTABLES:
                 self.demofile.read_raw_data()
-            elif cmd == DemoMessage.CONSOLECMD:
-                self.demofile.read_raw_data()
+            elif cmd == DemoMessage.USERCMD:
+                self.demofile.read_user_cmd()
             elif cmd == DemoMessage.SIGNON or cmd == DemoMessage.PACKET:
                 print "Packet found"
                 self.handle_demo_packet()
@@ -54,6 +93,7 @@ class DemoDump(object):
         print "length: %i|%i" % (length, len(buf))
         if length > 0:
             self.dump_packet(buf, length)
+         
             
     def dump_packet(self, buf, length):
         index = 0
@@ -62,7 +102,12 @@ class DemoDump(object):
             size, index = self.__read_int32(buf, index)
             #read data
             data = buf[index:index+size]
-            netmsg = netmessages_public_pb2.
+            print cmd
+            if cmd in self.NET_MSG:
+                self.NET_MSG[cmd](cmd)
+            else:
+                print "Unknown command: %i" % cmd
+            
             index = index + size
         
     def __read_int32(self, buf, index):
