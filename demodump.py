@@ -7,14 +7,8 @@ from demofile import DemoFile, DemoMessage
 from netmessages_public_pb2 import *
 from cstrike15_usermessages_public_pb2 import *
 import struct
-import sys
 
 
-
-def ignore(name, data):
-    '''
-    '''
-    ##print "%i ignored" % name
     
 def handle(id, data):
     if id == svc_UserMessage:
@@ -38,24 +32,7 @@ def handle(id, data):
             #elif t.msg_type == 5:
                 #print t.text
             #print dir(item)
-    elif id == svc_GameEvent:
-        t = CSVCMsg_GameEvent()
-        t.ParseFromString(data)
-        #print t.eventid
-        
-        if t.eventid == 21: #teamchange pending, see info/gameevents.txt
-            #print "done"
-            #print t.keys[0]
-            print "Player %i to team %i" % (t.keys[0].val_short, t.keys[1].val_byte)
-            #sys.exit()
-    elif id == svc_GameEventList:
-        t = CSVCMsg_GameEventList()
-        t.ParseFromString(data)
-        #for desc in t.descriptors:
-            #print "ID: %i, name: %s" % (desc.eventid, desc.name)
-            #for key in desc.keys:
-                #print "Key type: %i, name: %s" % (key.type, key.name)
-     
+
 GAMEEVENT_TYPES = {2:"val_string",
                    3:"val_float",
                    4:"val_long",
@@ -75,9 +52,7 @@ class GameEvent(object):
         for keyname in self.descriptor[3]:
             setattr(self, keyname[1], getattr(self.raw.keys[index], GAMEEVENT_TYPES[keyname[0] + 1]))
             index += 1
-
-            
-            
+       
 class DemoDump(object):
     '''
     Dumps a CSGO demo
@@ -117,16 +92,22 @@ class DemoDump(object):
                         svc_GameEventList: [],
                         svc_GetCvarValue: []
                         }
+        self.USER_MESSAGES = {}
         self.GAME_EVENTS = {}
+        
         self.descriptors = {}
         self.register_on_netmsg(svc_GameEvent, self.handle_gameevent)
         self.register_on_netmsg(svc_GameEventList, self.handle_gameeventlist)
+        self.register_on_netmsg(svc_ServerInfo, self.server_info_update)
         
     def open(self, filename):
         self.demofile = DemoFile()
         return self.demofile.open(filename)
-        '''
-        '''
+    
+    def server_info_update(self, cmd, data):
+        info = CSVCMsg_ServerInfo()
+        info.ParseFromString(data)
+        self.server_info = info
     
     def register_on_netmsg(self, msg, callback):
         if msg not in self.NET_MSG:
@@ -140,6 +121,11 @@ class DemoDump(object):
         if not msg in self.GAME_EVENTS:
             self.GAME_EVENTS[msg] = []
         self.GAME_EVENTS[msg].append(callback)
+    
+    def register_on_usermessage(self, msg, callback):
+        if not msg in self.USER_MESSAGES:
+            self.USER_MESSAGES[msg] = []
+        self.USER_MESSAGES[msg].append(callback)
     
     def handle_gameeventlist(self, cmd, data):
         gameeventlist = CSVCMsg_GameEventList()
@@ -160,7 +146,6 @@ class DemoDump(object):
             for callback in self.GAME_EVENTS[event.raw.eventid]:
                 callback(event)
             
-    
     def dump(self):
         finished = False
         #print "dumping"
