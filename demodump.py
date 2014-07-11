@@ -9,6 +9,12 @@ from cstrike15_usermessages_public_pb2 import *
 import struct
 import sys
 
+TEAM_CT = 3
+TEAM_T = 2
+playerteam = {}
+for i in range(2, 14):
+    playerteam[i] = i + 4
+
 def ignore(name, data):
     '''
     '''
@@ -25,12 +31,12 @@ def handle(id, data):
             
             item = eval(name)()
             item.ParseFromString(t.msg_data)
-            #if t.msg_type == 6:
+            if t.msg_type == 6 and not item.textallchat and not playerteam[item.ent_idx] == playerteam[2]:
                 #print item.ent_idx
                 #print item.chat
                 #print item.msg_name + ":"
-                #for i in range(1, len(item.params) - 2):
-                #    print item.params[0] + ": " + item.params[i] + " - " + str(item.textallchat)
+                for i in range(1, len(item.params) - 2):
+                    print "[" + str(item.ent_idx) + "] " + item.params[0] + ": " + item.params[i]
                 #print "------"
                 #print item.textallchat
             #elif t.msg_type == 5:
@@ -39,13 +45,21 @@ def handle(id, data):
     elif id == svc_GameEvent:
         t = CSVCMsg_GameEvent()
         t.ParseFromString(data)
+        #print t.eventid
+        
+        if t.eventid == 21: #teamchange pending, see info/gameevents.txt
+            #print "done"
+            #print t.keys[0]
+            playerteam[t.keys[0].val_short] = t.keys[1].val_byte
+            print "Player %i to team %i" % (t.keys[0].val_short, t.keys[1].val_byte)
+            #sys.exit()
     elif id == svc_GameEventList:
         t = CSVCMsg_GameEventList()
         t.ParseFromString(data)
-        for desc in t.descriptors:
-            print "ID: %i, name: %s" % (desc.eventid, desc.name)
-            for key in desc.keys:
-                print "Key type: %i, name: %s" % (key.type, key.name)
+        #for desc in t.descriptors:
+            #print "ID: %i, name: %s" % (desc.eventid, desc.name)
+            #for key in desc.keys:
+                #print "Key type: %i, name: %s" % (key.type, key.name)
             
 
 class DemoDump(object):
@@ -57,42 +71,69 @@ class DemoDump(object):
         Constructor
         '''
         self.NET_MSG = {
-                        net_NOP: ignore,
-                        net_Disconnect: ignore,
-                        net_File: ignore,
-                        net_Tick: ignore,
-                        net_StringCmd: ignore,
-                        net_SetConVar: ignore,
-                        net_SignonState: ignore,
-                        svc_ServerInfo: ignore,
-                        svc_SendTable: ignore,
-                        svc_ClassInfo: ignore,
-                        svc_SetPause: ignore,
-                        svc_CreateStringTable: ignore,
-                        svc_UpdateStringTable: ignore,
-                        svc_VoiceInit: ignore,
-                        svc_VoiceData: ignore,
-                        svc_Print: ignore,
-                        svc_Sounds: ignore,
-                        svc_SetView: ignore,
-                        svc_FixAngle: ignore,
-                        svc_CrosshairAngle: ignore,
-                        svc_BSPDecal: ignore,
-                        svc_UserMessage: handle,
-                        svc_GameEvent: handle,
-                        svc_PacketEntities: ignore,
-                        svc_TempEntities: ignore,
-                        svc_Prefetch: ignore,
-                        svc_Menu: ignore,
-                        svc_GameEventList: handle,
-                        svc_GetCvarValue: ignore
+                        net_NOP: [],
+                        net_Disconnect: [],
+                        net_File: [],
+                        net_Tick: [],
+                        net_StringCmd: [],
+                        net_SetConVar: [],
+                        net_SignonState: [],
+                        svc_ServerInfo: [],
+                        svc_SendTable: [],
+                        svc_ClassInfo: [],
+                        svc_SetPause: [],
+                        svc_CreateStringTable: [],
+                        svc_UpdateStringTable: [],
+                        svc_VoiceInit: [],
+                        svc_VoiceData: [],
+                        svc_Print: [],
+                        svc_Sounds: [],
+                        svc_SetView: [],
+                        svc_FixAngle: [],
+                        svc_CrosshairAngle: [],
+                        svc_BSPDecal: [],
+                        svc_UserMessage: [],
+                        svc_GameEvent: [],
+                        svc_PacketEntities: [],
+                        svc_TempEntities: [],
+                        svc_Prefetch: [],
+                        svc_Menu: [],
+                        svc_GameEventList: [],
+                        svc_GetCvarValue: []
                         }
+        self.GAME_EVENTS = {}
+        self.register_on_netmsg(svc_GameEvent, self.handle_gameevent)
         
     def open(self, filename):
         self.demofile = DemoFile()
         return self.demofile.open(filename)
         '''
         '''
+    
+    def register_on_netmsg(self, msg, callback):
+        if msg not in self.NET_MSG:
+            raise "Net message not found"
+        self.NET_MSG[msg].append(callback)
+    
+    def register_on_gameevent(self, msg, callback):
+        '''
+        msg = event id
+        '''
+        if not msg in self.GAME_EVENTS:
+            self.GAME_EVENTS[msg] = []
+        self.GAME_EVENTS[msg].append(callback)
+        
+    def handle_gameevent(self, cmd, data):
+        '''
+        handles the game events and fires the callback
+        '''
+        gameevent = CSVCMsg_GameEvent()
+        gameevent.ParseFromString(data)
+        if gameevent.eventid in self.GAME_EVENTS:
+            
+            for callback in self.GAME_EVENTS[gameevent.eventid]:
+                callback(gameevent)
+            
     
     def dump(self):
         finished = False
@@ -136,7 +177,8 @@ class DemoDump(object):
             data = buf[index:index+size]
             #print cmd
             if cmd in self.NET_MSG:
-                self.NET_MSG[cmd](cmd, data)
+                for callback in self.NET_MSG[cmd]:
+                    callback(cmd, data);
             #else:
                 #print "Unknown command: %i" % cmd
             
