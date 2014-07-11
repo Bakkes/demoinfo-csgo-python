@@ -5,7 +5,9 @@ Created on Jul 11, 2014
 '''
 from demofile import DemoFile, DemoMessage
 from netmessages_public_pb2 import *
+from cstrike15_usermessages_public_pb2 import *
 import struct
+import sys
 
 def ignore(name, data):
     '''
@@ -13,18 +15,43 @@ def ignore(name, data):
     ##print "%i ignored" % name
     
 def handle(id, data):
-    print "Now doing %i" % id
     if id == svc_UserMessage:
         t = CSVCMsg_UserMessage()
         t.ParseFromString(data)
-        print "Message type %i" % t.msg_type
-        
+        if t.msg_type in ECstrike15UserMessages.values():
+            name = ECstrike15UserMessages.Name(t.msg_type)
+            name = name.replace("CS_UM_", "CCSUsrMsg_")
+            #print "Message type %s | %i" % (name, t.msg_type)
+            
+            item = eval(name)()
+            item.ParseFromString(t.msg_data)
+            #if t.msg_type == 6:
+                #print item.ent_idx
+                #print item.chat
+                #print item.msg_name + ":"
+                #for i in range(1, len(item.params) - 2):
+                #    print item.params[0] + ": " + item.params[i] + " - " + str(item.textallchat)
+                #print "------"
+                #print item.textallchat
+            #elif t.msg_type == 5:
+                #print t.text
+            #print dir(item)
+    elif id == svc_GameEvent:
+        t = CSVCMsg_GameEvent()
+        t.ParseFromString(data)
+    elif id == svc_GameEventList:
+        t = CSVCMsg_GameEventList()
+        t.ParseFromString(data)
+        for desc in t.descriptors:
+            print "ID: %i, name: %s" % (desc.eventid, desc.name)
+            for key in desc.keys:
+                print "Key type: %i, name: %s" % (key.type, key.name)
+            
 
 class DemoDump(object):
     '''
     Dumps a CSGO demo
     '''
-
     def __init__(self):
         '''
         Constructor
@@ -57,7 +84,7 @@ class DemoDump(object):
                         svc_TempEntities: ignore,
                         svc_Prefetch: ignore,
                         svc_Menu: ignore,
-                        svc_GameEventList: ignore,
+                        svc_GameEventList: handle,
                         svc_GetCvarValue: ignore
                         }
         
