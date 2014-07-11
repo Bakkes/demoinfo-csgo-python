@@ -1,0 +1,723 @@
+Beginning dump
+ID: 0, name: server_spawn
+Key type: 1, name: hostname
+Key type: 1, name: address
+Key type: 4, name: port
+Key type: 1, name: game
+Key type: 1, name: mapname
+Key type: 3, name: maxplayers
+Key type: 1, name: os
+Key type: 6, name: dedicated
+Key type: 6, name: official
+Key type: 6, name: password
+ID: 1, name: server_pre_shutdown
+Key type: 1, name: reason
+ID: 2, name: server_shutdown
+Key type: 1, name: reason
+ID: 3, name: server_cvar
+Key type: 1, name: cvarname
+Key type: 1, name: cvarvalue
+ID: 4, name: server_message
+Key type: 1, name: text
+ID: 5, name: server_addban
+Key type: 1, name: name
+Key type: 4, name: userid
+Key type: 1, name: networkid
+Key type: 1, name: ip
+Key type: 1, name: duration
+Key type: 1, name: by
+Key type: 6, name: kicked
+ID: 6, name: server_removeban
+Key type: 1, name: networkid
+Key type: 1, name: ip
+Key type: 1, name: by
+ID: 7, name: player_connect
+Key type: 1, name: name
+Key type: 5, name: index
+Key type: 4, name: userid
+Key type: 1, name: networkid
+Key type: 1, name: address
+ID: 8, name: player_info
+Key type: 1, name: name
+Key type: 5, name: index
+Key type: 4, name: userid
+Key type: 1, name: networkid
+Key type: 6, name: bot
+ID: 9, name: player_disconnect
+Key type: 4, name: userid
+Key type: 1, name: reason
+Key type: 1, name: name
+Key type: 1, name: networkid
+ID: 10, name: player_activate
+Key type: 4, name: userid
+ID: 11, name: player_connect_full
+Key type: 4, name: userid
+Key type: 5, name: index
+ID: 12, name: player_say
+Key type: 4, name: userid
+Key type: 1, name: text
+ID: 13, name: cs_round_start_beep
+ID: 14, name: cs_round_final_beep
+ID: 15, name: round_time_warning
+ID: 16, name: team_info
+Key type: 5, name: teamid
+Key type: 1, name: teamname
+ID: 17, name: team_score
+Key type: 5, name: teamid
+Key type: 4, name: score
+ID: 18, name: teamplay_broadcast_audio
+Key type: 5, name: team
+Key type: 1, name: sound
+ID: 19, name: gameui_hidden
+ID: 20, name: items_gifted
+Key type: 5, name: player
+Key type: 3, name: itemdef
+Key type: 5, name: numgifts
+Key type: 5, name: giftidx
+Key type: 3, name: accountid
+ID: 21, name: player_team
+Key type: 4, name: userid
+Key type: 5, name: team
+Key type: 5, name: oldteam
+Key type: 6, name: disconnect
+Key type: 6, name: autoteam
+Key type: 6, name: silent
+Key type: 6, name: isbot
+ID: 22, name: player_class
+Key type: 4, name: userid
+Key type: 1, name: class
+ID: 23, name: player_death
+Key type: 4, name: userid
+Key type: 4, name: attacker
+Key type: 4, name: assister
+Key type: 1, name: weapon
+Key type: 1, name: weapon_itemid
+Key type: 1, name: weapon_fauxitemid
+Key type: 1, name: weapon_originalowner_xuid
+Key type: 6, name: headshot
+Key type: 4, name: dominated
+Key type: 4, name: revenge
+Key type: 4, name: penetrated
+ID: 24, name: player_hurt
+Key type: 4, name: userid
+Key type: 4, name: attacker
+Key type: 5, name: health
+Key type: 5, name: armor
+Key type: 1, name: weapon
+Key type: 4, name: dmg_health
+Key type: 5, name: dmg_armor
+Key type: 5, name: hitgroup
+ID: 25, name: player_chat
+Key type: 6, name: teamonly
+Key type: 4, name: userid
+Key type: 1, name: text
+ID: 26, name: player_score
+Key type: 4, name: userid
+Key type: 4, name: kills
+Key type: 4, name: deaths
+Key type: 4, name: score
+ID: 27, name: player_spawn
+Key type: 4, name: userid
+Key type: 4, name: teamnum
+ID: 28, name: player_shoot
+Key type: 4, name: userid
+Key type: 5, name: weapon
+Key type: 5, name: mode
+ID: 29, name: player_use
+Key type: 4, name: userid
+Key type: 4, name: entity
+ID: 30, name: player_changename
+Key type: 4, name: userid
+Key type: 1, name: oldname
+Key type: 1, name: newname
+ID: 31, name: player_hintmessage
+Key type: 1, name: hintmessage
+ID: 32, name: game_init
+ID: 33, name: game_newmap
+Key type: 1, name: mapname
+ID: 34, name: game_start
+Key type: 3, name: roundslimit
+Key type: 3, name: timelimit
+Key type: 3, name: fraglimit
+Key type: 1, name: objective
+ID: 35, name: game_end
+Key type: 5, name: winner
+ID: 36, name: round_start
+Key type: 3, name: timelimit
+Key type: 3, name: fraglimit
+Key type: 1, name: objective
+ID: 37, name: round_announce_match_point
+ID: 38, name: round_announce_final
+ID: 39, name: round_announce_last_round_half
+ID: 40, name: round_announce_match_start
+ID: 41, name: round_announce_warmup
+ID: 42, name: round_end
+Key type: 5, name: winner
+Key type: 5, name: reason
+Key type: 1, name: message
+ID: 43, name: round_end_upload_stats
+ID: 44, name: round_officially_ended
+ID: 45, name: ugc_map_info_received
+Key type: 7, name: published_file_id
+ID: 46, name: ugc_map_unsubscribed
+Key type: 7, name: published_file_id
+ID: 47, name: ugc_map_download_error
+Key type: 7, name: published_file_id
+Key type: 3, name: error_code
+ID: 48, name: ugc_file_download_finished
+Key type: 7, name: hcontent
+ID: 49, name: ugc_file_download_start
+Key type: 7, name: hcontent
+Key type: 7, name: published_file_id
+ID: 50, name: begin_new_match
+ID: 51, name: round_start_pre_entity
+ID: 52, name: teamplay_round_start
+Key type: 6, name: full_reset
+ID: 53, name: hostname_changed
+Key type: 1, name: hostname
+ID: 54, name: difficulty_changed
+Key type: 4, name: newDifficulty
+Key type: 4, name: oldDifficulty
+Key type: 1, name: strDifficulty
+ID: 55, name: finale_start
+Key type: 4, name: rushes
+ID: 56, name: game_message
+Key type: 5, name: target
+Key type: 1, name: text
+ID: 57, name: dm_bonus_weapon_start
+Key type: 4, name: time
+Key type: 4, name: wepID
+ID: 58, name: break_breakable
+Key type: 3, name: entindex
+Key type: 4, name: userid
+Key type: 5, name: material
+ID: 59, name: break_prop
+Key type: 3, name: entindex
+Key type: 4, name: userid
+ID: 60, name: player_decal
+Key type: 4, name: userid
+ID: 61, name: entity_killed
+Key type: 3, name: entindex_killed
+Key type: 3, name: entindex_attacker
+Key type: 3, name: entindex_inflictor
+Key type: 3, name: damagebits
+ID: 62, name: bonus_updated
+Key type: 4, name: numadvanced
+Key type: 4, name: numbronze
+Key type: 4, name: numsilver
+Key type: 4, name: numgold
+ID: 63, name: player_stats_updated
+Key type: 6, name: forceupload
+ID: 64, name: achievement_event
+Key type: 1, name: achievement_name
+Key type: 4, name: cur_val
+Key type: 4, name: max_val
+ID: 65, name: achievement_increment
+Key type: 3, name: achievement_id
+Key type: 4, name: cur_val
+Key type: 4, name: max_val
+ID: 66, name: achievement_earned
+Key type: 5, name: player
+Key type: 4, name: achievement
+ID: 67, name: achievement_write_failed
+ID: 68, name: physgun_pickup
+Key type: 3, name: entindex
+ID: 69, name: flare_ignite_npc
+Key type: 3, name: entindex
+ID: 70, name: helicopter_grenade_punt_miss
+ID: 71, name: user_data_downloaded
+ID: 72, name: ragdoll_dissolved
+Key type: 3, name: entindex
+ID: 73, name: gameinstructor_draw
+ID: 74, name: gameinstructor_nodraw
+ID: 75, name: map_transition
+ID: 76, name: entity_visible
+Key type: 4, name: userid
+Key type: 4, name: subject
+Key type: 1, name: classname
+Key type: 1, name: entityname
+ID: 77, name: set_instructor_group_enabled
+Key type: 1, name: group
+Key type: 4, name: enabled
+ID: 78, name: instructor_server_hint_create
+Key type: 1, name: hint_name
+Key type: 1, name: hint_replace_key
+Key type: 3, name: hint_target
+Key type: 4, name: hint_activator_userid
+Key type: 4, name: hint_timeout
+Key type: 1, name: hint_icon_onscreen
+Key type: 1, name: hint_icon_offscreen
+Key type: 1, name: hint_caption
+Key type: 1, name: hint_activator_caption
+Key type: 1, name: hint_color
+Key type: 2, name: hint_icon_offset
+Key type: 2, name: hint_range
+Key type: 3, name: hint_flags
+Key type: 1, name: hint_binding
+Key type: 1, name: hint_gamepad_binding
+Key type: 6, name: hint_allow_nodraw_target
+Key type: 6, name: hint_nooffscreen
+Key type: 6, name: hint_forcecaption
+Key type: 6, name: hint_local_player_only
+ID: 79, name: instructor_server_hint_stop
+Key type: 1, name: hint_name
+ID: 80, name: read_game_titledata
+Key type: 4, name: controllerId
+ID: 81, name: write_game_titledata
+Key type: 4, name: controllerId
+ID: 82, name: reset_game_titledata
+Key type: 4, name: controllerId
+ID: 83, name: weapon_reload_database
+ID: 84, name: vote_ended
+ID: 85, name: vote_started
+Key type: 1, name: issue
+Key type: 1, name: param1
+Key type: 5, name: team
+Key type: 3, name: initiator
+ID: 86, name: vote_changed
+Key type: 5, name: vote_option1
+Key type: 5, name: vote_option2
+Key type: 5, name: vote_option3
+Key type: 5, name: vote_option4
+Key type: 5, name: vote_option5
+Key type: 5, name: potentialVotes
+ID: 87, name: vote_passed
+Key type: 1, name: details
+Key type: 1, name: param1
+Key type: 5, name: team
+ID: 88, name: vote_failed
+Key type: 5, name: team
+ID: 89, name: vote_cast
+Key type: 5, name: vote_option
+Key type: 4, name: team
+Key type: 3, name: entityid
+ID: 90, name: vote_options
+Key type: 5, name: count
+Key type: 1, name: option1
+Key type: 1, name: option2
+Key type: 1, name: option3
+Key type: 1, name: option4
+Key type: 1, name: option5
+ID: 91, name: endmatch_mapvote_selecting_map
+Key type: 5, name: count
+Key type: 5, name: slot1
+Key type: 5, name: slot2
+Key type: 5, name: slot3
+Key type: 5, name: slot4
+Key type: 5, name: slot5
+Key type: 5, name: slot6
+Key type: 5, name: slot7
+Key type: 5, name: slot8
+Key type: 5, name: slot9
+Key type: 5, name: slot10
+ID: 92, name: endmatch_cmm_start_reveal_items
+ID: 93, name: inventory_updated
+ID: 94, name: cart_updated
+ID: 95, name: store_pricesheet_updated
+ID: 96, name: gc_connected
+ID: 97, name: item_schema_initialized
+ID: 98, name: client_loadout_changed
+ID: 99, name: item_purchase
+Key type: 4, name: userid
+Key type: 4, name: team
+Key type: 1, name: weapon
+ID: 100, name: bomb_beginplant
+Key type: 4, name: userid
+Key type: 4, name: site
+ID: 101, name: bomb_abortplant
+Key type: 4, name: userid
+Key type: 4, name: site
+ID: 102, name: bomb_planted
+Key type: 4, name: userid
+Key type: 4, name: site
+ID: 103, name: bomb_defused
+Key type: 4, name: userid
+Key type: 4, name: site
+ID: 104, name: bomb_exploded
+Key type: 4, name: userid
+Key type: 4, name: site
+ID: 105, name: bomb_dropped
+Key type: 4, name: userid
+Key type: 3, name: entindex
+ID: 106, name: bomb_pickup
+Key type: 4, name: userid
+ID: 107, name: defuser_dropped
+Key type: 3, name: entityid
+ID: 108, name: defuser_pickup
+Key type: 3, name: entityid
+Key type: 4, name: userid
+ID: 109, name: announce_phase_end
+ID: 110, name: cs_intermission
+ID: 111, name: bomb_begindefuse
+Key type: 4, name: userid
+Key type: 6, name: haskit
+ID: 112, name: bomb_abortdefuse
+Key type: 4, name: userid
+ID: 113, name: hostage_follows
+Key type: 4, name: userid
+Key type: 4, name: hostage
+ID: 114, name: hostage_hurt
+Key type: 4, name: userid
+Key type: 4, name: hostage
+ID: 115, name: hostage_killed
+Key type: 4, name: userid
+Key type: 4, name: hostage
+ID: 116, name: hostage_rescued
+Key type: 4, name: userid
+Key type: 4, name: hostage
+Key type: 4, name: site
+ID: 117, name: hostage_stops_following
+Key type: 4, name: userid
+Key type: 4, name: hostage
+ID: 118, name: hostage_rescued_all
+ID: 119, name: hostage_call_for_help
+Key type: 4, name: hostage
+ID: 120, name: vip_escaped
+Key type: 4, name: userid
+ID: 121, name: vip_killed
+Key type: 4, name: userid
+Key type: 4, name: attacker
+ID: 122, name: player_radio
+Key type: 4, name: userid
+Key type: 4, name: slot
+ID: 123, name: bomb_beep
+Key type: 3, name: entindex
+ID: 124, name: weapon_fire
+Key type: 4, name: userid
+Key type: 1, name: weapon
+Key type: 6, name: silenced
+ID: 125, name: weapon_fire_on_empty
+Key type: 4, name: userid
+Key type: 1, name: weapon
+ID: 126, name: weapon_outofammo
+Key type: 4, name: userid
+ID: 127, name: weapon_reload
+Key type: 4, name: userid
+ID: 128, name: weapon_zoom
+Key type: 4, name: userid
+ID: 129, name: silencer_detach
+Key type: 4, name: userid
+ID: 130, name: inspect_weapon
+Key type: 4, name: userid
+ID: 131, name: weapon_zoom_rifle
+Key type: 4, name: userid
+ID: 132, name: player_spawned
+Key type: 4, name: userid
+Key type: 6, name: inrestart
+ID: 133, name: item_pickup
+Key type: 4, name: userid
+Key type: 1, name: item
+Key type: 6, name: silent
+ID: 134, name: ammo_pickup
+Key type: 4, name: userid
+Key type: 1, name: item
+Key type: 3, name: index
+ID: 135, name: item_equip
+Key type: 4, name: userid
+Key type: 1, name: item
+Key type: 6, name: canzoom
+Key type: 6, name: hassilencer
+Key type: 6, name: issilenced
+Key type: 6, name: hastracers
+Key type: 4, name: weptype
+Key type: 6, name: ispainted
+ID: 136, name: enter_buyzone
+Key type: 4, name: userid
+Key type: 6, name: canbuy
+ID: 137, name: exit_buyzone
+Key type: 4, name: userid
+Key type: 6, name: canbuy
+ID: 138, name: buytime_ended
+ID: 139, name: enter_bombzone
+Key type: 4, name: userid
+Key type: 6, name: hasbomb
+Key type: 6, name: isplanted
+ID: 140, name: exit_bombzone
+Key type: 4, name: userid
+Key type: 6, name: hasbomb
+Key type: 6, name: isplanted
+ID: 141, name: enter_rescue_zone
+Key type: 4, name: userid
+ID: 142, name: exit_rescue_zone
+Key type: 4, name: userid
+ID: 143, name: silencer_off
+Key type: 4, name: userid
+ID: 144, name: silencer_on
+Key type: 4, name: userid
+ID: 145, name: buymenu_open
+Key type: 4, name: userid
+ID: 146, name: buymenu_close
+Key type: 4, name: userid
+ID: 147, name: round_prestart
+ID: 148, name: round_poststart
+ID: 149, name: grenade_bounce
+Key type: 4, name: userid
+ID: 150, name: hegrenade_detonate
+Key type: 4, name: userid
+Key type: 4, name: entityid
+Key type: 2, name: x
+Key type: 2, name: y
+Key type: 2, name: z
+ID: 151, name: flashbang_detonate
+Key type: 4, name: userid
+Key type: 4, name: entityid
+Key type: 2, name: x
+Key type: 2, name: y
+Key type: 2, name: z
+ID: 152, name: smokegrenade_detonate
+Key type: 4, name: userid
+Key type: 4, name: entityid
+Key type: 2, name: x
+Key type: 2, name: y
+Key type: 2, name: z
+ID: 153, name: smokegrenade_expired
+Key type: 4, name: userid
+Key type: 4, name: entityid
+Key type: 2, name: x
+Key type: 2, name: y
+Key type: 2, name: z
+ID: 154, name: molotov_detonate
+Key type: 4, name: userid
+Key type: 2, name: x
+Key type: 2, name: y
+Key type: 2, name: z
+ID: 155, name: decoy_detonate
+Key type: 4, name: userid
+Key type: 4, name: entityid
+Key type: 2, name: x
+Key type: 2, name: y
+Key type: 2, name: z
+ID: 156, name: decoy_started
+Key type: 4, name: userid
+Key type: 4, name: entityid
+Key type: 2, name: x
+Key type: 2, name: y
+Key type: 2, name: z
+ID: 157, name: inferno_startburn
+Key type: 4, name: entityid
+Key type: 2, name: x
+Key type: 2, name: y
+Key type: 2, name: z
+ID: 158, name: inferno_expire
+Key type: 4, name: entityid
+Key type: 2, name: x
+Key type: 2, name: y
+Key type: 2, name: z
+ID: 159, name: inferno_extinguish
+Key type: 4, name: entityid
+Key type: 2, name: x
+Key type: 2, name: y
+Key type: 2, name: z
+ID: 160, name: decoy_firing
+Key type: 4, name: userid
+Key type: 4, name: entityid
+Key type: 2, name: x
+Key type: 2, name: y
+Key type: 2, name: z
+ID: 161, name: bullet_impact
+Key type: 4, name: userid
+Key type: 2, name: x
+Key type: 2, name: y
+Key type: 2, name: z
+ID: 162, name: player_footstep
+Key type: 4, name: userid
+ID: 163, name: player_jump
+Key type: 4, name: userid
+ID: 164, name: player_blind
+Key type: 4, name: userid
+ID: 165, name: player_falldamage
+Key type: 4, name: userid
+Key type: 2, name: damage
+ID: 166, name: door_moving
+Key type: 3, name: entindex
+Key type: 4, name: userid
+ID: 167, name: round_freeze_end
+ID: 168, name: mb_input_lock_success
+ID: 169, name: mb_input_lock_cancel
+ID: 170, name: nav_blocked
+Key type: 3, name: area
+Key type: 6, name: blocked
+ID: 171, name: nav_generate
+ID: 172, name: achievement_info_loaded
+ID: 173, name: spec_target_updated
+Key type: 5, name: userid
+ID: 174, name: spec_mode_updated
+Key type: 5, name: userid
+ID: 175, name: hltv_changed_mode
+Key type: 3, name: oldmode
+Key type: 3, name: newmode
+Key type: 3, name: obs_target
+ID: 176, name: cs_game_disconnected
+ID: 177, name: cs_win_panel_round
+Key type: 6, name: show_timer_defend
+Key type: 6, name: show_timer_attack
+Key type: 4, name: timer_time
+Key type: 5, name: final_event
+Key type: 1, name: funfact_token
+Key type: 4, name: funfact_player
+Key type: 3, name: funfact_data1
+Key type: 3, name: funfact_data2
+Key type: 3, name: funfact_data3
+ID: 178, name: cs_win_panel_match
+ID: 179, name: cs_match_end_restart
+ID: 180, name: cs_pre_restart
+ID: 181, name: show_freezepanel
+Key type: 4, name: victim
+Key type: 4, name: killer
+Key type: 4, name: hits_taken
+Key type: 4, name: damage_taken
+Key type: 4, name: hits_given
+Key type: 4, name: damage_given
+ID: 182, name: hide_freezepanel
+ID: 183, name: freezecam_started
+ID: 184, name: player_avenged_teammate
+Key type: 4, name: avenger_id
+Key type: 4, name: avenged_player_id
+ID: 185, name: achievement_earned_local
+Key type: 4, name: achievement
+Key type: 4, name: splitscreenplayer
+ID: 186, name: item_found
+Key type: 5, name: player
+Key type: 5, name: quality
+Key type: 5, name: method
+Key type: 3, name: itemdef
+Key type: 3, name: itemid
+ID: 187, name: repost_xbox_achievements
+Key type: 4, name: splitscreenplayer
+ID: 188, name: match_end_conditions
+Key type: 3, name: frags
+Key type: 3, name: max_rounds
+Key type: 3, name: win_rounds
+Key type: 3, name: time
+ID: 189, name: round_mvp
+Key type: 4, name: userid
+Key type: 4, name: reason
+ID: 190, name: client_disconnect
+ID: 191, name: gg_player_levelup
+Key type: 4, name: userid
+Key type: 4, name: weaponrank
+Key type: 1, name: weaponname
+ID: 192, name: ggtr_player_levelup
+Key type: 4, name: userid
+Key type: 4, name: weaponrank
+Key type: 1, name: weaponname
+ID: 193, name: ggprogressive_player_levelup
+Key type: 4, name: userid
+Key type: 4, name: weaponrank
+Key type: 1, name: weaponname
+ID: 194, name: gg_killed_enemy
+Key type: 4, name: victimid
+Key type: 4, name: attackerid
+Key type: 4, name: dominated
+Key type: 4, name: revenge
+Key type: 6, name: bonus
+ID: 195, name: gg_final_weapon_achieved
+Key type: 4, name: playerid
+ID: 196, name: gg_bonus_grenade_achieved
+Key type: 4, name: userid
+ID: 197, name: switch_team
+Key type: 4, name: numPlayers
+Key type: 4, name: numSpectators
+Key type: 4, name: avg_rank
+Key type: 4, name: numTSlotsFree
+Key type: 4, name: numCTSlotsFree
+ID: 198, name: gg_leader
+Key type: 4, name: playerid
+ID: 199, name: gg_player_impending_upgrade
+Key type: 4, name: userid
+ID: 200, name: write_profile_data
+ID: 201, name: trial_time_expired
+Key type: 4, name: slot
+ID: 202, name: update_matchmaking_stats
+ID: 203, name: player_reset_vote
+Key type: 4, name: userid
+Key type: 6, name: vote
+ID: 204, name: enable_restart_voting
+Key type: 6, name: enable
+ID: 205, name: sfuievent
+Key type: 1, name: action
+Key type: 1, name: data
+Key type: 5, name: slot
+ID: 206, name: start_vote
+Key type: 4, name: userid
+Key type: 5, name: type
+Key type: 4, name: vote_parameter
+ID: 207, name: player_given_c4
+Key type: 4, name: userid
+ID: 208, name: gg_reset_round_start_sounds
+Key type: 4, name: userid
+ID: 209, name: tr_player_flashbanged
+Key type: 4, name: userid
+ID: 210, name: tr_mark_complete
+Key type: 4, name: complete
+ID: 211, name: tr_mark_best_time
+Key type: 3, name: time
+ID: 212, name: tr_exit_hint_trigger
+ID: 213, name: bot_takeover
+Key type: 4, name: userid
+Key type: 4, name: botid
+Key type: 4, name: index
+ID: 214, name: tr_show_finish_msgbox
+Key type: 4, name: userid
+ID: 215, name: tr_show_exit_msgbox
+Key type: 4, name: userid
+ID: 216, name: reset_player_controls
+ID: 217, name: jointeam_failed
+Key type: 4, name: userid
+Key type: 5, name: reason
+ID: 218, name: teamchange_pending
+Key type: 4, name: userid
+Key type: 5, name: toteam
+ID: 219, name: material_default_complete
+ID: 220, name: cs_prev_next_spectator
+Key type: 6, name: next
+ID: 222, name: nextlevel_changed
+Key type: 1, name: nextlevel
+ID: 223, name: seasoncoin_levelup
+Key type: 4, name: player
+Key type: 4, name: category
+Key type: 4, name: rank
+ID: 224, name: tournament_reward
+Key type: 3, name: defindex
+Key type: 3, name: totalrewards
+Key type: 3, name: accountid
+ID: 225, name: hltv_status
+Key type: 3, name: clients
+Key type: 3, name: slots
+Key type: 4, name: proxies
+Key type: 1, name: master
+Key type: 3, name: externaltotal
+Key type: 3, name: externallinked
+ID: 226, name: hltv_cameraman
+Key type: 4, name: index
+ID: 227, name: hltv_rank_camera
+Key type: 5, name: index
+Key type: 2, name: rank
+Key type: 4, name: target
+ID: 228, name: hltv_rank_entity
+Key type: 4, name: index
+Key type: 2, name: rank
+Key type: 4, name: target
+ID: 229, name: hltv_fixed
+Key type: 3, name: posx
+Key type: 3, name: posy
+Key type: 3, name: posz
+Key type: 4, name: theta
+Key type: 4, name: phi
+Key type: 4, name: offset
+Key type: 2, name: fov
+Key type: 4, name: target
+ID: 230, name: hltv_chase
+Key type: 4, name: target1
+Key type: 4, name: target2
+Key type: 4, name: distance
+Key type: 4, name: theta
+Key type: 4, name: phi
+Key type: 5, name: inertia
+Key type: 5, name: ineye
+ID: 231, name: hltv_message
+Key type: 1, name: text
+ID: 232, name: hltv_title
+Key type: 1, name: text
+ID: 233, name: hltv_chat
+Key type: 1, name: text
