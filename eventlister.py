@@ -11,7 +11,7 @@ import sys
 import json
 
 events = {}
-GAMEEVENT_TYPES = {2:"string",
+_GAMEEVENT_TYPES = {2:"string",
                    3:"float",
                    4:"long",
                    5:"short",
@@ -31,7 +31,7 @@ def on_list_received(msg, data):
                              "params": {}
                                 }
         for key in desc.keys:
-            events[desc.name]["params"][key.name] = GAMEEVENT_TYPES[key.type + 1]
+            events[desc.name]["params"][key.name] = _GAMEEVENT_TYPES[key.type + 1]
 
 if __name__ == '__main__':
     demo = DemoDump()

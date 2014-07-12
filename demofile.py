@@ -4,15 +4,14 @@ Created on Jul 11, 2014
 @author: Chris
 '''
 import os
-
-import cstrike15_usermessages_public_pb2
-import netmessages_public_pb2
-
 import struct
 
 SUPPORTED_PROTOCOL = 4
 
 class DemoHeader(object):
+    '''
+    Header of the demo file, contains info about the demo. Read from the first few bytes of the demo file.
+    '''
     def __init__(self, demofile, demoprotocol, networkprotocol,
                  servername, clientname, mapname, gamedirectory,
                  playback_time, playback_ticks, playback_frames,
@@ -29,11 +28,11 @@ class DemoHeader(object):
         self.playback_frames = playback_frames
         self.signonlength = signonlength
 
-class DemoCMDInfo(object):
-    '''
-    '''
 
 class DemoMessage:
+    '''
+    All the demo messages CSGO uses.
+    '''
     SIGNON = 1
     PACKET = 2
     SYNCTICK = 3
@@ -47,7 +46,7 @@ class DemoMessage:
 
 class DemoFile(object):
     '''
-    classdocs
+    Class that can be used to read data from the demo file.
     '''
 
     def __init__(self):
@@ -58,6 +57,10 @@ class DemoFile(object):
         self.offset = 0
         
     def open(self, filename):
+        '''
+        Opens the demo file and reads the header.
+        True if succesful, False if unable to read demo.
+        '''
         self.file = open(filename, "rb")
         if self.file:
             
@@ -80,10 +83,13 @@ class DemoFile(object):
                 return False
         else:
             return False
-        #print "Succesfully opened file"
+
         return True
     
     def read_cmd_header(self):
+        '''
+        Reads the header of a cmd.
+        '''
         cmd = self.read_struct_from_file("B")
         if cmd <= 0:
             cmd = DemoMessage.STOP
@@ -93,6 +99,10 @@ class DemoFile(object):
         return cmd, tick, playerslot
     
     def read_raw_data(self):
+        '''
+        Reads the next int and then reads the amount of bytes in that int.
+        Returns a tuple of (size, buffer)
+        '''
         size = self.read_struct_from_file("@i")
         if size <= 0:
             return 0, None
@@ -104,15 +114,26 @@ class DemoFile(object):
         return size, data
         
     def read_user_cmd(self):
+        '''
+        Reads a user cmd.
+        Returns a tuple of (outgoing(?), size, buffer)
+        '''
         outgoing = self.read_struct_from_file("i")
         size, data = self.read_raw_data()
         return outgoing, size, data
     
     def read_cmd_info(self):
+        '''
+        Reads cmd info, beware: uses splitscreen so 152 bytes instead of 76.
+        '''
         fmt = "@iffffffffffffffffffiffffffffffffffffff"#x2 because of splitscreen
         return self.read_struct_from_file(fmt)
         
     def read_struct_from_file(self, fmt):
+        '''
+        General method to read and unpack a struct from the buffer.
+        Returns the unpacked struct.
+        '''
         self.file.seek(self.offset)
         struct_len = struct.calcsize(fmt)
         struct_unpack = struct.Struct(fmt)
@@ -123,6 +144,9 @@ class DemoFile(object):
         return read[0]
     
     def read_sequence_info(self):
+        '''
+        Reads sequence info.
+        '''
         seq_nr_in = self.read_struct_from_file("i")
         seq_nr_out = self.read_struct_from_file("i")
         return seq_nr_in, seq_nr_out
