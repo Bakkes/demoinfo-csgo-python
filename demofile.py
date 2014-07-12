@@ -106,7 +106,7 @@ class DemoFile(object):
     def read_user_cmd(self):
         outgoing = self.read_struct_from_file("i")
         size, data = self.read_raw_data()
-        return outgoing
+        return outgoing, size, data
     
     def read_cmd_info(self):
         fmt = "@iffffffffffffffffffiffffffffffffffffff"#x2 because of splitscreen

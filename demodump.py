@@ -41,6 +41,26 @@ GAMEEVENT_TYPES = {2:"val_string",
                    7:"val_bool",
                    8:"val_uint64",
                    9:"val_wstring"}
+   
+import bitstring
+class StringTable(object):
+    def __init__(self):
+        pass
+    
+    def decode(self, data):
+        stream = bitstring.BitStream(bytes=data)
+        flag = stream.read('bin:1') == '0'
+        index = -1
+        
+        while True:
+            print stream.read('bin:1')
+            return
+            if stream.read('bin:1'):
+                index += 1
+            else:
+                index = stream
+        print flag
+        #while True:
             
 class GameEvent(object):
     def __init__(self, raw, descriptor):
@@ -99,6 +119,10 @@ class DemoDump(object):
         self.register_on_netmsg(svc_GameEvent, self.handle_gameevent)
         self.register_on_netmsg(svc_GameEventList, self.handle_gameeventlist)
         self.register_on_netmsg(svc_ServerInfo, self.server_info_update)
+        self.register_on_netmsg(svc_CreateStringTable, self.server_create_stringtable)
+        self.register_on_netmsg(svc_SendTable, self.send_table)
+        self.register_on_netmsg(svc_UpdateStringTable, self.update_stringtable)
+        self.register_on_netmsg(svc_ClassInfo, self.handle_classinfo)
         
     def open(self, filename):
         self.demofile = DemoFile()
@@ -135,24 +159,70 @@ class DemoDump(object):
             for key in desc.keys:
                 self.descriptors[desc.eventid][3].append([key.type, key.name])
     
-    called = {}
     def handle_gameevent(self, cmd, data):
         '''
         handles the game events and fires the callback
         '''
         gameevent = CSVCMsg_GameEvent()
         gameevent.ParseFromString(data)
-        if gameevent.eventid not in self.called.keys():
-            self.called[gameevent.eventid] = 0
-        self.called[gameevent.eventid] += 1
         if gameevent.eventid in self.GAME_EVENTS:
             event = GameEvent(gameevent, self.descriptors[gameevent.eventid])
             for callback in self.GAME_EVENTS[event.raw.eventid]:
                 callback(event)
+         
+    stringtable_data = {}
+    def server_create_stringtable(self, cmd, data):
+        table = CSVCMsg_CreateStringTable()
+        #table_data = CSVCMsg_SendTable()
+        table.ParseFromString(data)
+        if table.name != "userinfo":
+            return
+        #table_data.ParseFromString(table.string_data)
+        self.stringtable_data[table.name] = {'entries': table.num_entries,
+                                             'user_data_fixed_size': table.user_data_fixed_size,
+                                             'user_data_size': table.user_data_size,
+                                             'user_data_size_bits': table.user_data_size_bits,
+                                             'flags': table.flags,
+                                             #'data': table_data
+                                             }
+        
+        fo = open("data/initial_" + table.name, "wb")
+        fo.write(table.string_data)
+        '''
+                int *pStringIndex = (int *)fieldInfo.pField;
+        int nLen = pRestore->ReadInt();
+        char *pTemp = (char *)stackalloc( nLen );
+        pRestore->ReadString( pTemp, nLen, nLen );
+        *pStringIndex = m_pStringTable->AddString( CBaseEntity::IsServer(), pTemp );
+        '''
+        
+    inx = 0
+    def update_stringtable(self, cmd, data):
+        update = CSVCMsg_UpdateStringTable()
+        update.ParseFromString(data)
+        #print "Table %i updated, changed: %i" % (update.table_id, update.num_changed_entries)
+        #print update.string_data
+        fo = open("data/update_" + str(update.table_id) + "_" + str(self.inx), "wb")
+        fo.write(update.string_data)
+        self.inx += 1
+        
+    def send_table(self, cmd, data):
+        table = CSVCMsg_SendTable()
+        table.ParseFromString(data)
+        print "%s: is end: %r, needs_decoder: %r" % (table.net_table_name, table.is_end, table.needs_decoder)
+        for prop in table.props:
+            print "Name: %s type: %i" % (prop.var_name, prop.type)
+        print "-------------------------------"
+        
+    def handle_classinfo(self, cmd, data):
+        info = CSVCMsg_ClassInfo()
+        info.ParseFromString(data)
+        print "CLASS INFO COUNT: %s, CREATE ON CLIENT: %r" % (len(info.classes), info.create_on_client)
+        for c in info.classes:
+            print "%i: %s, %s" % (c.class_id, c.data_table_name, c.class_name)
             
     def dump(self):
         finished = False
-        #print "dumping"
         while not finished:
             cmd, tick, playerslot = self.demofile.read_cmd_header()
             #print "%i - %i - % i " % (cmd, tick, playerslot)
@@ -162,19 +232,28 @@ class DemoDump(object):
                 finished = True
                 break
             elif cmd == DemoMessage.CONSOLECMD:
-                self.demofile.read_raw_data()
+                s, d = self.demofile.read_raw_data()
+                ''''o = open("packets/consolecmd", 'ab')
+                o.write(d)
+                o.write(''.join([b'\00' for x in range(0, 100)]))'''
             elif cmd == DemoMessage.DATATABLES:
-                self.demofile.read_raw_data()
+                s, d = self.demofile.read_raw_data()
+                ''''o = open("packets/datatables", 'ab')
+                o.write(d)
+                o.write(''.join([b'\00' for x in range(0, 100)]))'''
             elif cmd == DemoMessage.STRINGTABLES:
-                self.demofile.read_raw_data()
+                s,d = self.demofile.read_raw_data()
+                ''''o = open("packets/stringtables", 'ab')
+                o.write(d)
+                o.write(''.join([b'\00' for x in range(0, 100)]))'''
             elif cmd == DemoMessage.USERCMD:
-                self.demofile.read_user_cmd()
+                out, s,d = self.demofile.read_user_cmd()
+                ''''o = open("packets/usercmd", 'ab')
+                o.write(d)
+                o.write(''.join([b'\00' for x in range(0, 100)]))'''
             elif cmd == DemoMessage.SIGNON or cmd == DemoMessage.PACKET:
                 #print "Packet found"
                 self.handle_demo_packet()
-        for k, v in self.called.items():
-            print str(self.descriptors[k][1]) + ": " + str(v)
-        print(self.called)
                 
     def handle_demo_packet(self):
         info = self.demofile.read_cmd_info()
@@ -191,15 +270,11 @@ class DemoDump(object):
         while index < length:
             cmd, index = self.__read_int32(buf, index)
             size, index = self.__read_int32(buf, index)
-            #read data
             data = buf[index:index+size]
-            #print cmd
             if cmd in self.NET_MSG:
                 for callback in self.NET_MSG[cmd]:
                     callback(cmd, data);
-            #else:
-                #print "Unknown command: %i" % cmd
-            
+                    
             index = index + size
         
     def __read_int32(self, buf, index):

@@ -2,3 +2,5 @@
 .pydevproject
 *.pyc
 *.dem
+data/*.*
+packets/*.*
