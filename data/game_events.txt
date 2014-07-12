@@ -1,0 +1,1837 @@
+{
+    "round_poststart": {
+        "params": {}, 
+        "ID": 148, 
+        "name": "round_poststart"
+    }, 
+    "break_prop": {
+        "params": {
+            "entindex": "long", 
+            "userid": "short"
+        }, 
+        "ID": 59, 
+        "name": "break_prop"
+    }, 
+    "game_init": {
+        "params": {}, 
+        "ID": 32, 
+        "name": "game_init"
+    }, 
+    "bomb_beginplant": {
+        "params": {
+            "userid": "short", 
+            "site": "short"
+        }, 
+        "ID": 100, 
+        "name": "bomb_beginplant"
+    }, 
+    "bomb_defused": {
+        "params": {
+            "userid": "short", 
+            "site": "short"
+        }, 
+        "ID": 103, 
+        "name": "bomb_defused"
+    }, 
+    "player_score": {
+        "params": {
+            "score": "short", 
+            "userid": "short", 
+            "kills": "short", 
+            "deaths": "short"
+        }, 
+        "ID": 26, 
+        "name": "player_score"
+    }, 
+    "announce_phase_end": {
+        "params": {}, 
+        "ID": 109, 
+        "name": "announce_phase_end"
+    }, 
+    "player_radio": {
+        "params": {
+            "slot": "short", 
+            "userid": "short"
+        }, 
+        "ID": 122, 
+        "name": "player_radio"
+    }, 
+    "gc_connected": {
+        "params": {}, 
+        "ID": 96, 
+        "name": "gc_connected"
+    }, 
+    "team_score": {
+        "params": {
+            "teamid": "byte", 
+            "score": "short"
+        }, 
+        "ID": 17, 
+        "name": "team_score"
+    }, 
+    "dm_bonus_weapon_start": {
+        "params": {
+            "wepID": "short", 
+            "time": "short"
+        }, 
+        "ID": 57, 
+        "name": "dm_bonus_weapon_start"
+    }, 
+    "vote_failed": {
+        "params": {
+            "team": "byte"
+        }, 
+        "ID": 88, 
+        "name": "vote_failed"
+    }, 
+    "buymenu_open": {
+        "params": {
+            "userid": "short"
+        }, 
+        "ID": 145, 
+        "name": "buymenu_open"
+    }, 
+    "match_end_conditions": {
+        "params": {
+            "max_rounds": "long", 
+            "win_rounds": "long", 
+            "frags": "long", 
+            "time": "long"
+        }, 
+        "ID": 188, 
+        "name": "match_end_conditions"
+    }, 
+    "hltv_chase": {
+        "params": {
+            "distance": "short", 
+            "phi": "short", 
+            "ineye": "byte", 
+            "theta": "short", 
+            "target2": "short", 
+            "inertia": "byte", 
+            "target1": "short"
+        }, 
+        "ID": 230, 
+        "name": "hltv_chase"
+    }, 
+    "round_announce_match_point": {
+        "params": {}, 
+        "ID": 37, 
+        "name": "round_announce_match_point"
+    }, 
+    "ammo_pickup": {
+        "params": {
+            "item": "string", 
+            "userid": "short", 
+            "index": "long"
+        }, 
+        "ID": 134, 
+        "name": "ammo_pickup"
+    }, 
+    "player_spawn": {
+        "params": {
+            "teamnum": "short", 
+            "userid": "short"
+        }, 
+        "ID": 27, 
+        "name": "player_spawn"
+    }, 
+    "cs_win_panel_round": {
+        "params": {
+            "show_timer_attack": "bool", 
+            "timer_time": "short", 
+            "funfact_player": "short", 
+            "show_timer_defend": "bool", 
+            "funfact_token": "string", 
+            "final_event": "byte", 
+            "funfact_data1": "long", 
+            "funfact_data3": "long", 
+            "funfact_data2": "long"
+        }, 
+        "ID": 177, 
+        "name": "cs_win_panel_round"
+    }, 
+    "weapon_outofammo": {
+        "params": {
+            "userid": "short"
+        }, 
+        "ID": 126, 
+        "name": "weapon_outofammo"
+    }, 
+    "player_use": {
+        "params": {
+            "userid": "short", 
+            "entity": "short"
+        }, 
+        "ID": 29, 
+        "name": "player_use"
+    }, 
+    "gameui_hidden": {
+        "params": {}, 
+        "ID": 19, 
+        "name": "gameui_hidden"
+    }, 
+    "exit_bombzone": {
+        "params": {
+            "userid": "short", 
+            "isplanted": "bool", 
+            "hasbomb": "bool"
+        }, 
+        "ID": 140, 
+        "name": "exit_bombzone"
+    }, 
+    "ugc_file_download_start": {
+        "params": {
+            "published_file_id": "uint64", 
+            "hcontent": "uint64"
+        }, 
+        "ID": 49, 
+        "name": "ugc_file_download_start"
+    }, 
+    "inspect_weapon": {
+        "params": {
+            "userid": "short"
+        }, 
+        "ID": 130, 
+        "name": "inspect_weapon"
+    }, 
+    "round_announce_final": {
+        "params": {}, 
+        "ID": 38, 
+        "name": "round_announce_final"
+    }, 
+    "instructor_server_hint_create": {
+        "params": {
+            "hint_icon_offset": "float", 
+            "hint_gamepad_binding": "string", 
+            "hint_activator_userid": "short", 
+            "hint_forcecaption": "bool", 
+            "hint_caption": "string", 
+            "hint_name": "string", 
+            "hint_timeout": "short", 
+            "hint_target": "long", 
+            "hint_color": "string", 
+            "hint_activator_caption": "string", 
+            "hint_nooffscreen": "bool", 
+            "hint_local_player_only": "bool", 
+            "hint_flags": "long", 
+            "hint_allow_nodraw_target": "bool", 
+            "hint_icon_offscreen": "string", 
+            "hint_binding": "string", 
+            "hint_icon_onscreen": "string", 
+            "hint_replace_key": "string", 
+            "hint_range": "float"
+        }, 
+        "ID": 78, 
+        "name": "instructor_server_hint_create"
+    }, 
+    "tr_exit_hint_trigger": {
+        "params": {}, 
+        "ID": 212, 
+        "name": "tr_exit_hint_trigger"
+    }, 
+    "write_game_titledata": {
+        "params": {
+            "controllerId": "short"
+        }, 
+        "ID": 81, 
+        "name": "write_game_titledata"
+    }, 
+    "inferno_extinguish": {
+        "params": {
+            "y": "float", 
+            "x": "float", 
+            "entityid": "short", 
+            "z": "float"
+        }, 
+        "ID": 159, 
+        "name": "inferno_extinguish"
+    }, 
+    "server_removeban": {
+        "params": {
+            "networkid": "string", 
+            "ip": "string", 
+            "by": "string"
+        }, 
+        "ID": 6, 
+        "name": "server_removeban"
+    }, 
+    "server_shutdown": {
+        "params": {
+            "reason": "string"
+        }, 
+        "ID": 2, 
+        "name": "server_shutdown"
+    }, 
+    "vote_options": {
+        "params": {
+            "count": "byte", 
+            "option4": "string", 
+            "option5": "string", 
+            "option2": "string", 
+            "option3": "string", 
+            "option1": "string"
+        }, 
+        "ID": 90, 
+        "name": "vote_options"
+    }, 
+    "bonus_updated": {
+        "params": {
+            "numbronze": "short", 
+            "numsilver": "short", 
+            "numadvanced": "short", 
+            "numgold": "short"
+        }, 
+        "ID": 62, 
+        "name": "bonus_updated"
+    }, 
+    "player_footstep": {
+        "params": {
+            "userid": "short"
+        }, 
+        "ID": 162, 
+        "name": "player_footstep"
+    }, 
+    "hltv_rank_camera": {
+        "params": {
+            "index": "byte", 
+            "target": "short", 
+            "rank": "float"
+        }, 
+        "ID": 227, 
+        "name": "hltv_rank_camera"
+    }, 
+    "cart_updated": {
+        "params": {}, 
+        "ID": 94, 
+        "name": "cart_updated"
+    }, 
+    "gg_reset_round_start_sounds": {
+        "params": {
+            "userid": "short"
+        }, 
+        "ID": 208, 
+        "name": "gg_reset_round_start_sounds"
+    }, 
+    "round_start": {
+        "params": {
+            "objective": "string", 
+            "timelimit": "long", 
+            "fraglimit": "long"
+        }, 
+        "ID": 36, 
+        "name": "round_start"
+    }, 
+    "entity_killed": {
+        "params": {
+            "entindex_killed": "long", 
+            "entindex_inflictor": "long", 
+            "entindex_attacker": "long", 
+            "damagebits": "long"
+        }, 
+        "ID": 61, 
+        "name": "entity_killed"
+    }, 
+    "inferno_expire": {
+        "params": {
+            "y": "float", 
+            "x": "float", 
+            "entityid": "short", 
+            "z": "float"
+        }, 
+        "ID": 158, 
+        "name": "inferno_expire"
+    }, 
+    "bomb_planted": {
+        "params": {
+            "userid": "short", 
+            "site": "short"
+        }, 
+        "ID": 102, 
+        "name": "bomb_planted"
+    }, 
+    "item_equip": {
+        "params": {
+            "hastracers": "bool", 
+            "canzoom": "bool", 
+            "hassilencer": "bool", 
+            "userid": "short", 
+            "issilenced": "bool", 
+            "ispainted": "bool", 
+            "weptype": "short", 
+            "item": "string"
+        }, 
+        "ID": 135, 
+        "name": "item_equip"
+    }, 
+    "hltv_rank_entity": {
+        "params": {
+            "index": "short", 
+            "target": "short", 
+            "rank": "float"
+        }, 
+        "ID": 228, 
+        "name": "hltv_rank_entity"
+    }, 
+    "bomb_begindefuse": {
+        "params": {
+            "haskit": "bool", 
+            "userid": "short"
+        }, 
+        "ID": 111, 
+        "name": "bomb_begindefuse"
+    }, 
+    "instructor_server_hint_stop": {
+        "params": {
+            "hint_name": "string"
+        }, 
+        "ID": 79, 
+        "name": "instructor_server_hint_stop"
+    }, 
+    "flare_ignite_npc": {
+        "params": {
+            "entindex": "long"
+        }, 
+        "ID": 69, 
+        "name": "flare_ignite_npc"
+    }, 
+    "set_instructor_group_enabled": {
+        "params": {
+            "enabled": "short", 
+            "group": "string"
+        }, 
+        "ID": 77, 
+        "name": "set_instructor_group_enabled"
+    }, 
+    "teamchange_pending": {
+        "params": {
+            "userid": "short", 
+            "toteam": "byte"
+        }, 
+        "ID": 218, 
+        "name": "teamchange_pending"
+    }, 
+    "player_team": {
+        "params": {
+            "disconnect": "bool", 
+            "silent": "bool", 
+            "userid": "short", 
+            "isbot": "bool", 
+            "oldteam": "byte", 
+            "team": "byte", 
+            "autoteam": "bool"
+        }, 
+        "ID": 21, 
+        "name": "player_team"
+    }, 
+    "achievement_increment": {
+        "params": {
+            "achievement_id": "long", 
+            "cur_val": "short", 
+            "max_val": "short"
+        }, 
+        "ID": 65, 
+        "name": "achievement_increment"
+    }, 
+    "server_spawn": {
+        "params": {
+            "dedicated": "bool", 
+            "official": "bool", 
+            "hostname": "string", 
+            "maxplayers": "long", 
+            "mapname": "string", 
+            "game": "string", 
+            "address": "string", 
+            "password": "bool", 
+            "os": "string", 
+            "port": "short"
+        }, 
+        "ID": 0, 
+        "name": "server_spawn"
+    }, 
+    "mb_input_lock_success": {
+        "params": {}, 
+        "ID": 168, 
+        "name": "mb_input_lock_success"
+    }, 
+    "hostage_rescued": {
+        "params": {
+            "hostage": "short", 
+            "userid": "short", 
+            "site": "short"
+        }, 
+        "ID": 116, 
+        "name": "hostage_rescued"
+    }, 
+    "hostage_call_for_help": {
+        "params": {
+            "hostage": "short"
+        }, 
+        "ID": 119, 
+        "name": "hostage_call_for_help"
+    }, 
+    "player_connect_full": {
+        "params": {
+            "index": "byte", 
+            "userid": "short"
+        }, 
+        "ID": 11, 
+        "name": "player_connect_full"
+    }, 
+    "bomb_pickup": {
+        "params": {
+            "userid": "short"
+        }, 
+        "ID": 106, 
+        "name": "bomb_pickup"
+    }, 
+    "reset_player_controls": {
+        "params": {}, 
+        "ID": 216, 
+        "name": "reset_player_controls"
+    }, 
+    "round_end_upload_stats": {
+        "params": {}, 
+        "ID": 43, 
+        "name": "round_end_upload_stats"
+    }, 
+    "vote_changed": {
+        "params": {
+            "potentialVotes": "byte", 
+            "vote_option4": "byte", 
+            "vote_option5": "byte", 
+            "vote_option1": "byte", 
+            "vote_option2": "byte", 
+            "vote_option3": "byte"
+        }, 
+        "ID": 86, 
+        "name": "vote_changed"
+    }, 
+    "vote_started": {
+        "params": {
+            "initiator": "long", 
+            "issue": "string", 
+            "param1": "string", 
+            "team": "byte"
+        }, 
+        "ID": 85, 
+        "name": "vote_started"
+    }, 
+    "inferno_startburn": {
+        "params": {
+            "y": "float", 
+            "x": "float", 
+            "entityid": "short", 
+            "z": "float"
+        }, 
+        "ID": 157, 
+        "name": "inferno_startburn"
+    }, 
+    "store_pricesheet_updated": {
+        "params": {}, 
+        "ID": 95, 
+        "name": "store_pricesheet_updated"
+    }, 
+    "item_pickup": {
+        "params": {
+            "item": "string", 
+            "userid": "short", 
+            "silent": "bool"
+        }, 
+        "ID": 133, 
+        "name": "item_pickup"
+    }, 
+    "cs_win_panel_match": {
+        "params": {}, 
+        "ID": 178, 
+        "name": "cs_win_panel_match"
+    }, 
+    "tr_mark_complete": {
+        "params": {
+            "complete": "short"
+        }, 
+        "ID": 210, 
+        "name": "tr_mark_complete"
+    }, 
+    "player_stats_updated": {
+        "params": {
+            "forceupload": "bool"
+        }, 
+        "ID": 63, 
+        "name": "player_stats_updated"
+    }, 
+    "server_addban": {
+        "params": {
+            "networkid": "string", 
+            "kicked": "bool", 
+            "name": "string", 
+            "ip": "string", 
+            "userid": "short", 
+            "duration": "string", 
+            "by": "string"
+        }, 
+        "ID": 5, 
+        "name": "server_addban"
+    }, 
+    "enable_restart_voting": {
+        "params": {
+            "enable": "bool"
+        }, 
+        "ID": 204, 
+        "name": "enable_restart_voting"
+    }, 
+    "vip_killed": {
+        "params": {
+            "attacker": "short", 
+            "userid": "short"
+        }, 
+        "ID": 121, 
+        "name": "vip_killed"
+    }, 
+    "hltv_status": {
+        "params": {
+            "externallinked": "long", 
+            "clients": "long", 
+            "master": "string", 
+            "externaltotal": "long", 
+            "slots": "long", 
+            "proxies": "short"
+        }, 
+        "ID": 225, 
+        "name": "hltv_status"
+    }, 
+    "weapon_fire_on_empty": {
+        "params": {
+            "weapon": "string", 
+            "userid": "short"
+        }, 
+        "ID": 125, 
+        "name": "weapon_fire_on_empty"
+    }, 
+    "weapon_fire": {
+        "params": {
+            "weapon": "string", 
+            "userid": "short", 
+            "silenced": "bool"
+        }, 
+        "ID": 124, 
+        "name": "weapon_fire"
+    }, 
+    "ggtr_player_levelup": {
+        "params": {
+            "weaponrank": "short", 
+            "userid": "short", 
+            "weaponname": "string"
+        }, 
+        "ID": 192, 
+        "name": "ggtr_player_levelup"
+    }, 
+    "tr_show_finish_msgbox": {
+        "params": {
+            "userid": "short"
+        }, 
+        "ID": 214, 
+        "name": "tr_show_finish_msgbox"
+    }, 
+    "player_given_c4": {
+        "params": {
+            "userid": "short"
+        }, 
+        "ID": 207, 
+        "name": "player_given_c4"
+    }, 
+    "exit_buyzone": {
+        "params": {
+            "canbuy": "bool", 
+            "userid": "short"
+        }, 
+        "ID": 137, 
+        "name": "exit_buyzone"
+    }, 
+    "tr_player_flashbanged": {
+        "params": {
+            "userid": "short"
+        }, 
+        "ID": 209, 
+        "name": "tr_player_flashbanged"
+    }, 
+    "nextlevel_changed": {
+        "params": {
+            "nextlevel": "string"
+        }, 
+        "ID": 222, 
+        "name": "nextlevel_changed"
+    }, 
+    "item_purchase": {
+        "params": {
+            "weapon": "string", 
+            "userid": "short", 
+            "team": "short"
+        }, 
+        "ID": 99, 
+        "name": "item_purchase"
+    }, 
+    "ragdoll_dissolved": {
+        "params": {
+            "entindex": "long"
+        }, 
+        "ID": 72, 
+        "name": "ragdoll_dissolved"
+    }, 
+    "weapon_zoom": {
+        "params": {
+            "userid": "short"
+        }, 
+        "ID": 128, 
+        "name": "weapon_zoom"
+    }, 
+    "decoy_started": {
+        "params": {
+            "y": "float", 
+            "x": "float", 
+            "entityid": "short", 
+            "z": "float", 
+            "userid": "short"
+        }, 
+        "ID": 156, 
+        "name": "decoy_started"
+    }, 
+    "defuser_dropped": {
+        "params": {
+            "entityid": "long"
+        }, 
+        "ID": 107, 
+        "name": "defuser_dropped"
+    }, 
+    "hostname_changed": {
+        "params": {
+            "hostname": "string"
+        }, 
+        "ID": 53, 
+        "name": "hostname_changed"
+    }, 
+    "server_message": {
+        "params": {
+            "text": "string"
+        }, 
+        "ID": 4, 
+        "name": "server_message"
+    }, 
+    "player_chat": {
+        "params": {
+            "teamonly": "bool", 
+            "userid": "short", 
+            "text": "string"
+        }, 
+        "ID": 25, 
+        "name": "player_chat"
+    }, 
+    "round_freeze_end": {
+        "params": {}, 
+        "ID": 167, 
+        "name": "round_freeze_end"
+    }, 
+    "achievement_earned_local": {
+        "params": {
+            "splitscreenplayer": "short", 
+            "achievement": "short"
+        }, 
+        "ID": 185, 
+        "name": "achievement_earned_local"
+    }, 
+    "cs_pre_restart": {
+        "params": {}, 
+        "ID": 180, 
+        "name": "cs_pre_restart"
+    }, 
+    "round_announce_match_start": {
+        "params": {}, 
+        "ID": 40, 
+        "name": "round_announce_match_start"
+    }, 
+    "break_breakable": {
+        "params": {
+            "entindex": "long", 
+            "material": "byte", 
+            "userid": "short"
+        }, 
+        "ID": 58, 
+        "name": "break_breakable"
+    }, 
+    "hltv_cameraman": {
+        "params": {
+            "index": "short"
+        }, 
+        "ID": 226, 
+        "name": "hltv_cameraman"
+    }, 
+    "player_death": {
+        "params": {
+            "weapon": "string", 
+            "userid": "short", 
+            "weapon_originalowner_xuid": "string", 
+            "revenge": "short", 
+            "weapon_itemid": "string", 
+            "attacker": "short", 
+            "weapon_fauxitemid": "string", 
+            "headshot": "bool", 
+            "dominated": "short", 
+            "assister": "short", 
+            "penetrated": "short"
+        }, 
+        "ID": 23, 
+        "name": "player_death"
+    }, 
+    "reset_game_titledata": {
+        "params": {
+            "controllerId": "short"
+        }, 
+        "ID": 82, 
+        "name": "reset_game_titledata"
+    }, 
+    "trial_time_expired": {
+        "params": {
+            "slot": "short"
+        }, 
+        "ID": 201, 
+        "name": "trial_time_expired"
+    }, 
+    "weapon_zoom_rifle": {
+        "params": {
+            "userid": "short"
+        }, 
+        "ID": 131, 
+        "name": "weapon_zoom_rifle"
+    }, 
+    "bot_takeover": {
+        "params": {
+            "index": "short", 
+            "userid": "short", 
+            "botid": "short"
+        }, 
+        "ID": 213, 
+        "name": "bot_takeover"
+    }, 
+    "server_pre_shutdown": {
+        "params": {
+            "reason": "string"
+        }, 
+        "ID": 1, 
+        "name": "server_pre_shutdown"
+    }, 
+    "client_loadout_changed": {
+        "params": {}, 
+        "ID": 98, 
+        "name": "client_loadout_changed"
+    }, 
+    "exit_rescue_zone": {
+        "params": {
+            "userid": "short"
+        }, 
+        "ID": 142, 
+        "name": "exit_rescue_zone"
+    }, 
+    "bomb_abortdefuse": {
+        "params": {
+            "userid": "short"
+        }, 
+        "ID": 112, 
+        "name": "bomb_abortdefuse"
+    }, 
+    "cs_round_start_beep": {
+        "params": {}, 
+        "ID": 13, 
+        "name": "cs_round_start_beep"
+    }, 
+    "player_falldamage": {
+        "params": {
+            "userid": "short", 
+            "damage": "float"
+        }, 
+        "ID": 165, 
+        "name": "player_falldamage"
+    }, 
+    "silencer_on": {
+        "params": {
+            "userid": "short"
+        }, 
+        "ID": 144, 
+        "name": "silencer_on"
+    }, 
+    "gg_final_weapon_achieved": {
+        "params": {
+            "playerid": "short"
+        }, 
+        "ID": 195, 
+        "name": "gg_final_weapon_achieved"
+    }, 
+    "player_changename": {
+        "params": {
+            "newname": "string", 
+            "userid": "short", 
+            "oldname": "string"
+        }, 
+        "ID": 30, 
+        "name": "player_changename"
+    }, 
+    "game_message": {
+        "params": {
+            "text": "string", 
+            "target": "byte"
+        }, 
+        "ID": 56, 
+        "name": "game_message"
+    }, 
+    "tournament_reward": {
+        "params": {
+            "totalrewards": "long", 
+            "accountid": "long", 
+            "defindex": "long"
+        }, 
+        "ID": 224, 
+        "name": "tournament_reward"
+    }, 
+    "player_disconnect": {
+        "params": {
+            "networkid": "string", 
+            "reason": "string", 
+            "userid": "short", 
+            "name": "string"
+        }, 
+        "ID": 9, 
+        "name": "player_disconnect"
+    }, 
+    "hltv_fixed": {
+        "params": {
+            "phi": "short", 
+            "target": "short", 
+            "posy": "long", 
+            "fov": "float", 
+            "posz": "long", 
+            "posx": "long", 
+            "offset": "short", 
+            "theta": "short"
+        }, 
+        "ID": 229, 
+        "name": "hltv_fixed"
+    }, 
+    "player_hintmessage": {
+        "params": {
+            "hintmessage": "string"
+        }, 
+        "ID": 31, 
+        "name": "player_hintmessage"
+    }, 
+    "jointeam_failed": {
+        "params": {
+            "reason": "byte", 
+            "userid": "short"
+        }, 
+        "ID": 217, 
+        "name": "jointeam_failed"
+    }, 
+    "client_disconnect": {
+        "params": {}, 
+        "ID": 190, 
+        "name": "client_disconnect"
+    }, 
+    "player_blind": {
+        "params": {
+            "userid": "short"
+        }, 
+        "ID": 164, 
+        "name": "player_blind"
+    }, 
+    "seasoncoin_levelup": {
+        "params": {
+            "category": "short", 
+            "player": "short", 
+            "rank": "short"
+        }, 
+        "ID": 223, 
+        "name": "seasoncoin_levelup"
+    }, 
+    "silencer_detach": {
+        "params": {
+            "userid": "short"
+        }, 
+        "ID": 129, 
+        "name": "silencer_detach"
+    }, 
+    "vip_escaped": {
+        "params": {
+            "userid": "short"
+        }, 
+        "ID": 120, 
+        "name": "vip_escaped"
+    }, 
+    "molotov_detonate": {
+        "params": {
+            "y": "float", 
+            "x": "float", 
+            "z": "float", 
+            "userid": "short"
+        }, 
+        "ID": 154, 
+        "name": "molotov_detonate"
+    }, 
+    "nav_generate": {
+        "params": {}, 
+        "ID": 171, 
+        "name": "nav_generate"
+    }, 
+    "round_prestart": {
+        "params": {}, 
+        "ID": 147, 
+        "name": "round_prestart"
+    }, 
+    "round_start_pre_entity": {
+        "params": {}, 
+        "ID": 51, 
+        "name": "round_start_pre_entity"
+    }, 
+    "defuser_pickup": {
+        "params": {
+            "entityid": "long", 
+            "userid": "short"
+        }, 
+        "ID": 108, 
+        "name": "defuser_pickup"
+    }, 
+    "gg_killed_enemy": {
+        "params": {
+            "attackerid": "short", 
+            "bonus": "bool", 
+            "dominated": "short", 
+            "revenge": "short", 
+            "victimid": "short"
+        }, 
+        "ID": 194, 
+        "name": "gg_killed_enemy"
+    }, 
+    "tr_mark_best_time": {
+        "params": {
+            "time": "long"
+        }, 
+        "ID": 211, 
+        "name": "tr_mark_best_time"
+    }, 
+    "achievement_info_loaded": {
+        "params": {}, 
+        "ID": 172, 
+        "name": "achievement_info_loaded"
+    }, 
+    "hltv_message": {
+        "params": {
+            "text": "string"
+        }, 
+        "ID": 231, 
+        "name": "hltv_message"
+    }, 
+    "decoy_detonate": {
+        "params": {
+            "y": "float", 
+            "x": "float", 
+            "entityid": "short", 
+            "z": "float", 
+            "userid": "short"
+        }, 
+        "ID": 155, 
+        "name": "decoy_detonate"
+    }, 
+    "difficulty_changed": {
+        "params": {
+            "newDifficulty": "short", 
+            "oldDifficulty": "short", 
+            "strDifficulty": "string"
+        }, 
+        "ID": 54, 
+        "name": "difficulty_changed"
+    }, 
+    "vote_passed": {
+        "params": {
+            "details": "string", 
+            "param1": "string", 
+            "team": "byte"
+        }, 
+        "ID": 87, 
+        "name": "vote_passed"
+    }, 
+    "ggprogressive_player_levelup": {
+        "params": {
+            "weaponrank": "short", 
+            "userid": "short", 
+            "weaponname": "string"
+        }, 
+        "ID": 193, 
+        "name": "ggprogressive_player_levelup"
+    }, 
+    "hostage_follows": {
+        "params": {
+            "hostage": "short", 
+            "userid": "short"
+        }, 
+        "ID": 113, 
+        "name": "hostage_follows"
+    }, 
+    "spec_target_updated": {
+        "params": {
+            "userid": "byte"
+        }, 
+        "ID": 173, 
+        "name": "spec_target_updated"
+    }, 
+    "mb_input_lock_cancel": {
+        "params": {}, 
+        "ID": 169, 
+        "name": "mb_input_lock_cancel"
+    }, 
+    "smokegrenade_detonate": {
+        "params": {
+            "y": "float", 
+            "x": "float", 
+            "entityid": "short", 
+            "z": "float", 
+            "userid": "short"
+        }, 
+        "ID": 152, 
+        "name": "smokegrenade_detonate"
+    }, 
+    "hostage_hurt": {
+        "params": {
+            "hostage": "short", 
+            "userid": "short"
+        }, 
+        "ID": 114, 
+        "name": "hostage_hurt"
+    }, 
+    "silencer_off": {
+        "params": {
+            "userid": "short"
+        }, 
+        "ID": 143, 
+        "name": "silencer_off"
+    }, 
+    "round_officially_ended": {
+        "params": {}, 
+        "ID": 44, 
+        "name": "round_officially_ended"
+    }, 
+    "hostage_killed": {
+        "params": {
+            "hostage": "short", 
+            "userid": "short"
+        }, 
+        "ID": 115, 
+        "name": "hostage_killed"
+    }, 
+    "enter_buyzone": {
+        "params": {
+            "canbuy": "bool", 
+            "userid": "short"
+        }, 
+        "ID": 136, 
+        "name": "enter_buyzone"
+    }, 
+    "hostage_stops_following": {
+        "params": {
+            "hostage": "short", 
+            "userid": "short"
+        }, 
+        "ID": 117, 
+        "name": "hostage_stops_following"
+    }, 
+    "user_data_downloaded": {
+        "params": {}, 
+        "ID": 71, 
+        "name": "user_data_downloaded"
+    }, 
+    "show_freezepanel": {
+        "params": {
+            "hits_taken": "short", 
+            "damage_given": "short", 
+            "hits_given": "short", 
+            "killer": "short", 
+            "damage_taken": "short", 
+            "victim": "short"
+        }, 
+        "ID": 181, 
+        "name": "show_freezepanel"
+    }, 
+    "spec_mode_updated": {
+        "params": {
+            "userid": "byte"
+        }, 
+        "ID": 174, 
+        "name": "spec_mode_updated"
+    }, 
+    "inventory_updated": {
+        "params": {}, 
+        "ID": 93, 
+        "name": "inventory_updated"
+    }, 
+    "item_found": {
+        "params": {
+            "itemid": "long", 
+            "player": "byte", 
+            "quality": "byte", 
+            "method": "byte", 
+            "itemdef": "long"
+        }, 
+        "ID": 186, 
+        "name": "item_found"
+    }, 
+    "player_connect": {
+        "params": {
+            "networkid": "string", 
+            "index": "byte", 
+            "userid": "short", 
+            "name": "string", 
+            "address": "string"
+        }, 
+        "ID": 7, 
+        "name": "player_connect"
+    }, 
+    "player_reset_vote": {
+        "params": {
+            "vote": "bool", 
+            "userid": "short"
+        }, 
+        "ID": 203, 
+        "name": "player_reset_vote"
+    }, 
+    "bomb_beep": {
+        "params": {
+            "entindex": "long"
+        }, 
+        "ID": 123, 
+        "name": "bomb_beep"
+    }, 
+    "player_spawned": {
+        "params": {
+            "inrestart": "bool", 
+            "userid": "short"
+        }, 
+        "ID": 132, 
+        "name": "player_spawned"
+    }, 
+    "player_decal": {
+        "params": {
+            "userid": "short"
+        }, 
+        "ID": 60, 
+        "name": "player_decal"
+    }, 
+    "player_class": {
+        "params": {
+            "userid": "short", 
+            "class": "string"
+        }, 
+        "ID": 22, 
+        "name": "player_class"
+    }, 
+    "vote_ended": {
+        "params": {}, 
+        "ID": 84, 
+        "name": "vote_ended"
+    }, 
+    "buymenu_close": {
+        "params": {
+            "userid": "short"
+        }, 
+        "ID": 146, 
+        "name": "buymenu_close"
+    }, 
+    "enter_rescue_zone": {
+        "params": {
+            "userid": "short"
+        }, 
+        "ID": 141, 
+        "name": "enter_rescue_zone"
+    }, 
+    "bomb_exploded": {
+        "params": {
+            "userid": "short", 
+            "site": "short"
+        }, 
+        "ID": 104, 
+        "name": "bomb_exploded"
+    }, 
+    "hegrenade_detonate": {
+        "params": {
+            "y": "float", 
+            "x": "float", 
+            "entityid": "short", 
+            "z": "float", 
+            "userid": "short"
+        }, 
+        "ID": 150, 
+        "name": "hegrenade_detonate"
+    }, 
+    "material_default_complete": {
+        "params": {}, 
+        "ID": 219, 
+        "name": "material_default_complete"
+    }, 
+    "game_newmap": {
+        "params": {
+            "mapname": "string"
+        }, 
+        "ID": 33, 
+        "name": "game_newmap"
+    }, 
+    "team_info": {
+        "params": {
+            "teamid": "byte", 
+            "teamname": "string"
+        }, 
+        "ID": 16, 
+        "name": "team_info"
+    }, 
+    "player_activate": {
+        "params": {
+            "userid": "short"
+        }, 
+        "ID": 10, 
+        "name": "player_activate"
+    }, 
+    "player_avenged_teammate": {
+        "params": {
+            "avenger_id": "short", 
+            "avenged_player_id": "short"
+        }, 
+        "ID": 184, 
+        "name": "player_avenged_teammate"
+    }, 
+    "items_gifted": {
+        "params": {
+            "player": "byte", 
+            "accountid": "long", 
+            "giftidx": "byte", 
+            "itemdef": "long", 
+            "numgifts": "byte"
+        }, 
+        "ID": 20, 
+        "name": "items_gifted"
+    }, 
+    "cs_match_end_restart": {
+        "params": {}, 
+        "ID": 179, 
+        "name": "cs_match_end_restart"
+    }, 
+    "helicopter_grenade_punt_miss": {
+        "params": {}, 
+        "ID": 70, 
+        "name": "helicopter_grenade_punt_miss"
+    }, 
+    "tr_show_exit_msgbox": {
+        "params": {
+            "userid": "short"
+        }, 
+        "ID": 215, 
+        "name": "tr_show_exit_msgbox"
+    }, 
+    "game_start": {
+        "params": {
+            "objective": "string", 
+            "timelimit": "long", 
+            "roundslimit": "long", 
+            "fraglimit": "long"
+        }, 
+        "ID": 34, 
+        "name": "game_start"
+    }, 
+    "decoy_firing": {
+        "params": {
+            "y": "float", 
+            "x": "float", 
+            "entityid": "short", 
+            "z": "float", 
+            "userid": "short"
+        }, 
+        "ID": 160, 
+        "name": "decoy_firing"
+    }, 
+    "achievement_event": {
+        "params": {
+            "achievement_name": "string", 
+            "cur_val": "short", 
+            "max_val": "short"
+        }, 
+        "ID": 64, 
+        "name": "achievement_event"
+    }, 
+    "gameinstructor_draw": {
+        "params": {}, 
+        "ID": 73, 
+        "name": "gameinstructor_draw"
+    }, 
+    "gameinstructor_nodraw": {
+        "params": {}, 
+        "ID": 74, 
+        "name": "gameinstructor_nodraw"
+    }, 
+    "sfuievent": {
+        "params": {
+            "action": "string", 
+            "slot": "byte", 
+            "data": "string"
+        }, 
+        "ID": 205, 
+        "name": "sfuievent"
+    }, 
+    "weapon_reload_database": {
+        "params": {}, 
+        "ID": 83, 
+        "name": "weapon_reload_database"
+    }, 
+    "vote_cast": {
+        "params": {
+            "entityid": "long", 
+            "vote_option": "byte", 
+            "team": "short"
+        }, 
+        "ID": 89, 
+        "name": "vote_cast"
+    }, 
+    "finale_start": {
+        "params": {
+            "rushes": "short"
+        }, 
+        "ID": 55, 
+        "name": "finale_start"
+    }, 
+    "player_say": {
+        "params": {
+            "text": "string", 
+            "userid": "short"
+        }, 
+        "ID": 12, 
+        "name": "player_say"
+    }, 
+    "entity_visible": {
+        "params": {
+            "classname": "string", 
+            "entityname": "string", 
+            "userid": "short", 
+            "subject": "short"
+        }, 
+        "ID": 76, 
+        "name": "entity_visible"
+    }, 
+    "ugc_map_info_received": {
+        "params": {
+            "published_file_id": "uint64"
+        }, 
+        "ID": 45, 
+        "name": "ugc_map_info_received"
+    }, 
+    "endmatch_mapvote_selecting_map": {
+        "params": {
+            "count": "byte", 
+            "slot10": "byte", 
+            "slot9": "byte", 
+            "slot8": "byte", 
+            "slot1": "byte", 
+            "slot3": "byte", 
+            "slot2": "byte", 
+            "slot5": "byte", 
+            "slot4": "byte", 
+            "slot7": "byte", 
+            "slot6": "byte"
+        }, 
+        "ID": 91, 
+        "name": "endmatch_mapvote_selecting_map"
+    }, 
+    "game_end": {
+        "params": {
+            "winner": "byte"
+        }, 
+        "ID": 35, 
+        "name": "game_end"
+    }, 
+    "player_jump": {
+        "params": {
+            "userid": "short"
+        }, 
+        "ID": 163, 
+        "name": "player_jump"
+    }, 
+    "player_hurt": {
+        "params": {
+            "armor": "byte", 
+            "dmg_armor": "byte", 
+            "weapon": "string", 
+            "userid": "short", 
+            "attacker": "short", 
+            "dmg_health": "short", 
+            "health": "byte", 
+            "hitgroup": "byte"
+        }, 
+        "ID": 24, 
+        "name": "player_hurt"
+    }, 
+    "begin_new_match": {
+        "params": {}, 
+        "ID": 50, 
+        "name": "begin_new_match"
+    }, 
+    "door_moving": {
+        "params": {
+            "entindex": "long", 
+            "userid": "short"
+        }, 
+        "ID": 166, 
+        "name": "door_moving"
+    }, 
+    "item_schema_initialized": {
+        "params": {}, 
+        "ID": 97, 
+        "name": "item_schema_initialized"
+    }, 
+    "gg_bonus_grenade_achieved": {
+        "params": {
+            "userid": "short"
+        }, 
+        "ID": 196, 
+        "name": "gg_bonus_grenade_achieved"
+    }, 
+    "achievement_earned": {
+        "params": {
+            "player": "byte", 
+            "achievement": "short"
+        }, 
+        "ID": 66, 
+        "name": "achievement_earned"
+    }, 
+    "bomb_abortplant": {
+        "params": {
+            "userid": "short", 
+            "site": "short"
+        }, 
+        "ID": 101, 
+        "name": "bomb_abortplant"
+    }, 
+    "cs_round_final_beep": {
+        "params": {}, 
+        "ID": 14, 
+        "name": "cs_round_final_beep"
+    }, 
+    "hltv_title": {
+        "params": {
+            "text": "string"
+        }, 
+        "ID": 232, 
+        "name": "hltv_title"
+    }, 
+    "hide_freezepanel": {
+        "params": {}, 
+        "ID": 182, 
+        "name": "hide_freezepanel"
+    }, 
+    "teamplay_broadcast_audio": {
+        "params": {
+            "sound": "string", 
+            "team": "byte"
+        }, 
+        "ID": 18, 
+        "name": "teamplay_broadcast_audio"
+    }, 
+    "smokegrenade_expired": {
+        "params": {
+            "y": "float", 
+            "x": "float", 
+            "entityid": "short", 
+            "z": "float", 
+            "userid": "short"
+        }, 
+        "ID": 153, 
+        "name": "smokegrenade_expired"
+    }, 
+    "nav_blocked": {
+        "params": {
+            "blocked": "bool", 
+            "area": "long"
+        }, 
+        "ID": 170, 
+        "name": "nav_blocked"
+    }, 
+    "switch_team": {
+        "params": {
+            "numTSlotsFree": "short", 
+            "numCTSlotsFree": "short", 
+            "numSpectators": "short", 
+            "numPlayers": "short", 
+            "avg_rank": "short"
+        }, 
+        "ID": 197, 
+        "name": "switch_team"
+    }, 
+    "round_end": {
+        "params": {
+            "reason": "byte", 
+            "winner": "byte", 
+            "message": "string"
+        }, 
+        "ID": 42, 
+        "name": "round_end"
+    }, 
+    "server_cvar": {
+        "params": {
+            "cvarvalue": "string", 
+            "cvarname": "string"
+        }, 
+        "ID": 3, 
+        "name": "server_cvar"
+    }, 
+    "physgun_pickup": {
+        "params": {
+            "entindex": "long"
+        }, 
+        "ID": 68, 
+        "name": "physgun_pickup"
+    }, 
+    "freezecam_started": {
+        "params": {}, 
+        "ID": 183, 
+        "name": "freezecam_started"
+    }, 
+    "hltv_changed_mode": {
+        "params": {
+            "newmode": "long", 
+            "oldmode": "long", 
+            "obs_target": "long"
+        }, 
+        "ID": 175, 
+        "name": "hltv_changed_mode"
+    }, 
+    "round_time_warning": {
+        "params": {}, 
+        "ID": 15, 
+        "name": "round_time_warning"
+    }, 
+    "write_profile_data": {
+        "params": {}, 
+        "ID": 200, 
+        "name": "write_profile_data"
+    }, 
+    "ugc_file_download_finished": {
+        "params": {
+            "hcontent": "uint64"
+        }, 
+        "ID": 48, 
+        "name": "ugc_file_download_finished"
+    }, 
+    "player_info": {
+        "params": {
+            "networkid": "string", 
+            "index": "byte", 
+            "userid": "short", 
+            "name": "string", 
+            "bot": "bool"
+        }, 
+        "ID": 8, 
+        "name": "player_info"
+    }, 
+    "hltv_chat": {
+        "params": {
+            "text": "string"
+        }, 
+        "ID": 233, 
+        "name": "hltv_chat"
+    }, 
+    "gg_leader": {
+        "params": {
+            "playerid": "short"
+        }, 
+        "ID": 198, 
+        "name": "gg_leader"
+    }, 
+    "cs_intermission": {
+        "params": {}, 
+        "ID": 110, 
+        "name": "cs_intermission"
+    }, 
+    "grenade_bounce": {
+        "params": {
+            "userid": "short"
+        }, 
+        "ID": 149, 
+        "name": "grenade_bounce"
+    }, 
+    "cs_game_disconnected": {
+        "params": {}, 
+        "ID": 176, 
+        "name": "cs_game_disconnected"
+    }, 
+    "enter_bombzone": {
+        "params": {
+            "userid": "short", 
+            "isplanted": "bool", 
+            "hasbomb": "bool"
+        }, 
+        "ID": 139, 
+        "name": "enter_bombzone"
+    }, 
+    "achievement_write_failed": {
+        "params": {}, 
+        "ID": 67, 
+        "name": "achievement_write_failed"
+    }, 
+    "round_announce_warmup": {
+        "params": {}, 
+        "ID": 41, 
+        "name": "round_announce_warmup"
+    }, 
+    "gg_player_impending_upgrade": {
+        "params": {
+            "userid": "short"
+        }, 
+        "ID": 199, 
+        "name": "gg_player_impending_upgrade"
+    }, 
+    "player_shoot": {
+        "params": {
+            "weapon": "byte", 
+            "userid": "short", 
+            "mode": "byte"
+        }, 
+        "ID": 28, 
+        "name": "player_shoot"
+    }, 
+    "hostage_rescued_all": {
+        "params": {}, 
+        "ID": 118, 
+        "name": "hostage_rescued_all"
+    }, 
+    "buytime_ended": {
+        "params": {}, 
+        "ID": 138, 
+        "name": "buytime_ended"
+    }, 
+    "flashbang_detonate": {
+        "params": {
+            "y": "float", 
+            "x": "float", 
+            "entityid": "short", 
+            "z": "float", 
+            "userid": "short"
+        }, 
+        "ID": 151, 
+        "name": "flashbang_detonate"
+    }, 
+    "endmatch_cmm_start_reveal_items": {
+        "params": {}, 
+        "ID": 92, 
+        "name": "endmatch_cmm_start_reveal_items"
+    }, 
+    "read_game_titledata": {
+        "params": {
+            "controllerId": "short"
+        }, 
+        "ID": 80, 
+        "name": "read_game_titledata"
+    }, 
+    "update_matchmaking_stats": {
+        "params": {}, 
+        "ID": 202, 
+        "name": "update_matchmaking_stats"
+    }, 
+    "map_transition": {
+        "params": {}, 
+        "ID": 75, 
+        "name": "map_transition"
+    }, 
+    "weapon_reload": {
+        "params": {
+            "userid": "short"
+        }, 
+        "ID": 127, 
+        "name": "weapon_reload"
+    }, 
+    "ugc_map_download_error": {
+        "params": {
+            "error_code": "long", 
+            "published_file_id": "uint64"
+        }, 
+        "ID": 47, 
+        "name": "ugc_map_download_error"
+    }, 
+    "bullet_impact": {
+        "params": {
+            "y": "float", 
+            "x": "float", 
+            "z": "float", 
+            "userid": "short"
+        }, 
+        "ID": 161, 
+        "name": "bullet_impact"
+    }, 
+    "start_vote": {
+        "params": {
+            "type": "byte", 
+            "vote_parameter": "short", 
+            "userid": "short"
+        }, 
+        "ID": 206, 
+        "name": "start_vote"
+    }, 
+    "round_mvp": {
+        "params": {
+            "reason": "short", 
+            "userid": "short"
+        }, 
+        "ID": 189, 
+        "name": "round_mvp"
+    }, 
+    "repost_xbox_achievements": {
+        "params": {
+            "splitscreenplayer": "short"
+        }, 
+        "ID": 187, 
+        "name": "repost_xbox_achievements"
+    }, 
+    "teamplay_round_start": {
+        "params": {
+            "full_reset": "bool"
+        }, 
+        "ID": 52, 
+        "name": "teamplay_round_start"
+    }, 
+    "round_announce_last_round_half": {
+        "params": {}, 
+        "ID": 39, 
+        "name": "round_announce_last_round_half"
+    }, 
+    "bomb_dropped": {
+        "params": {
+            "entindex": "long", 
+            "userid": "short"
+        }, 
+        "ID": 105, 
+        "name": "bomb_dropped"
+    }, 
+    "ugc_map_unsubscribed": {
+        "params": {
+            "published_file_id": "uint64"
+        }, 
+        "ID": 46, 
+        "name": "ugc_map_unsubscribed"
+    }, 
+    "gg_player_levelup": {
+        "params": {
+            "weaponrank": "short", 
+            "userid": "short", 
+            "weaponname": "string"
+        }, 
+        "ID": 191, 
+        "name": "gg_player_levelup"
+    }, 
+    "cs_prev_next_spectator": {
+        "params": {
+            "next": "bool"
+        }, 
+        "ID": 220, 
+        "name": "cs_prev_next_spectator"
+    }
+}
