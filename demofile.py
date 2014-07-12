@@ -18,7 +18,7 @@ class DemoHeader(object):
                  signonlength):
         self.demofile = demofile.rstrip('\0')
         self.demoprotocol = demoprotocol
-        self.networkprotocol =  networkprotocol
+        self.networkprotocol = networkprotocol
         self.servername = servername.rstrip('\0')
         self.clientname = clientname.rstrip('\0')
         self.mapname = mapname.rstrip('\0')
@@ -64,11 +64,11 @@ class DemoFile(object):
         self.file = open(filename, "rb")
         if self.file:
             
-            self.file.seek(0, os.SEEK_END) #get file size
+            self.file.seek(0, os.SEEK_END)  # get file size
             self.length = self.file.tell()
-            self.file.seek(0, os.SEEK_SET) #get back to beginning
+            self.file.seek(0, os.SEEK_SET)  # get back to beginning
         
-            #parse header
+            # parse header
             struct_fmt = "@8sii260s260s260s260sfiii"
             struct_len = struct.calcsize(struct_fmt)
             struct_unpack = struct.Struct(struct_fmt)
@@ -79,7 +79,7 @@ class DemoFile(object):
             
             
             if self.demoheader.demoprotocol != SUPPORTED_PROTOCOL:
-                #print "This protocol is not supported"
+                # print "This protocol is not supported"
                 return False
         else:
             return False
@@ -126,7 +126,7 @@ class DemoFile(object):
         '''
         Reads cmd info, beware: uses splitscreen so 152 bytes instead of 76.
         '''
-        fmt = "@iffffffffffffffffffiffffffffffffffffff"#x2 because of splitscreen
+        fmt = "@iffffffffffffffffffiffffffffffffffffff"  # x2 because of splitscreen
         return self.read_struct_from_file(fmt)
         
     def read_struct_from_file(self, fmt):

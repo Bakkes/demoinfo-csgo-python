@@ -26,7 +26,7 @@ class GameEvent(object):
         self.raw = raw
         self.descriptor = descriptor
         
-        #convert the val_ stuff to actual property names
+        # convert the val_ stuff to actual property names
         index = 0
         for keyname in self.descriptor[3]:
             setattr(self, keyname[1], getattr(self.raw.keys[index], _GAMEEVENT_TYPES[keyname[0] + 1]))
@@ -125,7 +125,7 @@ class DemoDump(object):
         finished = False
         while not finished:
             cmd, tick, playerslot = self.demofile.read_cmd_header()
-            #print "%i - %i - % i " % (cmd, tick, playerslot)
+            # print "%i - %i - % i " % (cmd, tick, playerslot)
             if cmd == DemoMessage.SYNCTICK:
                 continue
             elif cmd == DemoMessage.STOP:
@@ -176,17 +176,17 @@ class DemoDump(object):
         TO BE IMPLEMENTED
         '''
         table = CSVCMsg_CreateStringTable()
-        #table_data = CSVCMsg_SendTable()
+        # table_data = CSVCMsg_SendTable()
         table.ParseFromString(data)
         if table.name != "userinfo":
             return
-        #table_data.ParseFromString(table.string_data)
+        # table_data.ParseFromString(table.string_data)
         self.stringtable_data[table.name] = {'entries': table.num_entries,
                                              'user_data_fixed_size': table.user_data_fixed_size,
                                              'user_data_size': table.user_data_size,
                                              'user_data_size_bits': table.user_data_size_bits,
                                              'flags': table.flags,
-                                             #'data': table_data
+                                             # 'data': table_data
                                              }
         '''
                 int *pStringIndex = (int *)fieldInfo.pField;
@@ -221,7 +221,7 @@ class DemoDump(object):
                 
     def _handle_demo_packet(self):
         info = self.demofile.read_cmd_info()
-        self.demofile.read_sequence_info()#ignore result
+        self.demofile.read_sequence_info()  # ignore result
         length, buf = self.demofile.read_raw_data()
         
         if length > 0:
@@ -233,7 +233,7 @@ class DemoDump(object):
         while index < length:
             cmd, index = self.__read_int32(buf, index)
             size, index = self.__read_int32(buf, index)
-            data = buf[index:index+size]
+            data = buf[index:index + size]
             if cmd in self.NET_MSG:
                 for callback in self.NET_MSG[cmd]:
                     callback(cmd, data);

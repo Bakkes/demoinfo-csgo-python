@@ -24,7 +24,7 @@ class Player(object):
         self.clutch_kills = 0
         self.is_connected = True
         self.is_alive = False
-        self.team = 0 #2 is T, 3 is CT?
+        self.team = 0  # 2 is T, 3 is CT?
  
 class HighlightFinder(object):
     def __init__(self, filename):
@@ -42,7 +42,7 @@ class HighlightFinder(object):
             self.demo.register_on_gameevent(9, self.player_disconnected)
             self.demo.register_on_gameevent(21, self.player_join_team)
             self.demo.register_on_gameevent(27, self.player_spawn)
-            self.demo.register_on_gameevent(40, self.game_start) #only start counting when highlights are over
+            self.demo.register_on_gameevent(40, self.game_start)  # only start counting when highlights are over
             self.demo.dump()
         else:
             print "Demo unparsable"
@@ -55,13 +55,13 @@ class HighlightFinder(object):
         print "New player %i" % data.userid
         
     def player_disconnected(self, data):
-        if data.networkid == 'BOT': #if bot, just remove
+        if data.networkid == 'BOT':  # if bot, just remove
             self.players.pop(data.userid, None)
         else:
             self.players[data.userid].is_connected = False
     
     def player_join_team(self, data):
-        if data.team == 0: #disconnect?
+        if data.team == 0:  # disconnect?
             return
         print "%i joined team %i" % (data.userid, data.team)
         self.players[data.userid].team = data.team
@@ -94,15 +94,15 @@ class HighlightFinder(object):
         self.players[data.userid].is_alive = False
         
             
-        if data.userid != data.attacker: #not suicide?
+        if data.userid != data.attacker:  # not suicide?
             self.players[data.attacker].kills += 1
-            self.players[data.attacker].kills_this_round += 1 #used for finding highlights
+            self.players[data.attacker].kills_this_round += 1  # used for finding highlights
             
             if self.count_alive(self.players[data.attacker].team) == 1:
                 self.players[data.attacker].clutch_kills += 1
             print "%s killed %s with %s%s" % (self.players[data.attacker].name, self.players[data.userid].name, data.weapon, " (headshot)" if data.headshot else "")
         
-        if data.assister != 0: #someone assisted
+        if data.assister != 0:  # someone assisted
             self.players[data.assister].assists += 1
     
     def count_alive(self, teamid):
@@ -130,7 +130,7 @@ class HighlightFinder(object):
     
     
 if __name__ == '__main__':
-    #demo = DemoDump()
+    # demo = DemoDump()
     filename = sys.argv[1]
     
     if len(sys.argv) <= 1:
