@@ -42,7 +42,7 @@ class HighlightFinder(object):
             self.demo.register_on_gameevent(9, self.player_disconnected)
             self.demo.register_on_gameevent(21, self.player_join_team)
             self.demo.register_on_gameevent(27, self.player_spawn)
-            self.demo.register_on_gameevent(40, self.game_start)  # only start counting when highlights are over
+            self.demo.register_on_gameevent(40, self.game_start)  # only start counting when warmup is over
             self.demo.dump()
         else:
             print "Demo unparsable"
