@@ -232,27 +232,14 @@ class DemoDump(object):
                 finished = True
                 break
             elif cmd == DemoMessage.CONSOLECMD:
-                s, d = self.demofile.read_raw_data()
-                ''''o = open("packets/consolecmd", 'ab')
-                o.write(d)
-                o.write(''.join([b'\00' for x in range(0, 100)]))'''
+                self.demofile.read_raw_data()
             elif cmd == DemoMessage.DATATABLES:
-                s, d = self.demofile.read_raw_data()
-                ''''o = open("packets/datatables", 'ab')
-                o.write(d)
-                o.write(''.join([b'\00' for x in range(0, 100)]))'''
+                self.demofile.read_raw_data()
             elif cmd == DemoMessage.STRINGTABLES:
-                s,d = self.demofile.read_raw_data()
-                ''''o = open("packets/stringtables", 'ab')
-                o.write(d)
-                o.write(''.join([b'\00' for x in range(0, 100)]))'''
+                self.demofile.read_raw_data()
             elif cmd == DemoMessage.USERCMD:
-                out, s,d = self.demofile.read_user_cmd()
-                ''''o = open("packets/usercmd", 'ab')
-                o.write(d)
-                o.write(''.join([b'\00' for x in range(0, 100)]))'''
+                self.demofile.read_user_cmd()
             elif cmd == DemoMessage.SIGNON or cmd == DemoMessage.PACKET:
-                #print "Packet found"
                 self.handle_demo_packet()
                 
     def handle_demo_packet(self):
@@ -260,7 +247,6 @@ class DemoDump(object):
         self.demofile.read_sequence_info()#ignore result
         length, buf = self.demofile.read_raw_data()
         
-        #print "length: %i|%i" % (length, len(buf))
         if length > 0:
             self.dump_packet(buf, length)
          
