@@ -73,7 +73,7 @@ class HighlightFinder(object):
     
     def game_start(self, data):
         self.current_round = 0
-        self.demo.register_on_gameevent(42, self.round_start)
+        self.demo.register_on_gameevent(36, self.round_start)
         self.demo.register_on_gameevent(42, self.round_end)
         self.demo.register_on_gameevent(23, self.player_death)
         

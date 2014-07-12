@@ -185,9 +185,6 @@ class DemoDump(object):
                                              'flags': table.flags,
                                              #'data': table_data
                                              }
-        
-        fo = open("data/initial_" + table.name, "wb")
-        fo.write(table.string_data)
         '''
                 int *pStringIndex = (int *)fieldInfo.pField;
         int nLen = pRestore->ReadInt();
@@ -202,8 +199,6 @@ class DemoDump(object):
         update.ParseFromString(data)
         #print "Table %i updated, changed: %i" % (update.table_id, update.num_changed_entries)
         #print update.string_data
-        fo = open("data/update_" + str(update.table_id) + "_" + str(self.inx), "wb")
-        fo.write(update.string_data)
         self.inx += 1
         
     def send_table(self, cmd, data):
