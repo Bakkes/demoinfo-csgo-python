@@ -30,7 +30,7 @@ _DUMPED_TYPES = {
                     svc_CrosshairAngle: ("CSVCMsg_CrosshairAngle"),
                     svc_BSPDecal: ("CSVCMsg_BSPDecal"),
                     svc_UserMessage: ("CSVCMsg_UserMessage"),
-                    svc_GameEvent: ("CSVCMsg_GameEvent"),
+                    #svc_GameEvent: ("CSVCMsg_GameEvent"),
                     svc_PacketEntities: ("CSVCMsg_PacketEntities"),
                     svc_TempEntities: ("CSVCMsg_TempEntities"),
                     svc_Prefetch: ("CSVCMsg_Prefetch"),
@@ -49,7 +49,19 @@ class JSONDumper(object):
         if self.demo.open(filename):
             for t in _DUMPED_TYPES:
                 self.demo.register_on_netmsg(t, self.on_netmsg)
-            
+            for i in range(1, 10000):
+                self.demo.register_on_gameevent(i, self.on_event)
+    
+    def on_event(self, data):
+        del data.raw
+        name = data.descriptor[1]
+        id = data.descriptor[0]
+        del data.descriptor
+        v = {"name": name, "id": id}
+        v["params"] = data.__dict__
+        dictz = {"type": "GameEvent", "data": v}
+        if self.callback is not None:
+            self.callback(dictz)
     
     def on_netmsg(self, id, data):
         inst = eval(_DUMPED_TYPES[id])()
