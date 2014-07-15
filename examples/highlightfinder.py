@@ -4,7 +4,7 @@ Created on Jul 12, 2014
 @author: Chris
 '''
 import sys
-from demodump import DemoDump
+from demoinfocsgo.demodump import DemoDump
 
 TEAM_T = 2
 TEAM_CT = 3
@@ -134,7 +134,7 @@ if __name__ == '__main__':
     filename = sys.argv[1]
     
     if len(sys.argv) <= 1:
-        print "main.py demofile.dem"
+        print "highlightfinder.py demofile.dem"
         sys.exit()        
     hlfinder = HighlightFinder(filename)
     hlfinder.parse()

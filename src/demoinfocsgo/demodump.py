@@ -3,9 +3,9 @@ Created on Jul 11, 2014
 
 @author: Chris
 '''
-from demofile import DemoFile, DemoMessage
-from netmessages_public_pb2 import *
-from cstrike15_usermessages_public_pb2 import *
+from demoinfocsgo.demofile import DemoFile, DemoMessage
+from demoinfocsgo.proto.netmessages_public_pb2 import *
+from demoinfocsgo.proto.cstrike15_usermessages_public_pb2 import *
 import struct
 
 _GAMEEVENT_TYPES = {2:"val_string",

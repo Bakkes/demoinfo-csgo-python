@@ -14,12 +14,12 @@ import google.protobuf.descriptor_pb2
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='netmessages_public.proto',
-  package='',
-  serialized_pb='\n\x18netmessages_public.proto\x1a google/protobuf/descriptor.proto\"-\n\nCMsgVector\x12\t\n\x01x\x18\x01 \x01(\x02\x12\t\n\x01y\x18\x02 \x01(\x02\x12\t\n\x01z\x18\x03 \x01(\x02\"$\n\x0c\x43MsgVector2D\x12\t\n\x01x\x18\x01 \x01(\x02\x12\t\n\x01y\x18\x02 \x01(\x02\"-\n\nCMsgQAngle\x12\t\n\x01x\x18\x01 \x01(\x02\x12\t\n\x01y\x18\x02 \x01(\x02\x12\t\n\x01z\x18\x03 \x01(\x02\"6\n\x08\x43MsgRGBA\x12\t\n\x01r\x18\x01 \x01(\x05\x12\t\n\x01g\x18\x02 \x01(\x05\x12\t\n\x01\x62\x18\x03 \x01(\x05\x12\t\n\x01\x61\x18\x04 \x01(\x05\"\x91\x01\n\x0c\x43NETMsg_Tick\x12\x0c\n\x04tick\x18\x01 \x01(\r\x12\x1c\n\x14host_computationtime\x18\x04 \x01(\r\x12*\n\"host_computationtime_std_deviation\x18\x05 \x01(\r\x12)\n!host_framestarttime_std_deviation\x18\x06 \x01(\r\"$\n\x11\x43NETMsg_StringCmd\x12\x0f\n\x07\x63ommand\x18\x01 \x01(\t\"\x8a\x01\n\x13\x43NETMsg_SignonState\x12\x14\n\x0csignon_state\x18\x01 \x01(\r\x12\x13\n\x0bspawn_count\x18\x02 \x01(\r\x12\x1a\n\x12num_server_players\x18\x03 \x01(\r\x12\x1a\n\x12players_networkids\x18\x04 \x03(\t\x12\x10\n\x08map_name\x18\x05 \x01(\t\"R\n\nCMsg_CVars\x12\x1f\n\x05\x63vars\x18\x01 \x03(\x0b\x32\x10.CMsg_CVars.CVar\x1a#\n\x04\x43Var\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\"1\n\x11\x43NETMsg_SetConVar\x12\x1c\n\x07\x63onvars\x18\x01 \x01(\x0b\x32\x0b.CMsg_CVars\"\r\n\x0b\x43NETMsg_NOP\"\"\n\x12\x43NETMsg_Disconnect\x12\x0c\n\x04text\x18\x01 \x01(\t\"a\n\x0c\x43NETMsg_File\x12\x13\n\x0btransfer_id\x18\x01 \x01(\x05\x12\x11\n\tfile_name\x18\x02 \x01(\t\x12\x1b\n\x13is_replay_demo_file\x18\x03 \x01(\x08\x12\x0c\n\x04\x64\x65ny\x18\x04 \x01(\x08\"\xd7\x03\n\x12\x43SVCMsg_ServerInfo\x12\x10\n\x08protocol\x18\x01 \x01(\x05\x12\x14\n\x0cserver_count\x18\x02 \x01(\x05\x12\x14\n\x0cis_dedicated\x18\x03 \x01(\x08\x12 \n\x18is_official_valve_server\x18\x04 \x01(\x08\x12\x0f\n\x07is_hltv\x18\x05 \x01(\x08\x12\x11\n\tis_replay\x18\x06 \x01(\x08\x12%\n\x1dis_redirecting_to_proxy_relay\x18\x15 \x01(\x08\x12\x0c\n\x04\x63_os\x18\x07 \x01(\x05\x12\x0f\n\x07map_crc\x18\x08 \x01(\x07\x12\x12\n\nclient_crc\x18\t \x01(\x07\x12\x18\n\x10string_table_crc\x18\n \x01(\x07\x12\x13\n\x0bmax_clients\x18\x0b \x01(\x05\x12\x13\n\x0bmax_classes\x18\x0c \x01(\x05\x12\x13\n\x0bplayer_slot\x18\r \x01(\x05\x12\x15\n\rtick_interval\x18\x0e \x01(\x02\x12\x10\n\x08game_dir\x18\x0f \x01(\t\x12\x10\n\x08map_name\x18\x10 \x01(\t\x12\x16\n\x0emap_group_name\x18\x11 \x01(\t\x12\x10\n\x08sky_name\x18\x12 \x01(\t\x12\x11\n\thost_name\x18\x13 \x01(\t\x12\x12\n\nugc_map_id\x18\x16 \x01(\x04\"\xa4\x01\n\x11\x43SVCMsg_ClassInfo\x12\x18\n\x10\x63reate_on_client\x18\x01 \x01(\x08\x12+\n\x07\x63lasses\x18\x02 \x03(\x0b\x32\x1a.CSVCMsg_ClassInfo.class_t\x1aH\n\x07\x63lass_t\x12\x10\n\x08\x63lass_id\x18\x01 \x01(\x05\x12\x17\n\x0f\x64\x61ta_table_name\x18\x02 \x01(\t\x12\x12\n\nclass_name\x18\x03 \x01(\t\"\xb0\x02\n\x11\x43SVCMsg_SendTable\x12\x0e\n\x06is_end\x18\x01 \x01(\x08\x12\x16\n\x0enet_table_name\x18\x02 \x01(\t\x12\x15\n\rneeds_decoder\x18\x03 \x01(\x08\x12,\n\x05props\x18\x04 \x03(\x0b\x32\x1d.CSVCMsg_SendTable.sendprop_t\x1a\xad\x01\n\nsendprop_t\x12\x0c\n\x04type\x18\x01 \x01(\x05\x12\x10\n\x08var_name\x18\x02 \x01(\t\x12\r\n\x05\x66lags\x18\x03 \x01(\x05\x12\x10\n\x08priority\x18\x04 \x01(\x05\x12\x0f\n\x07\x64t_name\x18\x05 \x01(\t\x12\x14\n\x0cnum_elements\x18\x06 \x01(\x05\x12\x11\n\tlow_value\x18\x07 \x01(\x02\x12\x12\n\nhigh_value\x18\x08 \x01(\x02\x12\x10\n\x08num_bits\x18\t \x01(\x05\"\x1d\n\rCSVCMsg_Print\x12\x0c\n\x04text\x18\x01 \x01(\t\"\"\n\x10\x43SVCMsg_SetPause\x12\x0e\n\x06paused\x18\x01 \x01(\x08\"\'\n\x0f\x43SVCMsg_SetView\x12\x14\n\x0c\x65ntity_index\x18\x01 \x01(\x05\"\xca\x01\n\x19\x43SVCMsg_CreateStringTable\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0bmax_entries\x18\x02 \x01(\x05\x12\x13\n\x0bnum_entries\x18\x03 \x01(\x05\x12\x1c\n\x14user_data_fixed_size\x18\x04 \x01(\x08\x12\x16\n\x0euser_data_size\x18\x05 \x01(\x05\x12\x1b\n\x13user_data_size_bits\x18\x06 \x01(\x05\x12\r\n\x05\x66lags\x18\x07 \x01(\x05\x12\x13\n\x0bstring_data\x18\x08 \x01(\x0c\"_\n\x19\x43SVCMsg_UpdateStringTable\x12\x10\n\x08table_id\x18\x01 \x01(\x05\x12\x1b\n\x13num_changed_entries\x18\x02 \x01(\x05\x12\x13\n\x0bstring_data\x18\x03 \x01(\x0c\"3\n\x11\x43SVCMsg_VoiceInit\x12\x0f\n\x07quality\x18\x01 \x01(\x05\x12\r\n\x05\x63odec\x18\x02 \x01(\t\"n\n\x11\x43SVCMsg_VoiceData\x12\x0e\n\x06\x63lient\x18\x01 \x01(\x05\x12\x11\n\tproximity\x18\x02 \x01(\x08\x12\x0c\n\x04xuid\x18\x03 \x01(\x06\x12\x14\n\x0c\x61udible_mask\x18\x04 \x01(\x05\x12\x12\n\nvoice_data\x18\x05 \x01(\x0c\"@\n\x10\x43SVCMsg_FixAngle\x12\x10\n\x08relative\x18\x01 \x01(\x08\x12\x1a\n\x05\x61ngle\x18\x02 \x01(\x0b\x32\x0b.CMsgQAngle\"4\n\x16\x43SVCMsg_CrosshairAngle\x12\x1a\n\x05\x61ngle\x18\x01 \x01(\x0b\x32\x0b.CMsgQAngle\"\'\n\x10\x43SVCMsg_Prefetch\x12\x13\n\x0bsound_index\x18\x01 \x01(\x05\"\x8a\x01\n\x10\x43SVCMsg_BSPDecal\x12\x18\n\x03pos\x18\x01 \x01(\x0b\x32\x0b.CMsgVector\x12\x1b\n\x13\x64\x65\x63\x61l_texture_index\x18\x02 \x01(\x05\x12\x14\n\x0c\x65ntity_index\x18\x03 \x01(\x05\x12\x13\n\x0bmodel_index\x18\x04 \x01(\x05\x12\x14\n\x0clow_priority\x18\x05 \x01(\x08\"9\n\x14\x43SVCMsg_GetCvarValue\x12\x0e\n\x06\x63ookie\x18\x01 \x01(\x05\x12\x11\n\tcvar_name\x18\x02 \x01(\t\"<\n\x0c\x43SVCMsg_Menu\x12\x13\n\x0b\x64ialog_type\x18\x01 \x01(\x05\x12\x17\n\x0fmenu_key_values\x18\x02 \x01(\x0c\"9\n\x13\x43SVCMsg_UserMessage\x12\x10\n\x08msg_type\x18\x01 \x01(\x05\x12\x10\n\x08msg_data\x18\x02 \x01(\x0c\"\x91\x02\n\x11\x43SVCMsg_GameEvent\x12\x12\n\nevent_name\x18\x01 \x01(\t\x12\x0f\n\x07\x65ventid\x18\x02 \x01(\x05\x12&\n\x04keys\x18\x03 \x03(\x0b\x32\x18.CSVCMsg_GameEvent.key_t\x1a\xae\x01\n\x05key_t\x12\x0c\n\x04type\x18\x01 \x01(\x05\x12\x12\n\nval_string\x18\x02 \x01(\t\x12\x11\n\tval_float\x18\x03 \x01(\x02\x12\x10\n\x08val_long\x18\x04 \x01(\x05\x12\x11\n\tval_short\x18\x05 \x01(\x05\x12\x10\n\x08val_byte\x18\x06 \x01(\x05\x12\x10\n\x08val_bool\x18\x07 \x01(\x08\x12\x12\n\nval_uint64\x18\x08 \x01(\x04\x12\x13\n\x0bval_wstring\x18\t \x01(\x0c\"\xd1\x01\n\x15\x43SVCMsg_GameEventList\x12\x38\n\x0b\x64\x65scriptors\x18\x01 \x03(\x0b\x32#.CSVCMsg_GameEventList.descriptor_t\x1a#\n\x05key_t\x12\x0c\n\x04type\x18\x01 \x01(\x05\x12\x0c\n\x04name\x18\x02 \x01(\t\x1aY\n\x0c\x64\x65scriptor_t\x12\x0f\n\x07\x65ventid\x18\x01 \x01(\x05\x12\x0c\n\x04name\x18\x02 \x01(\t\x12*\n\x04keys\x18\x03 \x03(\x0b\x32\x1c.CSVCMsg_GameEventList.key_t\"R\n\x14\x43SVCMsg_TempEntities\x12\x10\n\x08reliable\x18\x01 \x01(\x08\x12\x13\n\x0bnum_entries\x18\x02 \x01(\x05\x12\x13\n\x0b\x65ntity_data\x18\x03 \x01(\x0c\"\xac\x01\n\x16\x43SVCMsg_PacketEntities\x12\x13\n\x0bmax_entries\x18\x01 \x01(\x05\x12\x17\n\x0fupdated_entries\x18\x02 \x01(\x05\x12\x10\n\x08is_delta\x18\x03 \x01(\x08\x12\x17\n\x0fupdate_baseline\x18\x04 \x01(\x08\x12\x10\n\x08\x62\x61seline\x18\x05 \x01(\x05\x12\x12\n\ndelta_from\x18\x06 \x01(\x05\x12\x13\n\x0b\x65ntity_data\x18\x07 \x01(\x0c\"\xb6\x03\n\x0e\x43SVCMsg_Sounds\x12\x16\n\x0ereliable_sound\x18\x01 \x01(\x08\x12+\n\x06sounds\x18\x02 \x03(\x0b\x32\x1b.CSVCMsg_Sounds.sounddata_t\x1a\xde\x02\n\x0bsounddata_t\x12\x10\n\x08origin_x\x18\x01 \x01(\x11\x12\x10\n\x08origin_y\x18\x02 \x01(\x11\x12\x10\n\x08origin_z\x18\x03 \x01(\x11\x12\x0e\n\x06volume\x18\x04 \x01(\r\x12\x13\n\x0b\x64\x65lay_value\x18\x05 \x01(\x02\x12\x17\n\x0fsequence_number\x18\x06 \x01(\x05\x12\x14\n\x0c\x65ntity_index\x18\x07 \x01(\x05\x12\x0f\n\x07\x63hannel\x18\x08 \x01(\x05\x12\r\n\x05pitch\x18\t \x01(\x05\x12\r\n\x05\x66lags\x18\n \x01(\x05\x12\x11\n\tsound_num\x18\x0b \x01(\r\x12\x18\n\x10sound_num_handle\x18\x0c \x01(\x07\x12\x16\n\x0espeaker_entity\x18\r \x01(\x05\x12\x13\n\x0brandom_seed\x18\x0e \x01(\x05\x12\x13\n\x0bsound_level\x18\x0f \x01(\x05\x12\x13\n\x0bis_sentence\x18\x10 \x01(\x08\x12\x12\n\nis_ambient\x18\x11 \x01(\x08*\x86\x01\n\x0cNET_Messages\x12\x0b\n\x07net_NOP\x10\x00\x12\x12\n\x0enet_Disconnect\x10\x01\x12\x0c\n\x08net_File\x10\x02\x12\x0c\n\x08net_Tick\x10\x04\x12\x11\n\rnet_StringCmd\x10\x05\x12\x11\n\rnet_SetConVar\x10\x06\x12\x13\n\x0fnet_SignonState\x10\x07*\xc5\x03\n\x0cSVC_Messages\x12\x12\n\x0esvc_ServerInfo\x10\x08\x12\x11\n\rsvc_SendTable\x10\t\x12\x11\n\rsvc_ClassInfo\x10\n\x12\x10\n\x0csvc_SetPause\x10\x0b\x12\x19\n\x15svc_CreateStringTable\x10\x0c\x12\x19\n\x15svc_UpdateStringTable\x10\r\x12\x11\n\rsvc_VoiceInit\x10\x0e\x12\x11\n\rsvc_VoiceData\x10\x0f\x12\r\n\tsvc_Print\x10\x10\x12\x0e\n\nsvc_Sounds\x10\x11\x12\x0f\n\x0bsvc_SetView\x10\x12\x12\x10\n\x0csvc_FixAngle\x10\x13\x12\x16\n\x12svc_CrosshairAngle\x10\x14\x12\x10\n\x0csvc_BSPDecal\x10\x15\x12\x13\n\x0fsvc_UserMessage\x10\x17\x12\x11\n\rsvc_GameEvent\x10\x19\x12\x16\n\x12svc_PacketEntities\x10\x1a\x12\x14\n\x10svc_TempEntities\x10\x1b\x12\x10\n\x0csvc_Prefetch\x10\x1c\x12\x0c\n\x08svc_Menu\x10\x1d\x12\x15\n\x11svc_GameEventList\x10\x1e\x12\x14\n\x10svc_GetCvarValue\x10\x1f\x42\x03\x80\x01\x00')
+  package='demoinfocsgo.proto',
+  serialized_pb='\n\x18netmessages_public.proto\x12\x12\x64\x65moinfocsgo.proto\x1a google/protobuf/descriptor.proto\"-\n\nCMsgVector\x12\t\n\x01x\x18\x01 \x01(\x02\x12\t\n\x01y\x18\x02 \x01(\x02\x12\t\n\x01z\x18\x03 \x01(\x02\"$\n\x0c\x43MsgVector2D\x12\t\n\x01x\x18\x01 \x01(\x02\x12\t\n\x01y\x18\x02 \x01(\x02\"-\n\nCMsgQAngle\x12\t\n\x01x\x18\x01 \x01(\x02\x12\t\n\x01y\x18\x02 \x01(\x02\x12\t\n\x01z\x18\x03 \x01(\x02\"6\n\x08\x43MsgRGBA\x12\t\n\x01r\x18\x01 \x01(\x05\x12\t\n\x01g\x18\x02 \x01(\x05\x12\t\n\x01\x62\x18\x03 \x01(\x05\x12\t\n\x01\x61\x18\x04 \x01(\x05\"\x91\x01\n\x0c\x43NETMsg_Tick\x12\x0c\n\x04tick\x18\x01 \x01(\r\x12\x1c\n\x14host_computationtime\x18\x04 \x01(\r\x12*\n\"host_computationtime_std_deviation\x18\x05 \x01(\r\x12)\n!host_framestarttime_std_deviation\x18\x06 \x01(\r\"$\n\x11\x43NETMsg_StringCmd\x12\x0f\n\x07\x63ommand\x18\x01 \x01(\t\"\x8a\x01\n\x13\x43NETMsg_SignonState\x12\x14\n\x0csignon_state\x18\x01 \x01(\r\x12\x13\n\x0bspawn_count\x18\x02 \x01(\r\x12\x1a\n\x12num_server_players\x18\x03 \x01(\r\x12\x1a\n\x12players_networkids\x18\x04 \x03(\t\x12\x10\n\x08map_name\x18\x05 \x01(\t\"e\n\nCMsg_CVars\x12\x32\n\x05\x63vars\x18\x01 \x03(\x0b\x32#.demoinfocsgo.proto.CMsg_CVars.CVar\x1a#\n\x04\x43Var\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\"D\n\x11\x43NETMsg_SetConVar\x12/\n\x07\x63onvars\x18\x01 \x01(\x0b\x32\x1e.demoinfocsgo.proto.CMsg_CVars\"\r\n\x0b\x43NETMsg_NOP\"\"\n\x12\x43NETMsg_Disconnect\x12\x0c\n\x04text\x18\x01 \x01(\t\"a\n\x0c\x43NETMsg_File\x12\x13\n\x0btransfer_id\x18\x01 \x01(\x05\x12\x11\n\tfile_name\x18\x02 \x01(\t\x12\x1b\n\x13is_replay_demo_file\x18\x03 \x01(\x08\x12\x0c\n\x04\x64\x65ny\x18\x04 \x01(\x08\"\xd7\x03\n\x12\x43SVCMsg_ServerInfo\x12\x10\n\x08protocol\x18\x01 \x01(\x05\x12\x14\n\x0cserver_count\x18\x02 \x01(\x05\x12\x14\n\x0cis_dedicated\x18\x03 \x01(\x08\x12 \n\x18is_official_valve_server\x18\x04 \x01(\x08\x12\x0f\n\x07is_hltv\x18\x05 \x01(\x08\x12\x11\n\tis_replay\x18\x06 \x01(\x08\x12%\n\x1dis_redirecting_to_proxy_relay\x18\x15 \x01(\x08\x12\x0c\n\x04\x63_os\x18\x07 \x01(\x05\x12\x0f\n\x07map_crc\x18\x08 \x01(\x07\x12\x12\n\nclient_crc\x18\t \x01(\x07\x12\x18\n\x10string_table_crc\x18\n \x01(\x07\x12\x13\n\x0bmax_clients\x18\x0b \x01(\x05\x12\x13\n\x0bmax_classes\x18\x0c \x01(\x05\x12\x13\n\x0bplayer_slot\x18\r \x01(\x05\x12\x15\n\rtick_interval\x18\x0e \x01(\x02\x12\x10\n\x08game_dir\x18\x0f \x01(\t\x12\x10\n\x08map_name\x18\x10 \x01(\t\x12\x16\n\x0emap_group_name\x18\x11 \x01(\t\x12\x10\n\x08sky_name\x18\x12 \x01(\t\x12\x11\n\thost_name\x18\x13 \x01(\t\x12\x12\n\nugc_map_id\x18\x16 \x01(\x04\"\xb7\x01\n\x11\x43SVCMsg_ClassInfo\x12\x18\n\x10\x63reate_on_client\x18\x01 \x01(\x08\x12>\n\x07\x63lasses\x18\x02 \x03(\x0b\x32-.demoinfocsgo.proto.CSVCMsg_ClassInfo.class_t\x1aH\n\x07\x63lass_t\x12\x10\n\x08\x63lass_id\x18\x01 \x01(\x05\x12\x17\n\x0f\x64\x61ta_table_name\x18\x02 \x01(\t\x12\x12\n\nclass_name\x18\x03 \x01(\t\"\xc3\x02\n\x11\x43SVCMsg_SendTable\x12\x0e\n\x06is_end\x18\x01 \x01(\x08\x12\x16\n\x0enet_table_name\x18\x02 \x01(\t\x12\x15\n\rneeds_decoder\x18\x03 \x01(\x08\x12?\n\x05props\x18\x04 \x03(\x0b\x32\x30.demoinfocsgo.proto.CSVCMsg_SendTable.sendprop_t\x1a\xad\x01\n\nsendprop_t\x12\x0c\n\x04type\x18\x01 \x01(\x05\x12\x10\n\x08var_name\x18\x02 \x01(\t\x12\r\n\x05\x66lags\x18\x03 \x01(\x05\x12\x10\n\x08priority\x18\x04 \x01(\x05\x12\x0f\n\x07\x64t_name\x18\x05 \x01(\t\x12\x14\n\x0cnum_elements\x18\x06 \x01(\x05\x12\x11\n\tlow_value\x18\x07 \x01(\x02\x12\x12\n\nhigh_value\x18\x08 \x01(\x02\x12\x10\n\x08num_bits\x18\t \x01(\x05\"\x1d\n\rCSVCMsg_Print\x12\x0c\n\x04text\x18\x01 \x01(\t\"\"\n\x10\x43SVCMsg_SetPause\x12\x0e\n\x06paused\x18\x01 \x01(\x08\"\'\n\x0f\x43SVCMsg_SetView\x12\x14\n\x0c\x65ntity_index\x18\x01 \x01(\x05\"\xca\x01\n\x19\x43SVCMsg_CreateStringTable\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0bmax_entries\x18\x02 \x01(\x05\x12\x13\n\x0bnum_entries\x18\x03 \x01(\x05\x12\x1c\n\x14user_data_fixed_size\x18\x04 \x01(\x08\x12\x16\n\x0euser_data_size\x18\x05 \x01(\x05\x12\x1b\n\x13user_data_size_bits\x18\x06 \x01(\x05\x12\r\n\x05\x66lags\x18\x07 \x01(\x05\x12\x13\n\x0bstring_data\x18\x08 \x01(\x0c\"_\n\x19\x43SVCMsg_UpdateStringTable\x12\x10\n\x08table_id\x18\x01 \x01(\x05\x12\x1b\n\x13num_changed_entries\x18\x02 \x01(\x05\x12\x13\n\x0bstring_data\x18\x03 \x01(\x0c\"3\n\x11\x43SVCMsg_VoiceInit\x12\x0f\n\x07quality\x18\x01 \x01(\x05\x12\r\n\x05\x63odec\x18\x02 \x01(\t\"n\n\x11\x43SVCMsg_VoiceData\x12\x0e\n\x06\x63lient\x18\x01 \x01(\x05\x12\x11\n\tproximity\x18\x02 \x01(\x08\x12\x0c\n\x04xuid\x18\x03 \x01(\x06\x12\x14\n\x0c\x61udible_mask\x18\x04 \x01(\x05\x12\x12\n\nvoice_data\x18\x05 \x01(\x0c\"S\n\x10\x43SVCMsg_FixAngle\x12\x10\n\x08relative\x18\x01 \x01(\x08\x12-\n\x05\x61ngle\x18\x02 \x01(\x0b\x32\x1e.demoinfocsgo.proto.CMsgQAngle\"G\n\x16\x43SVCMsg_CrosshairAngle\x12-\n\x05\x61ngle\x18\x01 \x01(\x0b\x32\x1e.demoinfocsgo.proto.CMsgQAngle\"\'\n\x10\x43SVCMsg_Prefetch\x12\x13\n\x0bsound_index\x18\x01 \x01(\x05\"\x9d\x01\n\x10\x43SVCMsg_BSPDecal\x12+\n\x03pos\x18\x01 \x01(\x0b\x32\x1e.demoinfocsgo.proto.CMsgVector\x12\x1b\n\x13\x64\x65\x63\x61l_texture_index\x18\x02 \x01(\x05\x12\x14\n\x0c\x65ntity_index\x18\x03 \x01(\x05\x12\x13\n\x0bmodel_index\x18\x04 \x01(\x05\x12\x14\n\x0clow_priority\x18\x05 \x01(\x08\"9\n\x14\x43SVCMsg_GetCvarValue\x12\x0e\n\x06\x63ookie\x18\x01 \x01(\x05\x12\x11\n\tcvar_name\x18\x02 \x01(\t\"<\n\x0c\x43SVCMsg_Menu\x12\x13\n\x0b\x64ialog_type\x18\x01 \x01(\x05\x12\x17\n\x0fmenu_key_values\x18\x02 \x01(\x0c\"9\n\x13\x43SVCMsg_UserMessage\x12\x10\n\x08msg_type\x18\x01 \x01(\x05\x12\x10\n\x08msg_data\x18\x02 \x01(\x0c\"\xa4\x02\n\x11\x43SVCMsg_GameEvent\x12\x12\n\nevent_name\x18\x01 \x01(\t\x12\x0f\n\x07\x65ventid\x18\x02 \x01(\x05\x12\x39\n\x04keys\x18\x03 \x03(\x0b\x32+.demoinfocsgo.proto.CSVCMsg_GameEvent.key_t\x1a\xae\x01\n\x05key_t\x12\x0c\n\x04type\x18\x01 \x01(\x05\x12\x12\n\nval_string\x18\x02 \x01(\t\x12\x11\n\tval_float\x18\x03 \x01(\x02\x12\x10\n\x08val_long\x18\x04 \x01(\x05\x12\x11\n\tval_short\x18\x05 \x01(\x05\x12\x10\n\x08val_byte\x18\x06 \x01(\x05\x12\x10\n\x08val_bool\x18\x07 \x01(\x08\x12\x12\n\nval_uint64\x18\x08 \x01(\x04\x12\x13\n\x0bval_wstring\x18\t \x01(\x0c\"\xf7\x01\n\x15\x43SVCMsg_GameEventList\x12K\n\x0b\x64\x65scriptors\x18\x01 \x03(\x0b\x32\x36.demoinfocsgo.proto.CSVCMsg_GameEventList.descriptor_t\x1a#\n\x05key_t\x12\x0c\n\x04type\x18\x01 \x01(\x05\x12\x0c\n\x04name\x18\x02 \x01(\t\x1al\n\x0c\x64\x65scriptor_t\x12\x0f\n\x07\x65ventid\x18\x01 \x01(\x05\x12\x0c\n\x04name\x18\x02 \x01(\t\x12=\n\x04keys\x18\x03 \x03(\x0b\x32/.demoinfocsgo.proto.CSVCMsg_GameEventList.key_t\"R\n\x14\x43SVCMsg_TempEntities\x12\x10\n\x08reliable\x18\x01 \x01(\x08\x12\x13\n\x0bnum_entries\x18\x02 \x01(\x05\x12\x13\n\x0b\x65ntity_data\x18\x03 \x01(\x0c\"\xac\x01\n\x16\x43SVCMsg_PacketEntities\x12\x13\n\x0bmax_entries\x18\x01 \x01(\x05\x12\x17\n\x0fupdated_entries\x18\x02 \x01(\x05\x12\x10\n\x08is_delta\x18\x03 \x01(\x08\x12\x17\n\x0fupdate_baseline\x18\x04 \x01(\x08\x12\x10\n\x08\x62\x61seline\x18\x05 \x01(\x05\x12\x12\n\ndelta_from\x18\x06 \x01(\x05\x12\x13\n\x0b\x65ntity_data\x18\x07 \x01(\x0c\"\xc9\x03\n\x0e\x43SVCMsg_Sounds\x12\x16\n\x0ereliable_sound\x18\x01 \x01(\x08\x12>\n\x06sounds\x18\x02 \x03(\x0b\x32..demoinfocsgo.proto.CSVCMsg_Sounds.sounddata_t\x1a\xde\x02\n\x0bsounddata_t\x12\x10\n\x08origin_x\x18\x01 \x01(\x11\x12\x10\n\x08origin_y\x18\x02 \x01(\x11\x12\x10\n\x08origin_z\x18\x03 \x01(\x11\x12\x0e\n\x06volume\x18\x04 \x01(\r\x12\x13\n\x0b\x64\x65lay_value\x18\x05 \x01(\x02\x12\x17\n\x0fsequence_number\x18\x06 \x01(\x05\x12\x14\n\x0c\x65ntity_index\x18\x07 \x01(\x05\x12\x0f\n\x07\x63hannel\x18\x08 \x01(\x05\x12\r\n\x05pitch\x18\t \x01(\x05\x12\r\n\x05\x66lags\x18\n \x01(\x05\x12\x11\n\tsound_num\x18\x0b \x01(\r\x12\x18\n\x10sound_num_handle\x18\x0c \x01(\x07\x12\x16\n\x0espeaker_entity\x18\r \x01(\x05\x12\x13\n\x0brandom_seed\x18\x0e \x01(\x05\x12\x13\n\x0bsound_level\x18\x0f \x01(\x05\x12\x13\n\x0bis_sentence\x18\x10 \x01(\x08\x12\x12\n\nis_ambient\x18\x11 \x01(\x08*\x86\x01\n\x0cNET_Messages\x12\x0b\n\x07net_NOP\x10\x00\x12\x12\n\x0enet_Disconnect\x10\x01\x12\x0c\n\x08net_File\x10\x02\x12\x0c\n\x08net_Tick\x10\x04\x12\x11\n\rnet_StringCmd\x10\x05\x12\x11\n\rnet_SetConVar\x10\x06\x12\x13\n\x0fnet_SignonState\x10\x07*\xc5\x03\n\x0cSVC_Messages\x12\x12\n\x0esvc_ServerInfo\x10\x08\x12\x11\n\rsvc_SendTable\x10\t\x12\x11\n\rsvc_ClassInfo\x10\n\x12\x10\n\x0csvc_SetPause\x10\x0b\x12\x19\n\x15svc_CreateStringTable\x10\x0c\x12\x19\n\x15svc_UpdateStringTable\x10\r\x12\x11\n\rsvc_VoiceInit\x10\x0e\x12\x11\n\rsvc_VoiceData\x10\x0f\x12\r\n\tsvc_Print\x10\x10\x12\x0e\n\nsvc_Sounds\x10\x11\x12\x0f\n\x0bsvc_SetView\x10\x12\x12\x10\n\x0csvc_FixAngle\x10\x13\x12\x16\n\x12svc_CrosshairAngle\x10\x14\x12\x10\n\x0csvc_BSPDecal\x10\x15\x12\x13\n\x0fsvc_UserMessage\x10\x17\x12\x11\n\rsvc_GameEvent\x10\x19\x12\x16\n\x12svc_PacketEntities\x10\x1a\x12\x14\n\x10svc_TempEntities\x10\x1b\x12\x10\n\x0csvc_Prefetch\x10\x1c\x12\x0c\n\x08svc_Menu\x10\x1d\x12\x15\n\x11svc_GameEventList\x10\x1e\x12\x14\n\x10svc_GetCvarValue\x10\x1f\x42\x03\x80\x01\x00')
 
 _NET_MESSAGES = _descriptor.EnumDescriptor(
   name='NET_Messages',
-  full_name='NET_Messages',
+  full_name='demoinfocsgo.proto.NET_Messages',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -54,14 +54,14 @@ _NET_MESSAGES = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=4056,
-  serialized_end=4190,
+  serialized_start=4285,
+  serialized_end=4419,
 )
 
 NET_Messages = enum_type_wrapper.EnumTypeWrapper(_NET_MESSAGES)
 _SVC_MESSAGES = _descriptor.EnumDescriptor(
   name='SVC_Messages',
-  full_name='SVC_Messages',
+  full_name='demoinfocsgo.proto.SVC_Messages',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -156,8 +156,8 @@ _SVC_MESSAGES = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=4193,
-  serialized_end=4646,
+  serialized_start=4422,
+  serialized_end=4875,
 )
 
 SVC_Messages = enum_type_wrapper.EnumTypeWrapper(_SVC_MESSAGES)
@@ -195,27 +195,27 @@ svc_GetCvarValue = 31
 
 _CMSGVECTOR = _descriptor.Descriptor(
   name='CMsgVector',
-  full_name='CMsgVector',
+  full_name='demoinfocsgo.proto.CMsgVector',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='x', full_name='CMsgVector.x', index=0,
+      name='x', full_name='demoinfocsgo.proto.CMsgVector.x', index=0,
       number=1, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='y', full_name='CMsgVector.y', index=1,
+      name='y', full_name='demoinfocsgo.proto.CMsgVector.y', index=1,
       number=2, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='z', full_name='CMsgVector.z', index=2,
+      name='z', full_name='demoinfocsgo.proto.CMsgVector.z', index=2,
       number=3, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -230,27 +230,27 @@ _CMSGVECTOR = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=62,
-  serialized_end=107,
+  serialized_start=82,
+  serialized_end=127,
 )
 
 
 _CMSGVECTOR2D = _descriptor.Descriptor(
   name='CMsgVector2D',
-  full_name='CMsgVector2D',
+  full_name='demoinfocsgo.proto.CMsgVector2D',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='x', full_name='CMsgVector2D.x', index=0,
+      name='x', full_name='demoinfocsgo.proto.CMsgVector2D.x', index=0,
       number=1, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='y', full_name='CMsgVector2D.y', index=1,
+      name='y', full_name='demoinfocsgo.proto.CMsgVector2D.y', index=1,
       number=2, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -265,34 +265,34 @@ _CMSGVECTOR2D = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=109,
-  serialized_end=145,
+  serialized_start=129,
+  serialized_end=165,
 )
 
 
 _CMSGQANGLE = _descriptor.Descriptor(
   name='CMsgQAngle',
-  full_name='CMsgQAngle',
+  full_name='demoinfocsgo.proto.CMsgQAngle',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='x', full_name='CMsgQAngle.x', index=0,
+      name='x', full_name='demoinfocsgo.proto.CMsgQAngle.x', index=0,
       number=1, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='y', full_name='CMsgQAngle.y', index=1,
+      name='y', full_name='demoinfocsgo.proto.CMsgQAngle.y', index=1,
       number=2, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='z', full_name='CMsgQAngle.z', index=2,
+      name='z', full_name='demoinfocsgo.proto.CMsgQAngle.z', index=2,
       number=3, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -307,41 +307,41 @@ _CMSGQANGLE = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=147,
-  serialized_end=192,
+  serialized_start=167,
+  serialized_end=212,
 )
 
 
 _CMSGRGBA = _descriptor.Descriptor(
   name='CMsgRGBA',
-  full_name='CMsgRGBA',
+  full_name='demoinfocsgo.proto.CMsgRGBA',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='r', full_name='CMsgRGBA.r', index=0,
+      name='r', full_name='demoinfocsgo.proto.CMsgRGBA.r', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='g', full_name='CMsgRGBA.g', index=1,
+      name='g', full_name='demoinfocsgo.proto.CMsgRGBA.g', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='b', full_name='CMsgRGBA.b', index=2,
+      name='b', full_name='demoinfocsgo.proto.CMsgRGBA.b', index=2,
       number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='a', full_name='CMsgRGBA.a', index=3,
+      name='a', full_name='demoinfocsgo.proto.CMsgRGBA.a', index=3,
       number=4, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -356,41 +356,41 @@ _CMSGRGBA = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=194,
-  serialized_end=248,
+  serialized_start=214,
+  serialized_end=268,
 )
 
 
 _CNETMSG_TICK = _descriptor.Descriptor(
   name='CNETMsg_Tick',
-  full_name='CNETMsg_Tick',
+  full_name='demoinfocsgo.proto.CNETMsg_Tick',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='tick', full_name='CNETMsg_Tick.tick', index=0,
+      name='tick', full_name='demoinfocsgo.proto.CNETMsg_Tick.tick', index=0,
       number=1, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='host_computationtime', full_name='CNETMsg_Tick.host_computationtime', index=1,
+      name='host_computationtime', full_name='demoinfocsgo.proto.CNETMsg_Tick.host_computationtime', index=1,
       number=4, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='host_computationtime_std_deviation', full_name='CNETMsg_Tick.host_computationtime_std_deviation', index=2,
+      name='host_computationtime_std_deviation', full_name='demoinfocsgo.proto.CNETMsg_Tick.host_computationtime_std_deviation', index=2,
       number=5, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='host_framestarttime_std_deviation', full_name='CNETMsg_Tick.host_framestarttime_std_deviation', index=3,
+      name='host_framestarttime_std_deviation', full_name='demoinfocsgo.proto.CNETMsg_Tick.host_framestarttime_std_deviation', index=3,
       number=6, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -405,20 +405,20 @@ _CNETMSG_TICK = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=251,
-  serialized_end=396,
+  serialized_start=271,
+  serialized_end=416,
 )
 
 
 _CNETMSG_STRINGCMD = _descriptor.Descriptor(
   name='CNETMsg_StringCmd',
-  full_name='CNETMsg_StringCmd',
+  full_name='demoinfocsgo.proto.CNETMsg_StringCmd',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='command', full_name='CNETMsg_StringCmd.command', index=0,
+      name='command', full_name='demoinfocsgo.proto.CNETMsg_StringCmd.command', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
@@ -433,48 +433,48 @@ _CNETMSG_STRINGCMD = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=398,
-  serialized_end=434,
+  serialized_start=418,
+  serialized_end=454,
 )
 
 
 _CNETMSG_SIGNONSTATE = _descriptor.Descriptor(
   name='CNETMsg_SignonState',
-  full_name='CNETMsg_SignonState',
+  full_name='demoinfocsgo.proto.CNETMsg_SignonState',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='signon_state', full_name='CNETMsg_SignonState.signon_state', index=0,
+      name='signon_state', full_name='demoinfocsgo.proto.CNETMsg_SignonState.signon_state', index=0,
       number=1, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='spawn_count', full_name='CNETMsg_SignonState.spawn_count', index=1,
+      name='spawn_count', full_name='demoinfocsgo.proto.CNETMsg_SignonState.spawn_count', index=1,
       number=2, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='num_server_players', full_name='CNETMsg_SignonState.num_server_players', index=2,
+      name='num_server_players', full_name='demoinfocsgo.proto.CNETMsg_SignonState.num_server_players', index=2,
       number=3, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='players_networkids', full_name='CNETMsg_SignonState.players_networkids', index=3,
+      name='players_networkids', full_name='demoinfocsgo.proto.CNETMsg_SignonState.players_networkids', index=3,
       number=4, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='map_name', full_name='CNETMsg_SignonState.map_name', index=4,
+      name='map_name', full_name='demoinfocsgo.proto.CNETMsg_SignonState.map_name', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
@@ -489,27 +489,27 @@ _CNETMSG_SIGNONSTATE = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=437,
-  serialized_end=575,
+  serialized_start=457,
+  serialized_end=595,
 )
 
 
 _CMSG_CVARS_CVAR = _descriptor.Descriptor(
   name='CVar',
-  full_name='CMsg_CVars.CVar',
+  full_name='demoinfocsgo.proto.CMsg_CVars.CVar',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='name', full_name='CMsg_CVars.CVar.name', index=0,
+      name='name', full_name='demoinfocsgo.proto.CMsg_CVars.CVar.name', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='value', full_name='CMsg_CVars.CVar.value', index=1,
+      name='value', full_name='demoinfocsgo.proto.CMsg_CVars.CVar.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
@@ -524,19 +524,19 @@ _CMSG_CVARS_CVAR = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=624,
-  serialized_end=659,
+  serialized_start=663,
+  serialized_end=698,
 )
 
 _CMSG_CVARS = _descriptor.Descriptor(
   name='CMsg_CVars',
-  full_name='CMsg_CVars',
+  full_name='demoinfocsgo.proto.CMsg_CVars',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='cvars', full_name='CMsg_CVars.cvars', index=0,
+      name='cvars', full_name='demoinfocsgo.proto.CMsg_CVars.cvars', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -551,20 +551,20 @@ _CMSG_CVARS = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=577,
-  serialized_end=659,
+  serialized_start=597,
+  serialized_end=698,
 )
 
 
 _CNETMSG_SETCONVAR = _descriptor.Descriptor(
   name='CNETMsg_SetConVar',
-  full_name='CNETMsg_SetConVar',
+  full_name='demoinfocsgo.proto.CNETMsg_SetConVar',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='convars', full_name='CNETMsg_SetConVar.convars', index=0,
+      name='convars', full_name='demoinfocsgo.proto.CNETMsg_SetConVar.convars', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -579,14 +579,14 @@ _CNETMSG_SETCONVAR = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=661,
-  serialized_end=710,
+  serialized_start=700,
+  serialized_end=768,
 )
 
 
 _CNETMSG_NOP = _descriptor.Descriptor(
   name='CNETMsg_NOP',
-  full_name='CNETMsg_NOP',
+  full_name='demoinfocsgo.proto.CNETMsg_NOP',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -600,20 +600,20 @@ _CNETMSG_NOP = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=712,
-  serialized_end=725,
+  serialized_start=770,
+  serialized_end=783,
 )
 
 
 _CNETMSG_DISCONNECT = _descriptor.Descriptor(
   name='CNETMsg_Disconnect',
-  full_name='CNETMsg_Disconnect',
+  full_name='demoinfocsgo.proto.CNETMsg_Disconnect',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='text', full_name='CNETMsg_Disconnect.text', index=0,
+      name='text', full_name='demoinfocsgo.proto.CNETMsg_Disconnect.text', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
@@ -628,41 +628,41 @@ _CNETMSG_DISCONNECT = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=727,
-  serialized_end=761,
+  serialized_start=785,
+  serialized_end=819,
 )
 
 
 _CNETMSG_FILE = _descriptor.Descriptor(
   name='CNETMsg_File',
-  full_name='CNETMsg_File',
+  full_name='demoinfocsgo.proto.CNETMsg_File',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='transfer_id', full_name='CNETMsg_File.transfer_id', index=0,
+      name='transfer_id', full_name='demoinfocsgo.proto.CNETMsg_File.transfer_id', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='file_name', full_name='CNETMsg_File.file_name', index=1,
+      name='file_name', full_name='demoinfocsgo.proto.CNETMsg_File.file_name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='is_replay_demo_file', full_name='CNETMsg_File.is_replay_demo_file', index=2,
+      name='is_replay_demo_file', full_name='demoinfocsgo.proto.CNETMsg_File.is_replay_demo_file', index=2,
       number=3, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='deny', full_name='CNETMsg_File.deny', index=3,
+      name='deny', full_name='demoinfocsgo.proto.CNETMsg_File.deny', index=3,
       number=4, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
@@ -677,160 +677,160 @@ _CNETMSG_FILE = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=763,
-  serialized_end=860,
+  serialized_start=821,
+  serialized_end=918,
 )
 
 
 _CSVCMSG_SERVERINFO = _descriptor.Descriptor(
   name='CSVCMsg_ServerInfo',
-  full_name='CSVCMsg_ServerInfo',
+  full_name='demoinfocsgo.proto.CSVCMsg_ServerInfo',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='protocol', full_name='CSVCMsg_ServerInfo.protocol', index=0,
+      name='protocol', full_name='demoinfocsgo.proto.CSVCMsg_ServerInfo.protocol', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='server_count', full_name='CSVCMsg_ServerInfo.server_count', index=1,
+      name='server_count', full_name='demoinfocsgo.proto.CSVCMsg_ServerInfo.server_count', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='is_dedicated', full_name='CSVCMsg_ServerInfo.is_dedicated', index=2,
+      name='is_dedicated', full_name='demoinfocsgo.proto.CSVCMsg_ServerInfo.is_dedicated', index=2,
       number=3, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='is_official_valve_server', full_name='CSVCMsg_ServerInfo.is_official_valve_server', index=3,
+      name='is_official_valve_server', full_name='demoinfocsgo.proto.CSVCMsg_ServerInfo.is_official_valve_server', index=3,
       number=4, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='is_hltv', full_name='CSVCMsg_ServerInfo.is_hltv', index=4,
+      name='is_hltv', full_name='demoinfocsgo.proto.CSVCMsg_ServerInfo.is_hltv', index=4,
       number=5, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='is_replay', full_name='CSVCMsg_ServerInfo.is_replay', index=5,
+      name='is_replay', full_name='demoinfocsgo.proto.CSVCMsg_ServerInfo.is_replay', index=5,
       number=6, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='is_redirecting_to_proxy_relay', full_name='CSVCMsg_ServerInfo.is_redirecting_to_proxy_relay', index=6,
+      name='is_redirecting_to_proxy_relay', full_name='demoinfocsgo.proto.CSVCMsg_ServerInfo.is_redirecting_to_proxy_relay', index=6,
       number=21, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='c_os', full_name='CSVCMsg_ServerInfo.c_os', index=7,
+      name='c_os', full_name='demoinfocsgo.proto.CSVCMsg_ServerInfo.c_os', index=7,
       number=7, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='map_crc', full_name='CSVCMsg_ServerInfo.map_crc', index=8,
+      name='map_crc', full_name='demoinfocsgo.proto.CSVCMsg_ServerInfo.map_crc', index=8,
       number=8, type=7, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='client_crc', full_name='CSVCMsg_ServerInfo.client_crc', index=9,
+      name='client_crc', full_name='demoinfocsgo.proto.CSVCMsg_ServerInfo.client_crc', index=9,
       number=9, type=7, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='string_table_crc', full_name='CSVCMsg_ServerInfo.string_table_crc', index=10,
+      name='string_table_crc', full_name='demoinfocsgo.proto.CSVCMsg_ServerInfo.string_table_crc', index=10,
       number=10, type=7, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='max_clients', full_name='CSVCMsg_ServerInfo.max_clients', index=11,
+      name='max_clients', full_name='demoinfocsgo.proto.CSVCMsg_ServerInfo.max_clients', index=11,
       number=11, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='max_classes', full_name='CSVCMsg_ServerInfo.max_classes', index=12,
+      name='max_classes', full_name='demoinfocsgo.proto.CSVCMsg_ServerInfo.max_classes', index=12,
       number=12, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='player_slot', full_name='CSVCMsg_ServerInfo.player_slot', index=13,
+      name='player_slot', full_name='demoinfocsgo.proto.CSVCMsg_ServerInfo.player_slot', index=13,
       number=13, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='tick_interval', full_name='CSVCMsg_ServerInfo.tick_interval', index=14,
+      name='tick_interval', full_name='demoinfocsgo.proto.CSVCMsg_ServerInfo.tick_interval', index=14,
       number=14, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='game_dir', full_name='CSVCMsg_ServerInfo.game_dir', index=15,
+      name='game_dir', full_name='demoinfocsgo.proto.CSVCMsg_ServerInfo.game_dir', index=15,
       number=15, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='map_name', full_name='CSVCMsg_ServerInfo.map_name', index=16,
+      name='map_name', full_name='demoinfocsgo.proto.CSVCMsg_ServerInfo.map_name', index=16,
       number=16, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='map_group_name', full_name='CSVCMsg_ServerInfo.map_group_name', index=17,
+      name='map_group_name', full_name='demoinfocsgo.proto.CSVCMsg_ServerInfo.map_group_name', index=17,
       number=17, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='sky_name', full_name='CSVCMsg_ServerInfo.sky_name', index=18,
+      name='sky_name', full_name='demoinfocsgo.proto.CSVCMsg_ServerInfo.sky_name', index=18,
       number=18, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='host_name', full_name='CSVCMsg_ServerInfo.host_name', index=19,
+      name='host_name', full_name='demoinfocsgo.proto.CSVCMsg_ServerInfo.host_name', index=19,
       number=19, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='ugc_map_id', full_name='CSVCMsg_ServerInfo.ugc_map_id', index=20,
+      name='ugc_map_id', full_name='demoinfocsgo.proto.CSVCMsg_ServerInfo.ugc_map_id', index=20,
       number=22, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -845,34 +845,34 @@ _CSVCMSG_SERVERINFO = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=863,
-  serialized_end=1334,
+  serialized_start=921,
+  serialized_end=1392,
 )
 
 
 _CSVCMSG_CLASSINFO_CLASS_T = _descriptor.Descriptor(
   name='class_t',
-  full_name='CSVCMsg_ClassInfo.class_t',
+  full_name='demoinfocsgo.proto.CSVCMsg_ClassInfo.class_t',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='class_id', full_name='CSVCMsg_ClassInfo.class_t.class_id', index=0,
+      name='class_id', full_name='demoinfocsgo.proto.CSVCMsg_ClassInfo.class_t.class_id', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='data_table_name', full_name='CSVCMsg_ClassInfo.class_t.data_table_name', index=1,
+      name='data_table_name', full_name='demoinfocsgo.proto.CSVCMsg_ClassInfo.class_t.data_table_name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='class_name', full_name='CSVCMsg_ClassInfo.class_t.class_name', index=2,
+      name='class_name', full_name='demoinfocsgo.proto.CSVCMsg_ClassInfo.class_t.class_name', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
@@ -887,26 +887,26 @@ _CSVCMSG_CLASSINFO_CLASS_T = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1429,
-  serialized_end=1501,
+  serialized_start=1506,
+  serialized_end=1578,
 )
 
 _CSVCMSG_CLASSINFO = _descriptor.Descriptor(
   name='CSVCMsg_ClassInfo',
-  full_name='CSVCMsg_ClassInfo',
+  full_name='demoinfocsgo.proto.CSVCMsg_ClassInfo',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='create_on_client', full_name='CSVCMsg_ClassInfo.create_on_client', index=0,
+      name='create_on_client', full_name='demoinfocsgo.proto.CSVCMsg_ClassInfo.create_on_client', index=0,
       number=1, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='classes', full_name='CSVCMsg_ClassInfo.classes', index=1,
+      name='classes', full_name='demoinfocsgo.proto.CSVCMsg_ClassInfo.classes', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -921,76 +921,76 @@ _CSVCMSG_CLASSINFO = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1337,
-  serialized_end=1501,
+  serialized_start=1395,
+  serialized_end=1578,
 )
 
 
 _CSVCMSG_SENDTABLE_SENDPROP_T = _descriptor.Descriptor(
   name='sendprop_t',
-  full_name='CSVCMsg_SendTable.sendprop_t',
+  full_name='demoinfocsgo.proto.CSVCMsg_SendTable.sendprop_t',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='type', full_name='CSVCMsg_SendTable.sendprop_t.type', index=0,
+      name='type', full_name='demoinfocsgo.proto.CSVCMsg_SendTable.sendprop_t.type', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='var_name', full_name='CSVCMsg_SendTable.sendprop_t.var_name', index=1,
+      name='var_name', full_name='demoinfocsgo.proto.CSVCMsg_SendTable.sendprop_t.var_name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='flags', full_name='CSVCMsg_SendTable.sendprop_t.flags', index=2,
+      name='flags', full_name='demoinfocsgo.proto.CSVCMsg_SendTable.sendprop_t.flags', index=2,
       number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='priority', full_name='CSVCMsg_SendTable.sendprop_t.priority', index=3,
+      name='priority', full_name='demoinfocsgo.proto.CSVCMsg_SendTable.sendprop_t.priority', index=3,
       number=4, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='dt_name', full_name='CSVCMsg_SendTable.sendprop_t.dt_name', index=4,
+      name='dt_name', full_name='demoinfocsgo.proto.CSVCMsg_SendTable.sendprop_t.dt_name', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='num_elements', full_name='CSVCMsg_SendTable.sendprop_t.num_elements', index=5,
+      name='num_elements', full_name='demoinfocsgo.proto.CSVCMsg_SendTable.sendprop_t.num_elements', index=5,
       number=6, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='low_value', full_name='CSVCMsg_SendTable.sendprop_t.low_value', index=6,
+      name='low_value', full_name='demoinfocsgo.proto.CSVCMsg_SendTable.sendprop_t.low_value', index=6,
       number=7, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='high_value', full_name='CSVCMsg_SendTable.sendprop_t.high_value', index=7,
+      name='high_value', full_name='demoinfocsgo.proto.CSVCMsg_SendTable.sendprop_t.high_value', index=7,
       number=8, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='num_bits', full_name='CSVCMsg_SendTable.sendprop_t.num_bits', index=8,
+      name='num_bits', full_name='demoinfocsgo.proto.CSVCMsg_SendTable.sendprop_t.num_bits', index=8,
       number=9, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -1005,40 +1005,40 @@ _CSVCMSG_SENDTABLE_SENDPROP_T = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1635,
-  serialized_end=1808,
+  serialized_start=1731,
+  serialized_end=1904,
 )
 
 _CSVCMSG_SENDTABLE = _descriptor.Descriptor(
   name='CSVCMsg_SendTable',
-  full_name='CSVCMsg_SendTable',
+  full_name='demoinfocsgo.proto.CSVCMsg_SendTable',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='is_end', full_name='CSVCMsg_SendTable.is_end', index=0,
+      name='is_end', full_name='demoinfocsgo.proto.CSVCMsg_SendTable.is_end', index=0,
       number=1, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='net_table_name', full_name='CSVCMsg_SendTable.net_table_name', index=1,
+      name='net_table_name', full_name='demoinfocsgo.proto.CSVCMsg_SendTable.net_table_name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='needs_decoder', full_name='CSVCMsg_SendTable.needs_decoder', index=2,
+      name='needs_decoder', full_name='demoinfocsgo.proto.CSVCMsg_SendTable.needs_decoder', index=2,
       number=3, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='props', full_name='CSVCMsg_SendTable.props', index=3,
+      name='props', full_name='demoinfocsgo.proto.CSVCMsg_SendTable.props', index=3,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -1053,20 +1053,20 @@ _CSVCMSG_SENDTABLE = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1504,
-  serialized_end=1808,
+  serialized_start=1581,
+  serialized_end=1904,
 )
 
 
 _CSVCMSG_PRINT = _descriptor.Descriptor(
   name='CSVCMsg_Print',
-  full_name='CSVCMsg_Print',
+  full_name='demoinfocsgo.proto.CSVCMsg_Print',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='text', full_name='CSVCMsg_Print.text', index=0,
+      name='text', full_name='demoinfocsgo.proto.CSVCMsg_Print.text', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
@@ -1081,20 +1081,20 @@ _CSVCMSG_PRINT = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1810,
-  serialized_end=1839,
+  serialized_start=1906,
+  serialized_end=1935,
 )
 
 
 _CSVCMSG_SETPAUSE = _descriptor.Descriptor(
   name='CSVCMsg_SetPause',
-  full_name='CSVCMsg_SetPause',
+  full_name='demoinfocsgo.proto.CSVCMsg_SetPause',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='paused', full_name='CSVCMsg_SetPause.paused', index=0,
+      name='paused', full_name='demoinfocsgo.proto.CSVCMsg_SetPause.paused', index=0,
       number=1, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
@@ -1109,20 +1109,20 @@ _CSVCMSG_SETPAUSE = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1841,
-  serialized_end=1875,
+  serialized_start=1937,
+  serialized_end=1971,
 )
 
 
 _CSVCMSG_SETVIEW = _descriptor.Descriptor(
   name='CSVCMsg_SetView',
-  full_name='CSVCMsg_SetView',
+  full_name='demoinfocsgo.proto.CSVCMsg_SetView',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='entity_index', full_name='CSVCMsg_SetView.entity_index', index=0,
+      name='entity_index', full_name='demoinfocsgo.proto.CSVCMsg_SetView.entity_index', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -1137,69 +1137,69 @@ _CSVCMSG_SETVIEW = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1877,
-  serialized_end=1916,
+  serialized_start=1973,
+  serialized_end=2012,
 )
 
 
 _CSVCMSG_CREATESTRINGTABLE = _descriptor.Descriptor(
   name='CSVCMsg_CreateStringTable',
-  full_name='CSVCMsg_CreateStringTable',
+  full_name='demoinfocsgo.proto.CSVCMsg_CreateStringTable',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='name', full_name='CSVCMsg_CreateStringTable.name', index=0,
+      name='name', full_name='demoinfocsgo.proto.CSVCMsg_CreateStringTable.name', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='max_entries', full_name='CSVCMsg_CreateStringTable.max_entries', index=1,
+      name='max_entries', full_name='demoinfocsgo.proto.CSVCMsg_CreateStringTable.max_entries', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='num_entries', full_name='CSVCMsg_CreateStringTable.num_entries', index=2,
+      name='num_entries', full_name='demoinfocsgo.proto.CSVCMsg_CreateStringTable.num_entries', index=2,
       number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='user_data_fixed_size', full_name='CSVCMsg_CreateStringTable.user_data_fixed_size', index=3,
+      name='user_data_fixed_size', full_name='demoinfocsgo.proto.CSVCMsg_CreateStringTable.user_data_fixed_size', index=3,
       number=4, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='user_data_size', full_name='CSVCMsg_CreateStringTable.user_data_size', index=4,
+      name='user_data_size', full_name='demoinfocsgo.proto.CSVCMsg_CreateStringTable.user_data_size', index=4,
       number=5, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='user_data_size_bits', full_name='CSVCMsg_CreateStringTable.user_data_size_bits', index=5,
+      name='user_data_size_bits', full_name='demoinfocsgo.proto.CSVCMsg_CreateStringTable.user_data_size_bits', index=5,
       number=6, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='flags', full_name='CSVCMsg_CreateStringTable.flags', index=6,
+      name='flags', full_name='demoinfocsgo.proto.CSVCMsg_CreateStringTable.flags', index=6,
       number=7, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='string_data', full_name='CSVCMsg_CreateStringTable.string_data', index=7,
+      name='string_data', full_name='demoinfocsgo.proto.CSVCMsg_CreateStringTable.string_data', index=7,
       number=8, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value="",
       message_type=None, enum_type=None, containing_type=None,
@@ -1214,34 +1214,34 @@ _CSVCMSG_CREATESTRINGTABLE = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1919,
-  serialized_end=2121,
+  serialized_start=2015,
+  serialized_end=2217,
 )
 
 
 _CSVCMSG_UPDATESTRINGTABLE = _descriptor.Descriptor(
   name='CSVCMsg_UpdateStringTable',
-  full_name='CSVCMsg_UpdateStringTable',
+  full_name='demoinfocsgo.proto.CSVCMsg_UpdateStringTable',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='table_id', full_name='CSVCMsg_UpdateStringTable.table_id', index=0,
+      name='table_id', full_name='demoinfocsgo.proto.CSVCMsg_UpdateStringTable.table_id', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='num_changed_entries', full_name='CSVCMsg_UpdateStringTable.num_changed_entries', index=1,
+      name='num_changed_entries', full_name='demoinfocsgo.proto.CSVCMsg_UpdateStringTable.num_changed_entries', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='string_data', full_name='CSVCMsg_UpdateStringTable.string_data', index=2,
+      name='string_data', full_name='demoinfocsgo.proto.CSVCMsg_UpdateStringTable.string_data', index=2,
       number=3, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value="",
       message_type=None, enum_type=None, containing_type=None,
@@ -1256,27 +1256,27 @@ _CSVCMSG_UPDATESTRINGTABLE = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2123,
-  serialized_end=2218,
+  serialized_start=2219,
+  serialized_end=2314,
 )
 
 
 _CSVCMSG_VOICEINIT = _descriptor.Descriptor(
   name='CSVCMsg_VoiceInit',
-  full_name='CSVCMsg_VoiceInit',
+  full_name='demoinfocsgo.proto.CSVCMsg_VoiceInit',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='quality', full_name='CSVCMsg_VoiceInit.quality', index=0,
+      name='quality', full_name='demoinfocsgo.proto.CSVCMsg_VoiceInit.quality', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='codec', full_name='CSVCMsg_VoiceInit.codec', index=1,
+      name='codec', full_name='demoinfocsgo.proto.CSVCMsg_VoiceInit.codec', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
@@ -1291,48 +1291,48 @@ _CSVCMSG_VOICEINIT = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2220,
-  serialized_end=2271,
+  serialized_start=2316,
+  serialized_end=2367,
 )
 
 
 _CSVCMSG_VOICEDATA = _descriptor.Descriptor(
   name='CSVCMsg_VoiceData',
-  full_name='CSVCMsg_VoiceData',
+  full_name='demoinfocsgo.proto.CSVCMsg_VoiceData',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='client', full_name='CSVCMsg_VoiceData.client', index=0,
+      name='client', full_name='demoinfocsgo.proto.CSVCMsg_VoiceData.client', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='proximity', full_name='CSVCMsg_VoiceData.proximity', index=1,
+      name='proximity', full_name='demoinfocsgo.proto.CSVCMsg_VoiceData.proximity', index=1,
       number=2, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='xuid', full_name='CSVCMsg_VoiceData.xuid', index=2,
+      name='xuid', full_name='demoinfocsgo.proto.CSVCMsg_VoiceData.xuid', index=2,
       number=3, type=6, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='audible_mask', full_name='CSVCMsg_VoiceData.audible_mask', index=3,
+      name='audible_mask', full_name='demoinfocsgo.proto.CSVCMsg_VoiceData.audible_mask', index=3,
       number=4, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='voice_data', full_name='CSVCMsg_VoiceData.voice_data', index=4,
+      name='voice_data', full_name='demoinfocsgo.proto.CSVCMsg_VoiceData.voice_data', index=4,
       number=5, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value="",
       message_type=None, enum_type=None, containing_type=None,
@@ -1347,27 +1347,27 @@ _CSVCMSG_VOICEDATA = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2273,
-  serialized_end=2383,
+  serialized_start=2369,
+  serialized_end=2479,
 )
 
 
 _CSVCMSG_FIXANGLE = _descriptor.Descriptor(
   name='CSVCMsg_FixAngle',
-  full_name='CSVCMsg_FixAngle',
+  full_name='demoinfocsgo.proto.CSVCMsg_FixAngle',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='relative', full_name='CSVCMsg_FixAngle.relative', index=0,
+      name='relative', full_name='demoinfocsgo.proto.CSVCMsg_FixAngle.relative', index=0,
       number=1, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='angle', full_name='CSVCMsg_FixAngle.angle', index=1,
+      name='angle', full_name='demoinfocsgo.proto.CSVCMsg_FixAngle.angle', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -1382,20 +1382,20 @@ _CSVCMSG_FIXANGLE = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2385,
-  serialized_end=2449,
+  serialized_start=2481,
+  serialized_end=2564,
 )
 
 
 _CSVCMSG_CROSSHAIRANGLE = _descriptor.Descriptor(
   name='CSVCMsg_CrosshairAngle',
-  full_name='CSVCMsg_CrosshairAngle',
+  full_name='demoinfocsgo.proto.CSVCMsg_CrosshairAngle',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='angle', full_name='CSVCMsg_CrosshairAngle.angle', index=0,
+      name='angle', full_name='demoinfocsgo.proto.CSVCMsg_CrosshairAngle.angle', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -1410,20 +1410,20 @@ _CSVCMSG_CROSSHAIRANGLE = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2451,
-  serialized_end=2503,
+  serialized_start=2566,
+  serialized_end=2637,
 )
 
 
 _CSVCMSG_PREFETCH = _descriptor.Descriptor(
   name='CSVCMsg_Prefetch',
-  full_name='CSVCMsg_Prefetch',
+  full_name='demoinfocsgo.proto.CSVCMsg_Prefetch',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='sound_index', full_name='CSVCMsg_Prefetch.sound_index', index=0,
+      name='sound_index', full_name='demoinfocsgo.proto.CSVCMsg_Prefetch.sound_index', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -1438,48 +1438,48 @@ _CSVCMSG_PREFETCH = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2505,
-  serialized_end=2544,
+  serialized_start=2639,
+  serialized_end=2678,
 )
 
 
 _CSVCMSG_BSPDECAL = _descriptor.Descriptor(
   name='CSVCMsg_BSPDecal',
-  full_name='CSVCMsg_BSPDecal',
+  full_name='demoinfocsgo.proto.CSVCMsg_BSPDecal',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='pos', full_name='CSVCMsg_BSPDecal.pos', index=0,
+      name='pos', full_name='demoinfocsgo.proto.CSVCMsg_BSPDecal.pos', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='decal_texture_index', full_name='CSVCMsg_BSPDecal.decal_texture_index', index=1,
+      name='decal_texture_index', full_name='demoinfocsgo.proto.CSVCMsg_BSPDecal.decal_texture_index', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='entity_index', full_name='CSVCMsg_BSPDecal.entity_index', index=2,
+      name='entity_index', full_name='demoinfocsgo.proto.CSVCMsg_BSPDecal.entity_index', index=2,
       number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='model_index', full_name='CSVCMsg_BSPDecal.model_index', index=3,
+      name='model_index', full_name='demoinfocsgo.proto.CSVCMsg_BSPDecal.model_index', index=3,
       number=4, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='low_priority', full_name='CSVCMsg_BSPDecal.low_priority', index=4,
+      name='low_priority', full_name='demoinfocsgo.proto.CSVCMsg_BSPDecal.low_priority', index=4,
       number=5, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
@@ -1494,27 +1494,27 @@ _CSVCMSG_BSPDECAL = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2547,
-  serialized_end=2685,
+  serialized_start=2681,
+  serialized_end=2838,
 )
 
 
 _CSVCMSG_GETCVARVALUE = _descriptor.Descriptor(
   name='CSVCMsg_GetCvarValue',
-  full_name='CSVCMsg_GetCvarValue',
+  full_name='demoinfocsgo.proto.CSVCMsg_GetCvarValue',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='cookie', full_name='CSVCMsg_GetCvarValue.cookie', index=0,
+      name='cookie', full_name='demoinfocsgo.proto.CSVCMsg_GetCvarValue.cookie', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='cvar_name', full_name='CSVCMsg_GetCvarValue.cvar_name', index=1,
+      name='cvar_name', full_name='demoinfocsgo.proto.CSVCMsg_GetCvarValue.cvar_name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
@@ -1529,27 +1529,27 @@ _CSVCMSG_GETCVARVALUE = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2687,
-  serialized_end=2744,
+  serialized_start=2840,
+  serialized_end=2897,
 )
 
 
 _CSVCMSG_MENU = _descriptor.Descriptor(
   name='CSVCMsg_Menu',
-  full_name='CSVCMsg_Menu',
+  full_name='demoinfocsgo.proto.CSVCMsg_Menu',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='dialog_type', full_name='CSVCMsg_Menu.dialog_type', index=0,
+      name='dialog_type', full_name='demoinfocsgo.proto.CSVCMsg_Menu.dialog_type', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='menu_key_values', full_name='CSVCMsg_Menu.menu_key_values', index=1,
+      name='menu_key_values', full_name='demoinfocsgo.proto.CSVCMsg_Menu.menu_key_values', index=1,
       number=2, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value="",
       message_type=None, enum_type=None, containing_type=None,
@@ -1564,27 +1564,27 @@ _CSVCMSG_MENU = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2746,
-  serialized_end=2806,
+  serialized_start=2899,
+  serialized_end=2959,
 )
 
 
 _CSVCMSG_USERMESSAGE = _descriptor.Descriptor(
   name='CSVCMsg_UserMessage',
-  full_name='CSVCMsg_UserMessage',
+  full_name='demoinfocsgo.proto.CSVCMsg_UserMessage',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='msg_type', full_name='CSVCMsg_UserMessage.msg_type', index=0,
+      name='msg_type', full_name='demoinfocsgo.proto.CSVCMsg_UserMessage.msg_type', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='msg_data', full_name='CSVCMsg_UserMessage.msg_data', index=1,
+      name='msg_data', full_name='demoinfocsgo.proto.CSVCMsg_UserMessage.msg_data', index=1,
       number=2, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value="",
       message_type=None, enum_type=None, containing_type=None,
@@ -1599,76 +1599,76 @@ _CSVCMSG_USERMESSAGE = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2808,
-  serialized_end=2865,
+  serialized_start=2961,
+  serialized_end=3018,
 )
 
 
 _CSVCMSG_GAMEEVENT_KEY_T = _descriptor.Descriptor(
   name='key_t',
-  full_name='CSVCMsg_GameEvent.key_t',
+  full_name='demoinfocsgo.proto.CSVCMsg_GameEvent.key_t',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='type', full_name='CSVCMsg_GameEvent.key_t.type', index=0,
+      name='type', full_name='demoinfocsgo.proto.CSVCMsg_GameEvent.key_t.type', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='val_string', full_name='CSVCMsg_GameEvent.key_t.val_string', index=1,
+      name='val_string', full_name='demoinfocsgo.proto.CSVCMsg_GameEvent.key_t.val_string', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='val_float', full_name='CSVCMsg_GameEvent.key_t.val_float', index=2,
+      name='val_float', full_name='demoinfocsgo.proto.CSVCMsg_GameEvent.key_t.val_float', index=2,
       number=3, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='val_long', full_name='CSVCMsg_GameEvent.key_t.val_long', index=3,
+      name='val_long', full_name='demoinfocsgo.proto.CSVCMsg_GameEvent.key_t.val_long', index=3,
       number=4, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='val_short', full_name='CSVCMsg_GameEvent.key_t.val_short', index=4,
+      name='val_short', full_name='demoinfocsgo.proto.CSVCMsg_GameEvent.key_t.val_short', index=4,
       number=5, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='val_byte', full_name='CSVCMsg_GameEvent.key_t.val_byte', index=5,
+      name='val_byte', full_name='demoinfocsgo.proto.CSVCMsg_GameEvent.key_t.val_byte', index=5,
       number=6, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='val_bool', full_name='CSVCMsg_GameEvent.key_t.val_bool', index=6,
+      name='val_bool', full_name='demoinfocsgo.proto.CSVCMsg_GameEvent.key_t.val_bool', index=6,
       number=7, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='val_uint64', full_name='CSVCMsg_GameEvent.key_t.val_uint64', index=7,
+      name='val_uint64', full_name='demoinfocsgo.proto.CSVCMsg_GameEvent.key_t.val_uint64', index=7,
       number=8, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='val_wstring', full_name='CSVCMsg_GameEvent.key_t.val_wstring', index=8,
+      name='val_wstring', full_name='demoinfocsgo.proto.CSVCMsg_GameEvent.key_t.val_wstring', index=8,
       number=9, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value="",
       message_type=None, enum_type=None, containing_type=None,
@@ -1683,33 +1683,33 @@ _CSVCMSG_GAMEEVENT_KEY_T = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2967,
-  serialized_end=3141,
+  serialized_start=3139,
+  serialized_end=3313,
 )
 
 _CSVCMSG_GAMEEVENT = _descriptor.Descriptor(
   name='CSVCMsg_GameEvent',
-  full_name='CSVCMsg_GameEvent',
+  full_name='demoinfocsgo.proto.CSVCMsg_GameEvent',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='event_name', full_name='CSVCMsg_GameEvent.event_name', index=0,
+      name='event_name', full_name='demoinfocsgo.proto.CSVCMsg_GameEvent.event_name', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='eventid', full_name='CSVCMsg_GameEvent.eventid', index=1,
+      name='eventid', full_name='demoinfocsgo.proto.CSVCMsg_GameEvent.eventid', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='keys', full_name='CSVCMsg_GameEvent.keys', index=2,
+      name='keys', full_name='demoinfocsgo.proto.CSVCMsg_GameEvent.keys', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -1724,27 +1724,27 @@ _CSVCMSG_GAMEEVENT = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2868,
-  serialized_end=3141,
+  serialized_start=3021,
+  serialized_end=3313,
 )
 
 
 _CSVCMSG_GAMEEVENTLIST_KEY_T = _descriptor.Descriptor(
   name='key_t',
-  full_name='CSVCMsg_GameEventList.key_t',
+  full_name='demoinfocsgo.proto.CSVCMsg_GameEventList.key_t',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='type', full_name='CSVCMsg_GameEventList.key_t.type', index=0,
+      name='type', full_name='demoinfocsgo.proto.CSVCMsg_GameEventList.key_t.type', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='name', full_name='CSVCMsg_GameEventList.key_t.name', index=1,
+      name='name', full_name='demoinfocsgo.proto.CSVCMsg_GameEventList.key_t.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
@@ -1759,33 +1759,33 @@ _CSVCMSG_GAMEEVENTLIST_KEY_T = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3227,
-  serialized_end=3262,
+  serialized_start=3418,
+  serialized_end=3453,
 )
 
 _CSVCMSG_GAMEEVENTLIST_DESCRIPTOR_T = _descriptor.Descriptor(
   name='descriptor_t',
-  full_name='CSVCMsg_GameEventList.descriptor_t',
+  full_name='demoinfocsgo.proto.CSVCMsg_GameEventList.descriptor_t',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='eventid', full_name='CSVCMsg_GameEventList.descriptor_t.eventid', index=0,
+      name='eventid', full_name='demoinfocsgo.proto.CSVCMsg_GameEventList.descriptor_t.eventid', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='name', full_name='CSVCMsg_GameEventList.descriptor_t.name', index=1,
+      name='name', full_name='demoinfocsgo.proto.CSVCMsg_GameEventList.descriptor_t.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='keys', full_name='CSVCMsg_GameEventList.descriptor_t.keys', index=2,
+      name='keys', full_name='demoinfocsgo.proto.CSVCMsg_GameEventList.descriptor_t.keys', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -1800,19 +1800,19 @@ _CSVCMSG_GAMEEVENTLIST_DESCRIPTOR_T = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3264,
-  serialized_end=3353,
+  serialized_start=3455,
+  serialized_end=3563,
 )
 
 _CSVCMSG_GAMEEVENTLIST = _descriptor.Descriptor(
   name='CSVCMsg_GameEventList',
-  full_name='CSVCMsg_GameEventList',
+  full_name='demoinfocsgo.proto.CSVCMsg_GameEventList',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='descriptors', full_name='CSVCMsg_GameEventList.descriptors', index=0,
+      name='descriptors', full_name='demoinfocsgo.proto.CSVCMsg_GameEventList.descriptors', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -1827,34 +1827,34 @@ _CSVCMSG_GAMEEVENTLIST = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3144,
-  serialized_end=3353,
+  serialized_start=3316,
+  serialized_end=3563,
 )
 
 
 _CSVCMSG_TEMPENTITIES = _descriptor.Descriptor(
   name='CSVCMsg_TempEntities',
-  full_name='CSVCMsg_TempEntities',
+  full_name='demoinfocsgo.proto.CSVCMsg_TempEntities',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='reliable', full_name='CSVCMsg_TempEntities.reliable', index=0,
+      name='reliable', full_name='demoinfocsgo.proto.CSVCMsg_TempEntities.reliable', index=0,
       number=1, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='num_entries', full_name='CSVCMsg_TempEntities.num_entries', index=1,
+      name='num_entries', full_name='demoinfocsgo.proto.CSVCMsg_TempEntities.num_entries', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='entity_data', full_name='CSVCMsg_TempEntities.entity_data', index=2,
+      name='entity_data', full_name='demoinfocsgo.proto.CSVCMsg_TempEntities.entity_data', index=2,
       number=3, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value="",
       message_type=None, enum_type=None, containing_type=None,
@@ -1869,62 +1869,62 @@ _CSVCMSG_TEMPENTITIES = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3355,
-  serialized_end=3437,
+  serialized_start=3565,
+  serialized_end=3647,
 )
 
 
 _CSVCMSG_PACKETENTITIES = _descriptor.Descriptor(
   name='CSVCMsg_PacketEntities',
-  full_name='CSVCMsg_PacketEntities',
+  full_name='demoinfocsgo.proto.CSVCMsg_PacketEntities',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='max_entries', full_name='CSVCMsg_PacketEntities.max_entries', index=0,
+      name='max_entries', full_name='demoinfocsgo.proto.CSVCMsg_PacketEntities.max_entries', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='updated_entries', full_name='CSVCMsg_PacketEntities.updated_entries', index=1,
+      name='updated_entries', full_name='demoinfocsgo.proto.CSVCMsg_PacketEntities.updated_entries', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='is_delta', full_name='CSVCMsg_PacketEntities.is_delta', index=2,
+      name='is_delta', full_name='demoinfocsgo.proto.CSVCMsg_PacketEntities.is_delta', index=2,
       number=3, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='update_baseline', full_name='CSVCMsg_PacketEntities.update_baseline', index=3,
+      name='update_baseline', full_name='demoinfocsgo.proto.CSVCMsg_PacketEntities.update_baseline', index=3,
       number=4, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='baseline', full_name='CSVCMsg_PacketEntities.baseline', index=4,
+      name='baseline', full_name='demoinfocsgo.proto.CSVCMsg_PacketEntities.baseline', index=4,
       number=5, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='delta_from', full_name='CSVCMsg_PacketEntities.delta_from', index=5,
+      name='delta_from', full_name='demoinfocsgo.proto.CSVCMsg_PacketEntities.delta_from', index=5,
       number=6, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='entity_data', full_name='CSVCMsg_PacketEntities.entity_data', index=6,
+      name='entity_data', full_name='demoinfocsgo.proto.CSVCMsg_PacketEntities.entity_data', index=6,
       number=7, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value="",
       message_type=None, enum_type=None, containing_type=None,
@@ -1939,132 +1939,132 @@ _CSVCMSG_PACKETENTITIES = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3440,
-  serialized_end=3612,
+  serialized_start=3650,
+  serialized_end=3822,
 )
 
 
 _CSVCMSG_SOUNDS_SOUNDDATA_T = _descriptor.Descriptor(
   name='sounddata_t',
-  full_name='CSVCMsg_Sounds.sounddata_t',
+  full_name='demoinfocsgo.proto.CSVCMsg_Sounds.sounddata_t',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='origin_x', full_name='CSVCMsg_Sounds.sounddata_t.origin_x', index=0,
+      name='origin_x', full_name='demoinfocsgo.proto.CSVCMsg_Sounds.sounddata_t.origin_x', index=0,
       number=1, type=17, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='origin_y', full_name='CSVCMsg_Sounds.sounddata_t.origin_y', index=1,
+      name='origin_y', full_name='demoinfocsgo.proto.CSVCMsg_Sounds.sounddata_t.origin_y', index=1,
       number=2, type=17, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='origin_z', full_name='CSVCMsg_Sounds.sounddata_t.origin_z', index=2,
+      name='origin_z', full_name='demoinfocsgo.proto.CSVCMsg_Sounds.sounddata_t.origin_z', index=2,
       number=3, type=17, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='volume', full_name='CSVCMsg_Sounds.sounddata_t.volume', index=3,
+      name='volume', full_name='demoinfocsgo.proto.CSVCMsg_Sounds.sounddata_t.volume', index=3,
       number=4, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='delay_value', full_name='CSVCMsg_Sounds.sounddata_t.delay_value', index=4,
+      name='delay_value', full_name='demoinfocsgo.proto.CSVCMsg_Sounds.sounddata_t.delay_value', index=4,
       number=5, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='sequence_number', full_name='CSVCMsg_Sounds.sounddata_t.sequence_number', index=5,
+      name='sequence_number', full_name='demoinfocsgo.proto.CSVCMsg_Sounds.sounddata_t.sequence_number', index=5,
       number=6, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='entity_index', full_name='CSVCMsg_Sounds.sounddata_t.entity_index', index=6,
+      name='entity_index', full_name='demoinfocsgo.proto.CSVCMsg_Sounds.sounddata_t.entity_index', index=6,
       number=7, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='channel', full_name='CSVCMsg_Sounds.sounddata_t.channel', index=7,
+      name='channel', full_name='demoinfocsgo.proto.CSVCMsg_Sounds.sounddata_t.channel', index=7,
       number=8, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='pitch', full_name='CSVCMsg_Sounds.sounddata_t.pitch', index=8,
+      name='pitch', full_name='demoinfocsgo.proto.CSVCMsg_Sounds.sounddata_t.pitch', index=8,
       number=9, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='flags', full_name='CSVCMsg_Sounds.sounddata_t.flags', index=9,
+      name='flags', full_name='demoinfocsgo.proto.CSVCMsg_Sounds.sounddata_t.flags', index=9,
       number=10, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='sound_num', full_name='CSVCMsg_Sounds.sounddata_t.sound_num', index=10,
+      name='sound_num', full_name='demoinfocsgo.proto.CSVCMsg_Sounds.sounddata_t.sound_num', index=10,
       number=11, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='sound_num_handle', full_name='CSVCMsg_Sounds.sounddata_t.sound_num_handle', index=11,
+      name='sound_num_handle', full_name='demoinfocsgo.proto.CSVCMsg_Sounds.sounddata_t.sound_num_handle', index=11,
       number=12, type=7, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='speaker_entity', full_name='CSVCMsg_Sounds.sounddata_t.speaker_entity', index=12,
+      name='speaker_entity', full_name='demoinfocsgo.proto.CSVCMsg_Sounds.sounddata_t.speaker_entity', index=12,
       number=13, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='random_seed', full_name='CSVCMsg_Sounds.sounddata_t.random_seed', index=13,
+      name='random_seed', full_name='demoinfocsgo.proto.CSVCMsg_Sounds.sounddata_t.random_seed', index=13,
       number=14, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='sound_level', full_name='CSVCMsg_Sounds.sounddata_t.sound_level', index=14,
+      name='sound_level', full_name='demoinfocsgo.proto.CSVCMsg_Sounds.sounddata_t.sound_level', index=14,
       number=15, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='is_sentence', full_name='CSVCMsg_Sounds.sounddata_t.is_sentence', index=15,
+      name='is_sentence', full_name='demoinfocsgo.proto.CSVCMsg_Sounds.sounddata_t.is_sentence', index=15,
       number=16, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='is_ambient', full_name='CSVCMsg_Sounds.sounddata_t.is_ambient', index=16,
+      name='is_ambient', full_name='demoinfocsgo.proto.CSVCMsg_Sounds.sounddata_t.is_ambient', index=16,
       number=17, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
@@ -2079,26 +2079,26 @@ _CSVCMSG_SOUNDS_SOUNDDATA_T = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3703,
-  serialized_end=4053,
+  serialized_start=3932,
+  serialized_end=4282,
 )
 
 _CSVCMSG_SOUNDS = _descriptor.Descriptor(
   name='CSVCMsg_Sounds',
-  full_name='CSVCMsg_Sounds',
+  full_name='demoinfocsgo.proto.CSVCMsg_Sounds',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='reliable_sound', full_name='CSVCMsg_Sounds.reliable_sound', index=0,
+      name='reliable_sound', full_name='demoinfocsgo.proto.CSVCMsg_Sounds.reliable_sound', index=0,
       number=1, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='sounds', full_name='CSVCMsg_Sounds.sounds', index=1,
+      name='sounds', full_name='demoinfocsgo.proto.CSVCMsg_Sounds.sounds', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -2113,8 +2113,8 @@ _CSVCMSG_SOUNDS = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3615,
-  serialized_end=4053,
+  serialized_start=3825,
+  serialized_end=4282,
 )
 
 _CMSG_CVARS_CVAR.containing_type = _CMSG_CVARS;
@@ -2174,43 +2174,43 @@ class CMsgVector(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CMSGVECTOR
 
-  # @@protoc_insertion_point(class_scope:CMsgVector)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CMsgVector)
 
 class CMsgVector2D(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CMSGVECTOR2D
 
-  # @@protoc_insertion_point(class_scope:CMsgVector2D)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CMsgVector2D)
 
 class CMsgQAngle(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CMSGQANGLE
 
-  # @@protoc_insertion_point(class_scope:CMsgQAngle)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CMsgQAngle)
 
 class CMsgRGBA(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CMSGRGBA
 
-  # @@protoc_insertion_point(class_scope:CMsgRGBA)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CMsgRGBA)
 
 class CNETMsg_Tick(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CNETMSG_TICK
 
-  # @@protoc_insertion_point(class_scope:CNETMsg_Tick)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CNETMsg_Tick)
 
 class CNETMsg_StringCmd(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CNETMSG_STRINGCMD
 
-  # @@protoc_insertion_point(class_scope:CNETMsg_StringCmd)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CNETMsg_StringCmd)
 
 class CNETMsg_SignonState(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CNETMSG_SIGNONSTATE
 
-  # @@protoc_insertion_point(class_scope:CNETMsg_SignonState)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CNETMsg_SignonState)
 
 class CMsg_CVars(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
@@ -2219,40 +2219,40 @@ class CMsg_CVars(_message.Message):
     __metaclass__ = _reflection.GeneratedProtocolMessageType
     DESCRIPTOR = _CMSG_CVARS_CVAR
 
-    # @@protoc_insertion_point(class_scope:CMsg_CVars.CVar)
+    # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CMsg_CVars.CVar)
   DESCRIPTOR = _CMSG_CVARS
 
-  # @@protoc_insertion_point(class_scope:CMsg_CVars)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CMsg_CVars)
 
 class CNETMsg_SetConVar(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CNETMSG_SETCONVAR
 
-  # @@protoc_insertion_point(class_scope:CNETMsg_SetConVar)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CNETMsg_SetConVar)
 
 class CNETMsg_NOP(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CNETMSG_NOP
 
-  # @@protoc_insertion_point(class_scope:CNETMsg_NOP)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CNETMsg_NOP)
 
 class CNETMsg_Disconnect(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CNETMSG_DISCONNECT
 
-  # @@protoc_insertion_point(class_scope:CNETMsg_Disconnect)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CNETMsg_Disconnect)
 
 class CNETMsg_File(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CNETMSG_FILE
 
-  # @@protoc_insertion_point(class_scope:CNETMsg_File)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CNETMsg_File)
 
 class CSVCMsg_ServerInfo(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CSVCMSG_SERVERINFO
 
-  # @@protoc_insertion_point(class_scope:CSVCMsg_ServerInfo)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CSVCMsg_ServerInfo)
 
 class CSVCMsg_ClassInfo(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
@@ -2261,10 +2261,10 @@ class CSVCMsg_ClassInfo(_message.Message):
     __metaclass__ = _reflection.GeneratedProtocolMessageType
     DESCRIPTOR = _CSVCMSG_CLASSINFO_CLASS_T
 
-    # @@protoc_insertion_point(class_scope:CSVCMsg_ClassInfo.class_t)
+    # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CSVCMsg_ClassInfo.class_t)
   DESCRIPTOR = _CSVCMSG_CLASSINFO
 
-  # @@protoc_insertion_point(class_scope:CSVCMsg_ClassInfo)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CSVCMsg_ClassInfo)
 
 class CSVCMsg_SendTable(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
@@ -2273,94 +2273,94 @@ class CSVCMsg_SendTable(_message.Message):
     __metaclass__ = _reflection.GeneratedProtocolMessageType
     DESCRIPTOR = _CSVCMSG_SENDTABLE_SENDPROP_T
 
-    # @@protoc_insertion_point(class_scope:CSVCMsg_SendTable.sendprop_t)
+    # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CSVCMsg_SendTable.sendprop_t)
   DESCRIPTOR = _CSVCMSG_SENDTABLE
 
-  # @@protoc_insertion_point(class_scope:CSVCMsg_SendTable)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CSVCMsg_SendTable)
 
 class CSVCMsg_Print(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CSVCMSG_PRINT
 
-  # @@protoc_insertion_point(class_scope:CSVCMsg_Print)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CSVCMsg_Print)
 
 class CSVCMsg_SetPause(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CSVCMSG_SETPAUSE
 
-  # @@protoc_insertion_point(class_scope:CSVCMsg_SetPause)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CSVCMsg_SetPause)
 
 class CSVCMsg_SetView(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CSVCMSG_SETVIEW
 
-  # @@protoc_insertion_point(class_scope:CSVCMsg_SetView)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CSVCMsg_SetView)
 
 class CSVCMsg_CreateStringTable(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CSVCMSG_CREATESTRINGTABLE
 
-  # @@protoc_insertion_point(class_scope:CSVCMsg_CreateStringTable)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CSVCMsg_CreateStringTable)
 
 class CSVCMsg_UpdateStringTable(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CSVCMSG_UPDATESTRINGTABLE
 
-  # @@protoc_insertion_point(class_scope:CSVCMsg_UpdateStringTable)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CSVCMsg_UpdateStringTable)
 
 class CSVCMsg_VoiceInit(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CSVCMSG_VOICEINIT
 
-  # @@protoc_insertion_point(class_scope:CSVCMsg_VoiceInit)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CSVCMsg_VoiceInit)
 
 class CSVCMsg_VoiceData(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CSVCMSG_VOICEDATA
 
-  # @@protoc_insertion_point(class_scope:CSVCMsg_VoiceData)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CSVCMsg_VoiceData)
 
 class CSVCMsg_FixAngle(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CSVCMSG_FIXANGLE
 
-  # @@protoc_insertion_point(class_scope:CSVCMsg_FixAngle)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CSVCMsg_FixAngle)
 
 class CSVCMsg_CrosshairAngle(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CSVCMSG_CROSSHAIRANGLE
 
-  # @@protoc_insertion_point(class_scope:CSVCMsg_CrosshairAngle)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CSVCMsg_CrosshairAngle)
 
 class CSVCMsg_Prefetch(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CSVCMSG_PREFETCH
 
-  # @@protoc_insertion_point(class_scope:CSVCMsg_Prefetch)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CSVCMsg_Prefetch)
 
 class CSVCMsg_BSPDecal(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CSVCMSG_BSPDECAL
 
-  # @@protoc_insertion_point(class_scope:CSVCMsg_BSPDecal)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CSVCMsg_BSPDecal)
 
 class CSVCMsg_GetCvarValue(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CSVCMSG_GETCVARVALUE
 
-  # @@protoc_insertion_point(class_scope:CSVCMsg_GetCvarValue)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CSVCMsg_GetCvarValue)
 
 class CSVCMsg_Menu(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CSVCMSG_MENU
 
-  # @@protoc_insertion_point(class_scope:CSVCMsg_Menu)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CSVCMsg_Menu)
 
 class CSVCMsg_UserMessage(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CSVCMSG_USERMESSAGE
 
-  # @@protoc_insertion_point(class_scope:CSVCMsg_UserMessage)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CSVCMsg_UserMessage)
 
 class CSVCMsg_GameEvent(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
@@ -2369,10 +2369,10 @@ class CSVCMsg_GameEvent(_message.Message):
     __metaclass__ = _reflection.GeneratedProtocolMessageType
     DESCRIPTOR = _CSVCMSG_GAMEEVENT_KEY_T
 
-    # @@protoc_insertion_point(class_scope:CSVCMsg_GameEvent.key_t)
+    # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CSVCMsg_GameEvent.key_t)
   DESCRIPTOR = _CSVCMSG_GAMEEVENT
 
-  # @@protoc_insertion_point(class_scope:CSVCMsg_GameEvent)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CSVCMsg_GameEvent)
 
 class CSVCMsg_GameEventList(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
@@ -2381,28 +2381,28 @@ class CSVCMsg_GameEventList(_message.Message):
     __metaclass__ = _reflection.GeneratedProtocolMessageType
     DESCRIPTOR = _CSVCMSG_GAMEEVENTLIST_KEY_T
 
-    # @@protoc_insertion_point(class_scope:CSVCMsg_GameEventList.key_t)
+    # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CSVCMsg_GameEventList.key_t)
 
   class descriptor_t(_message.Message):
     __metaclass__ = _reflection.GeneratedProtocolMessageType
     DESCRIPTOR = _CSVCMSG_GAMEEVENTLIST_DESCRIPTOR_T
 
-    # @@protoc_insertion_point(class_scope:CSVCMsg_GameEventList.descriptor_t)
+    # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CSVCMsg_GameEventList.descriptor_t)
   DESCRIPTOR = _CSVCMSG_GAMEEVENTLIST
 
-  # @@protoc_insertion_point(class_scope:CSVCMsg_GameEventList)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CSVCMsg_GameEventList)
 
 class CSVCMsg_TempEntities(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CSVCMSG_TEMPENTITIES
 
-  # @@protoc_insertion_point(class_scope:CSVCMsg_TempEntities)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CSVCMsg_TempEntities)
 
 class CSVCMsg_PacketEntities(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CSVCMSG_PACKETENTITIES
 
-  # @@protoc_insertion_point(class_scope:CSVCMsg_PacketEntities)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CSVCMsg_PacketEntities)
 
 class CSVCMsg_Sounds(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
@@ -2411,10 +2411,10 @@ class CSVCMsg_Sounds(_message.Message):
     __metaclass__ = _reflection.GeneratedProtocolMessageType
     DESCRIPTOR = _CSVCMSG_SOUNDS_SOUNDDATA_T
 
-    # @@protoc_insertion_point(class_scope:CSVCMsg_Sounds.sounddata_t)
+    # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CSVCMsg_Sounds.sounddata_t)
   DESCRIPTOR = _CSVCMSG_SOUNDS
 
-  # @@protoc_insertion_point(class_scope:CSVCMsg_Sounds)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CSVCMsg_Sounds)
 
 
 DESCRIPTOR.has_options = True

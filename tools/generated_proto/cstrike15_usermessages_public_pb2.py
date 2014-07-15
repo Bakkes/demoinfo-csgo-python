@@ -15,12 +15,12 @@ import netmessages_public_pb2
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='cstrike15_usermessages_public.proto',
-  package='',
-  serialized_pb='\n#cstrike15_usermessages_public.proto\x1a google/protobuf/descriptor.proto\x1a\x18netmessages_public.proto\"\x82\x01\n\x12\x43\x43SUsrMsg_VGUIMenu\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04show\x18\x02 \x01(\x08\x12+\n\x07subkeys\x18\x03 \x03(\x0b\x32\x1a.CCSUsrMsg_VGUIMenu.Subkey\x1a#\n\x06Subkey\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0b\n\x03str\x18\x02 \x01(\t\"!\n\x10\x43\x43SUsrMsg_Geiger\x12\r\n\x05range\x18\x01 \x01(\x05\" \n\x0f\x43\x43SUsrMsg_Train\x12\r\n\x05train\x18\x01 \x01(\x05\"!\n\x11\x43\x43SUsrMsg_HudText\x12\x0c\n\x04text\x18\x01 \x01(\t\"U\n\x11\x43\x43SUsrMsg_SayText\x12\x0f\n\x07\x65nt_idx\x18\x01 \x01(\x05\x12\x0c\n\x04text\x18\x02 \x01(\t\x12\x0c\n\x04\x63hat\x18\x03 \x01(\x08\x12\x13\n\x0btextallchat\x18\x04 \x01(\x08\"j\n\x12\x43\x43SUsrMsg_SayText2\x12\x0f\n\x07\x65nt_idx\x18\x01 \x01(\x05\x12\x0c\n\x04\x63hat\x18\x02 \x01(\x08\x12\x10\n\x08msg_name\x18\x03 \x01(\t\x12\x0e\n\x06params\x18\x04 \x03(\t\x12\x13\n\x0btextallchat\x18\x05 \x01(\x08\"4\n\x11\x43\x43SUsrMsg_TextMsg\x12\x0f\n\x07msg_dst\x18\x01 \x01(\x05\x12\x0e\n\x06params\x18\x03 \x03(\t\"\xe0\x01\n\x10\x43\x43SUsrMsg_HudMsg\x12\x0f\n\x07\x63hannel\x18\x01 \x01(\x05\x12\x1a\n\x03pos\x18\x02 \x01(\x0b\x32\r.CMsgVector2D\x12\x17\n\x04\x63lr1\x18\x03 \x01(\x0b\x32\t.CMsgRGBA\x12\x17\n\x04\x63lr2\x18\x04 \x01(\x0b\x32\t.CMsgRGBA\x12\x0e\n\x06\x65\x66\x66\x65\x63t\x18\x05 \x01(\x05\x12\x14\n\x0c\x66\x61\x64\x65_in_time\x18\x06 \x01(\x02\x12\x15\n\rfade_out_time\x18\x07 \x01(\x02\x12\x11\n\thold_time\x18\t \x01(\x02\x12\x0f\n\x07\x66x_time\x18\n \x01(\x02\x12\x0c\n\x04text\x18\x0b \x01(\t\"`\n\x0f\x43\x43SUsrMsg_Shake\x12\x0f\n\x07\x63ommand\x18\x01 \x01(\x05\x12\x17\n\x0flocal_amplitude\x18\x02 \x01(\x02\x12\x11\n\tfrequency\x18\x03 \x01(\x02\x12\x10\n\x08\x64uration\x18\x04 \x01(\x02\"\\\n\x0e\x43\x43SUsrMsg_Fade\x12\x10\n\x08\x64uration\x18\x01 \x01(\x05\x12\x11\n\thold_time\x18\x02 \x01(\x05\x12\r\n\x05\x66lags\x18\x03 \x01(\x05\x12\x16\n\x03\x63lr\x18\x04 \x01(\x0b\x32\t.CMsgRGBA\">\n\x10\x43\x43SUsrMsg_Rumble\x12\r\n\x05index\x18\x01 \x01(\x05\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\x05\x12\r\n\x05\x66lags\x18\x03 \x01(\x05\"M\n\x16\x43\x43SUsrMsg_CloseCaption\x12\x0c\n\x04hash\x18\x01 \x01(\r\x12\x10\n\x08\x64uration\x18\x02 \x01(\x05\x12\x13\n\x0b\x66rom_player\x18\x03 \x01(\x08\"S\n\x1c\x43\x43SUsrMsg_CloseCaptionDirect\x12\x0c\n\x04hash\x18\x01 \x01(\r\x12\x10\n\x08\x64uration\x18\x02 \x01(\x05\x12\x13\n\x0b\x66rom_player\x18\x03 \x01(\x08\"*\n\x13\x43\x43SUsrMsg_SendAudio\x12\x13\n\x0bradio_sound\x18\x01 \x01(\t\"]\n\x12\x43\x43SUsrMsg_RawAudio\x12\r\n\x05pitch\x18\x01 \x01(\x05\x12\x0e\n\x06\x65ntidx\x18\x02 \x01(\x05\x12\x10\n\x08\x64uration\x18\x03 \x01(\x02\x12\x16\n\x0evoice_filename\x18\x04 \x01(\t\"\xa1\x01\n\x13\x43\x43SUsrMsg_VoiceMask\x12\x35\n\x0cplayer_masks\x18\x01 \x03(\x0b\x32\x1f.CCSUsrMsg_VoiceMask.PlayerMask\x12\x19\n\x11player_mod_enable\x18\x02 \x01(\x08\x1a\x38\n\nPlayerMask\x12\x17\n\x0fgame_rules_mask\x18\x01 \x01(\x05\x12\x11\n\tban_masks\x18\x02 \x01(\x05\"L\n\x10\x43\x43SUsrMsg_Damage\x12\x0e\n\x06\x61mount\x18\x01 \x01(\x05\x12(\n\x13inflictor_world_pos\x18\x02 \x01(\x0b\x32\x0b.CMsgVector\"X\n\x13\x43\x43SUsrMsg_RadioText\x12\x0f\n\x07msg_dst\x18\x01 \x01(\x05\x12\x0e\n\x06\x63lient\x18\x02 \x01(\x05\x12\x10\n\x08msg_name\x18\x03 \x01(\t\x12\x0e\n\x06params\x18\x04 \x03(\t\"\"\n\x12\x43\x43SUsrMsg_HintText\x12\x0c\n\x04text\x18\x01 \x01(\t\"&\n\x15\x43\x43SUsrMsg_KeyHintText\x12\r\n\x05hints\x18\x01 \x03(\t\"\xd6\x02\n$CCSUsrMsg_ProcessSpottedEntityUpdate\x12\x12\n\nnew_update\x18\x01 \x01(\x08\x12Q\n\x0e\x65ntity_updates\x18\x02 \x03(\x0b\x32\x39.CCSUsrMsg_ProcessSpottedEntityUpdate.SpottedEntityUpdate\x1a\xc6\x01\n\x13SpottedEntityUpdate\x12\x12\n\nentity_idx\x18\x01 \x01(\x05\x12\x10\n\x08\x63lass_id\x18\x02 \x01(\x05\x12\x10\n\x08origin_x\x18\x03 \x01(\x05\x12\x10\n\x08origin_y\x18\x04 \x01(\x05\x12\x10\n\x08origin_z\x18\x05 \x01(\x05\x12\x0f\n\x07\x61ngle_y\x18\x06 \x01(\x05\x12\x0f\n\x07\x64\x65\x66user\x18\x07 \x01(\x08\x12\x1a\n\x12player_has_defuser\x18\x08 \x01(\x08\x12\x15\n\rplayer_has_c4\x18\t \x01(\x08\"9\n\x16\x43\x43SUsrMsg_ReloadEffect\x12\x0e\n\x06\x65ntidx\x18\x01 \x01(\x05\x12\x0f\n\x07\x61\x63tanim\x18\x02 \x01(\x05\"\'\n\x15\x43\x43SUsrMsg_AdjustMoney\x12\x0e\n\x06\x61mount\x18\x01 \x01(\x05\"R\n\x11\x43\x43SUsrMsg_KillCam\x12\x10\n\x08obs_mode\x18\x01 \x01(\x05\x12\x14\n\x0c\x66irst_target\x18\x02 \x01(\x05\x12\x15\n\rsecond_target\x18\x03 \x01(\x05\"\x8b\x01\n\x1a\x43\x43SUsrMsg_DesiredTimescale\x12\x19\n\x11\x64\x65sired_timescale\x18\x01 \x01(\x02\x12\x1d\n\x15\x64uration_realtime_sec\x18\x02 \x01(\x02\x12\x19\n\x11interpolator_type\x18\x03 \x01(\x05\x12\x18\n\x10start_blend_time\x18\x04 \x01(\x02\"3\n\x1a\x43\x43SUsrMsg_CurrentTimescale\x12\x15\n\rcur_timescale\x18\x01 \x01(\x02\"Q\n\x1a\x43\x43SUsrMsg_AchievementEvent\x12\x13\n\x0b\x61\x63hievement\x18\x01 \x01(\x05\x12\r\n\x05\x63ount\x18\x02 \x01(\x05\x12\x0f\n\x07user_id\x18\x03 \x01(\x05\"r\n\x1c\x43\x43SUsrMsg_MatchEndConditions\x12\x11\n\tfraglimit\x18\x01 \x01(\x05\x12\x14\n\x0cmp_maxrounds\x18\x02 \x01(\x05\x12\x13\n\x0bmp_winlimit\x18\x03 \x01(\x05\x12\x14\n\x0cmp_timelimit\x18\x04 \x01(\x05\">\n\x1a\x43\x43SUsrMsg_DisplayInventory\x12\x0f\n\x07\x64isplay\x18\x01 \x01(\x08\x12\x0f\n\x07user_id\x18\x02 \x01(\x05\"8\n\x18\x43\x43SUsrMsg_CallVoteFailed\x12\x0e\n\x06reason\x18\x01 \x01(\x05\x12\x0c\n\x04time\x18\x02 \x01(\x05\"\x9e\x01\n\x13\x43\x43SUsrMsg_VoteStart\x12\x0c\n\x04team\x18\x01 \x01(\x05\x12\x0f\n\x07\x65nt_idx\x18\x02 \x01(\x05\x12\x11\n\tvote_type\x18\x03 \x01(\x05\x12\x10\n\x08\x64isp_str\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65tails_str\x18\x05 \x01(\t\x12\x16\n\x0eother_team_str\x18\x06 \x01(\t\x12\x16\n\x0eis_yes_no_vote\x18\x07 \x01(\x08\"\\\n\x12\x43\x43SUsrMsg_VotePass\x12\x0c\n\x04team\x18\x01 \x01(\x05\x12\x11\n\tvote_type\x18\x02 \x01(\x05\x12\x10\n\x08\x64isp_str\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65tails_str\x18\x04 \x01(\t\"4\n\x14\x43\x43SUsrMsg_VoteFailed\x12\x0c\n\x04team\x18\x01 \x01(\x05\x12\x0e\n\x06reason\x18\x02 \x01(\x05\"/\n\x13\x43\x43SUsrMsg_VoteSetup\x12\x18\n\x10potential_issues\x18\x01 \x03(\t\"\x84\x01\n&CCSUsrMsg_SendLastKillerDamageToClient\x12\x16\n\x0enum_hits_given\x18\x01 \x01(\x05\x12\x14\n\x0c\x64\x61mage_given\x18\x02 \x01(\x05\x12\x16\n\x0enum_hits_taken\x18\x03 \x01(\x05\x12\x14\n\x0c\x64\x61mage_taken\x18\x04 \x01(\x05\"$\n\x14\x43\x43SUsrMsg_ItemPickup\x12\x0c\n\x04item\x18\x01 \x01(\t\"Y\n\x12\x43\x43SUsrMsg_ShowMenu\x12\x18\n\x10\x62its_valid_slots\x18\x01 \x01(\x05\x12\x14\n\x0c\x64isplay_time\x18\x02 \x01(\x05\x12\x13\n\x0bmenu_string\x18\x03 \x01(\t\"!\n\x11\x43\x43SUsrMsg_BarTime\x12\x0c\n\x04time\x18\x01 \x01(\t\"\'\n\x14\x43\x43SUsrMsg_AmmoDenied\x12\x0f\n\x07\x61mmoIdx\x18\x01 \x01(\x05\"0\n\x19\x43\x43SUsrMsg_MarkAchievement\x12\x13\n\x0b\x61\x63hievement\x18\x01 \x01(\t\"3\n\x12\x43\x43SUsrMsg_ItemDrop\x12\x0e\n\x06itemid\x18\x01 \x01(\x03\x12\r\n\x05\x64\x65\x61th\x18\x02 \x01(\x08\"+\n\x19\x43\x43SUsrMsg_GlowPropTurnOff\x12\x0e\n\x06\x65ntidx\x18\x01 \x01(\x05\"b\n\x1e\x43\x43SUsrMsg_RoundBackupFilenames\x12\r\n\x05\x63ount\x18\x01 \x01(\x05\x12\r\n\x05index\x18\x02 \x01(\x05\x12\x10\n\x08\x66ilename\x18\x03 \x01(\t\x12\x10\n\x08nicename\x18\x04 \x01(\t\"#\n\x12\x43\x43SUsrMsg_ResetHud\x12\r\n\x05reset\x18\x01 \x01(\x08\"$\n\x13\x43\x43SUsrMsg_GameTitle\x12\r\n\x05\x64ummy\x18\x01 \x01(\x05\"\'\n\x16\x43\x43SUsrMsg_RequestState\x12\r\n\x05\x64ummy\x18\x01 \x01(\x05\",\n\x1b\x43\x43SUsrMsg_StopSpectatorMode\x12\r\n\x05\x64ummy\x18\x01 \x01(\x05\",\n\x1b\x43\x43SUsrMsg_DisconnectToLobby\x12\r\n\x05\x64ummy\x18\x01 \x01(\x05\")\n\x18\x43\x43SUsrMsg_WarmupHasEnded\x12\r\n\x05\x64ummy\x18\x01 \x01(\x05\"%\n\x14\x43\x43SUsrMsg_ClientInfo\x12\r\n\x05\x64ummy\x18\x01 \x01(\x05*\x96\t\n\x16\x45\x43strike15UserMessages\x12\x12\n\x0e\x43S_UM_VGUIMenu\x10\x01\x12\x10\n\x0c\x43S_UM_Geiger\x10\x02\x12\x0f\n\x0b\x43S_UM_Train\x10\x03\x12\x11\n\rCS_UM_HudText\x10\x04\x12\x11\n\rCS_UM_SayText\x10\x05\x12\x12\n\x0e\x43S_UM_SayText2\x10\x06\x12\x11\n\rCS_UM_TextMsg\x10\x07\x12\x10\n\x0c\x43S_UM_HudMsg\x10\x08\x12\x12\n\x0e\x43S_UM_ResetHud\x10\t\x12\x13\n\x0f\x43S_UM_GameTitle\x10\n\x12\x0f\n\x0b\x43S_UM_Shake\x10\x0c\x12\x0e\n\nCS_UM_Fade\x10\r\x12\x10\n\x0c\x43S_UM_Rumble\x10\x0e\x12\x16\n\x12\x43S_UM_CloseCaption\x10\x0f\x12\x1c\n\x18\x43S_UM_CloseCaptionDirect\x10\x10\x12\x13\n\x0f\x43S_UM_SendAudio\x10\x11\x12\x12\n\x0e\x43S_UM_RawAudio\x10\x12\x12\x13\n\x0f\x43S_UM_VoiceMask\x10\x13\x12\x16\n\x12\x43S_UM_RequestState\x10\x14\x12\x10\n\x0c\x43S_UM_Damage\x10\x15\x12\x13\n\x0f\x43S_UM_RadioText\x10\x16\x12\x12\n\x0e\x43S_UM_HintText\x10\x17\x12\x15\n\x11\x43S_UM_KeyHintText\x10\x18\x12$\n CS_UM_ProcessSpottedEntityUpdate\x10\x19\x12\x16\n\x12\x43S_UM_ReloadEffect\x10\x1a\x12\x15\n\x11\x43S_UM_AdjustMoney\x10\x1b\x12\x19\n\x15\x43S_UM_UpdateTeamMoney\x10\x1c\x12\x1b\n\x17\x43S_UM_StopSpectatorMode\x10\x1d\x12\x11\n\rCS_UM_KillCam\x10\x1e\x12\x1a\n\x16\x43S_UM_DesiredTimescale\x10\x1f\x12\x1a\n\x16\x43S_UM_CurrentTimescale\x10 \x12\x1a\n\x16\x43S_UM_AchievementEvent\x10!\x12\x1c\n\x18\x43S_UM_MatchEndConditions\x10\"\x12\x1b\n\x17\x43S_UM_DisconnectToLobby\x10#\x12\x1a\n\x16\x43S_UM_DisplayInventory\x10%\x12\x18\n\x14\x43S_UM_WarmupHasEnded\x10&\x12\x14\n\x10\x43S_UM_ClientInfo\x10\'\x12\x18\n\x14\x43S_UM_CallVoteFailed\x10-\x12\x13\n\x0f\x43S_UM_VoteStart\x10.\x12\x12\n\x0e\x43S_UM_VotePass\x10/\x12\x14\n\x10\x43S_UM_VoteFailed\x10\x30\x12\x13\n\x0f\x43S_UM_VoteSetup\x10\x31\x12&\n\"CS_UM_SendLastKillerDamageToClient\x10\x33\x12\x14\n\x10\x43S_UM_ItemPickup\x10\x35\x12\x12\n\x0e\x43S_UM_ShowMenu\x10\x36\x12\x11\n\rCS_UM_BarTime\x10\x37\x12\x14\n\x10\x43S_UM_AmmoDenied\x10\x38\x12\x19\n\x15\x43S_UM_MarkAchievement\x10\x39\x12\x12\n\x0e\x43S_UM_ItemDrop\x10;\x12\x19\n\x15\x43S_UM_GlowPropTurnOff\x10<B\x05H\x01\x80\x01\x00')
+  package='demoinfocsgo.proto',
+  serialized_pb='\n#cstrike15_usermessages_public.proto\x12\x12\x64\x65moinfocsgo.proto\x1a google/protobuf/descriptor.proto\x1a\x18netmessages_public.proto\"\x95\x01\n\x12\x43\x43SUsrMsg_VGUIMenu\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04show\x18\x02 \x01(\x08\x12>\n\x07subkeys\x18\x03 \x03(\x0b\x32-.demoinfocsgo.proto.CCSUsrMsg_VGUIMenu.Subkey\x1a#\n\x06Subkey\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0b\n\x03str\x18\x02 \x01(\t\"!\n\x10\x43\x43SUsrMsg_Geiger\x12\r\n\x05range\x18\x01 \x01(\x05\" \n\x0f\x43\x43SUsrMsg_Train\x12\r\n\x05train\x18\x01 \x01(\x05\"!\n\x11\x43\x43SUsrMsg_HudText\x12\x0c\n\x04text\x18\x01 \x01(\t\"U\n\x11\x43\x43SUsrMsg_SayText\x12\x0f\n\x07\x65nt_idx\x18\x01 \x01(\x05\x12\x0c\n\x04text\x18\x02 \x01(\t\x12\x0c\n\x04\x63hat\x18\x03 \x01(\x08\x12\x13\n\x0btextallchat\x18\x04 \x01(\x08\"j\n\x12\x43\x43SUsrMsg_SayText2\x12\x0f\n\x07\x65nt_idx\x18\x01 \x01(\x05\x12\x0c\n\x04\x63hat\x18\x02 \x01(\x08\x12\x10\n\x08msg_name\x18\x03 \x01(\t\x12\x0e\n\x06params\x18\x04 \x03(\t\x12\x13\n\x0btextallchat\x18\x05 \x01(\x08\"4\n\x11\x43\x43SUsrMsg_TextMsg\x12\x0f\n\x07msg_dst\x18\x01 \x01(\x05\x12\x0e\n\x06params\x18\x03 \x03(\t\"\x99\x02\n\x10\x43\x43SUsrMsg_HudMsg\x12\x0f\n\x07\x63hannel\x18\x01 \x01(\x05\x12-\n\x03pos\x18\x02 \x01(\x0b\x32 .demoinfocsgo.proto.CMsgVector2D\x12*\n\x04\x63lr1\x18\x03 \x01(\x0b\x32\x1c.demoinfocsgo.proto.CMsgRGBA\x12*\n\x04\x63lr2\x18\x04 \x01(\x0b\x32\x1c.demoinfocsgo.proto.CMsgRGBA\x12\x0e\n\x06\x65\x66\x66\x65\x63t\x18\x05 \x01(\x05\x12\x14\n\x0c\x66\x61\x64\x65_in_time\x18\x06 \x01(\x02\x12\x15\n\rfade_out_time\x18\x07 \x01(\x02\x12\x11\n\thold_time\x18\t \x01(\x02\x12\x0f\n\x07\x66x_time\x18\n \x01(\x02\x12\x0c\n\x04text\x18\x0b \x01(\t\"`\n\x0f\x43\x43SUsrMsg_Shake\x12\x0f\n\x07\x63ommand\x18\x01 \x01(\x05\x12\x17\n\x0flocal_amplitude\x18\x02 \x01(\x02\x12\x11\n\tfrequency\x18\x03 \x01(\x02\x12\x10\n\x08\x64uration\x18\x04 \x01(\x02\"o\n\x0e\x43\x43SUsrMsg_Fade\x12\x10\n\x08\x64uration\x18\x01 \x01(\x05\x12\x11\n\thold_time\x18\x02 \x01(\x05\x12\r\n\x05\x66lags\x18\x03 \x01(\x05\x12)\n\x03\x63lr\x18\x04 \x01(\x0b\x32\x1c.demoinfocsgo.proto.CMsgRGBA\">\n\x10\x43\x43SUsrMsg_Rumble\x12\r\n\x05index\x18\x01 \x01(\x05\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\x05\x12\r\n\x05\x66lags\x18\x03 \x01(\x05\"M\n\x16\x43\x43SUsrMsg_CloseCaption\x12\x0c\n\x04hash\x18\x01 \x01(\r\x12\x10\n\x08\x64uration\x18\x02 \x01(\x05\x12\x13\n\x0b\x66rom_player\x18\x03 \x01(\x08\"S\n\x1c\x43\x43SUsrMsg_CloseCaptionDirect\x12\x0c\n\x04hash\x18\x01 \x01(\r\x12\x10\n\x08\x64uration\x18\x02 \x01(\x05\x12\x13\n\x0b\x66rom_player\x18\x03 \x01(\x08\"*\n\x13\x43\x43SUsrMsg_SendAudio\x12\x13\n\x0bradio_sound\x18\x01 \x01(\t\"]\n\x12\x43\x43SUsrMsg_RawAudio\x12\r\n\x05pitch\x18\x01 \x01(\x05\x12\x0e\n\x06\x65ntidx\x18\x02 \x01(\x05\x12\x10\n\x08\x64uration\x18\x03 \x01(\x02\x12\x16\n\x0evoice_filename\x18\x04 \x01(\t\"\xb4\x01\n\x13\x43\x43SUsrMsg_VoiceMask\x12H\n\x0cplayer_masks\x18\x01 \x03(\x0b\x32\x32.demoinfocsgo.proto.CCSUsrMsg_VoiceMask.PlayerMask\x12\x19\n\x11player_mod_enable\x18\x02 \x01(\x08\x1a\x38\n\nPlayerMask\x12\x17\n\x0fgame_rules_mask\x18\x01 \x01(\x05\x12\x11\n\tban_masks\x18\x02 \x01(\x05\"_\n\x10\x43\x43SUsrMsg_Damage\x12\x0e\n\x06\x61mount\x18\x01 \x01(\x05\x12;\n\x13inflictor_world_pos\x18\x02 \x01(\x0b\x32\x1e.demoinfocsgo.proto.CMsgVector\"X\n\x13\x43\x43SUsrMsg_RadioText\x12\x0f\n\x07msg_dst\x18\x01 \x01(\x05\x12\x0e\n\x06\x63lient\x18\x02 \x01(\x05\x12\x10\n\x08msg_name\x18\x03 \x01(\t\x12\x0e\n\x06params\x18\x04 \x03(\t\"\"\n\x12\x43\x43SUsrMsg_HintText\x12\x0c\n\x04text\x18\x01 \x01(\t\"&\n\x15\x43\x43SUsrMsg_KeyHintText\x12\r\n\x05hints\x18\x01 \x03(\t\"\xe9\x02\n$CCSUsrMsg_ProcessSpottedEntityUpdate\x12\x12\n\nnew_update\x18\x01 \x01(\x08\x12\x64\n\x0e\x65ntity_updates\x18\x02 \x03(\x0b\x32L.demoinfocsgo.proto.CCSUsrMsg_ProcessSpottedEntityUpdate.SpottedEntityUpdate\x1a\xc6\x01\n\x13SpottedEntityUpdate\x12\x12\n\nentity_idx\x18\x01 \x01(\x05\x12\x10\n\x08\x63lass_id\x18\x02 \x01(\x05\x12\x10\n\x08origin_x\x18\x03 \x01(\x05\x12\x10\n\x08origin_y\x18\x04 \x01(\x05\x12\x10\n\x08origin_z\x18\x05 \x01(\x05\x12\x0f\n\x07\x61ngle_y\x18\x06 \x01(\x05\x12\x0f\n\x07\x64\x65\x66user\x18\x07 \x01(\x08\x12\x1a\n\x12player_has_defuser\x18\x08 \x01(\x08\x12\x15\n\rplayer_has_c4\x18\t \x01(\x08\"9\n\x16\x43\x43SUsrMsg_ReloadEffect\x12\x0e\n\x06\x65ntidx\x18\x01 \x01(\x05\x12\x0f\n\x07\x61\x63tanim\x18\x02 \x01(\x05\"\'\n\x15\x43\x43SUsrMsg_AdjustMoney\x12\x0e\n\x06\x61mount\x18\x01 \x01(\x05\"R\n\x11\x43\x43SUsrMsg_KillCam\x12\x10\n\x08obs_mode\x18\x01 \x01(\x05\x12\x14\n\x0c\x66irst_target\x18\x02 \x01(\x05\x12\x15\n\rsecond_target\x18\x03 \x01(\x05\"\x8b\x01\n\x1a\x43\x43SUsrMsg_DesiredTimescale\x12\x19\n\x11\x64\x65sired_timescale\x18\x01 \x01(\x02\x12\x1d\n\x15\x64uration_realtime_sec\x18\x02 \x01(\x02\x12\x19\n\x11interpolator_type\x18\x03 \x01(\x05\x12\x18\n\x10start_blend_time\x18\x04 \x01(\x02\"3\n\x1a\x43\x43SUsrMsg_CurrentTimescale\x12\x15\n\rcur_timescale\x18\x01 \x01(\x02\"Q\n\x1a\x43\x43SUsrMsg_AchievementEvent\x12\x13\n\x0b\x61\x63hievement\x18\x01 \x01(\x05\x12\r\n\x05\x63ount\x18\x02 \x01(\x05\x12\x0f\n\x07user_id\x18\x03 \x01(\x05\"r\n\x1c\x43\x43SUsrMsg_MatchEndConditions\x12\x11\n\tfraglimit\x18\x01 \x01(\x05\x12\x14\n\x0cmp_maxrounds\x18\x02 \x01(\x05\x12\x13\n\x0bmp_winlimit\x18\x03 \x01(\x05\x12\x14\n\x0cmp_timelimit\x18\x04 \x01(\x05\">\n\x1a\x43\x43SUsrMsg_DisplayInventory\x12\x0f\n\x07\x64isplay\x18\x01 \x01(\x08\x12\x0f\n\x07user_id\x18\x02 \x01(\x05\"8\n\x18\x43\x43SUsrMsg_CallVoteFailed\x12\x0e\n\x06reason\x18\x01 \x01(\x05\x12\x0c\n\x04time\x18\x02 \x01(\x05\"\x9e\x01\n\x13\x43\x43SUsrMsg_VoteStart\x12\x0c\n\x04team\x18\x01 \x01(\x05\x12\x0f\n\x07\x65nt_idx\x18\x02 \x01(\x05\x12\x11\n\tvote_type\x18\x03 \x01(\x05\x12\x10\n\x08\x64isp_str\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65tails_str\x18\x05 \x01(\t\x12\x16\n\x0eother_team_str\x18\x06 \x01(\t\x12\x16\n\x0eis_yes_no_vote\x18\x07 \x01(\x08\"\\\n\x12\x43\x43SUsrMsg_VotePass\x12\x0c\n\x04team\x18\x01 \x01(\x05\x12\x11\n\tvote_type\x18\x02 \x01(\x05\x12\x10\n\x08\x64isp_str\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65tails_str\x18\x04 \x01(\t\"4\n\x14\x43\x43SUsrMsg_VoteFailed\x12\x0c\n\x04team\x18\x01 \x01(\x05\x12\x0e\n\x06reason\x18\x02 \x01(\x05\"/\n\x13\x43\x43SUsrMsg_VoteSetup\x12\x18\n\x10potential_issues\x18\x01 \x03(\t\"\x84\x01\n&CCSUsrMsg_SendLastKillerDamageToClient\x12\x16\n\x0enum_hits_given\x18\x01 \x01(\x05\x12\x14\n\x0c\x64\x61mage_given\x18\x02 \x01(\x05\x12\x16\n\x0enum_hits_taken\x18\x03 \x01(\x05\x12\x14\n\x0c\x64\x61mage_taken\x18\x04 \x01(\x05\"$\n\x14\x43\x43SUsrMsg_ItemPickup\x12\x0c\n\x04item\x18\x01 \x01(\t\"Y\n\x12\x43\x43SUsrMsg_ShowMenu\x12\x18\n\x10\x62its_valid_slots\x18\x01 \x01(\x05\x12\x14\n\x0c\x64isplay_time\x18\x02 \x01(\x05\x12\x13\n\x0bmenu_string\x18\x03 \x01(\t\"!\n\x11\x43\x43SUsrMsg_BarTime\x12\x0c\n\x04time\x18\x01 \x01(\t\"\'\n\x14\x43\x43SUsrMsg_AmmoDenied\x12\x0f\n\x07\x61mmoIdx\x18\x01 \x01(\x05\"0\n\x19\x43\x43SUsrMsg_MarkAchievement\x12\x13\n\x0b\x61\x63hievement\x18\x01 \x01(\t\"3\n\x12\x43\x43SUsrMsg_ItemDrop\x12\x0e\n\x06itemid\x18\x01 \x01(\x03\x12\r\n\x05\x64\x65\x61th\x18\x02 \x01(\x08\"+\n\x19\x43\x43SUsrMsg_GlowPropTurnOff\x12\x0e\n\x06\x65ntidx\x18\x01 \x01(\x05\"b\n\x1e\x43\x43SUsrMsg_RoundBackupFilenames\x12\r\n\x05\x63ount\x18\x01 \x01(\x05\x12\r\n\x05index\x18\x02 \x01(\x05\x12\x10\n\x08\x66ilename\x18\x03 \x01(\t\x12\x10\n\x08nicename\x18\x04 \x01(\t\"#\n\x12\x43\x43SUsrMsg_ResetHud\x12\r\n\x05reset\x18\x01 \x01(\x08\"$\n\x13\x43\x43SUsrMsg_GameTitle\x12\r\n\x05\x64ummy\x18\x01 \x01(\x05\"\'\n\x16\x43\x43SUsrMsg_RequestState\x12\r\n\x05\x64ummy\x18\x01 \x01(\x05\",\n\x1b\x43\x43SUsrMsg_StopSpectatorMode\x12\r\n\x05\x64ummy\x18\x01 \x01(\x05\",\n\x1b\x43\x43SUsrMsg_DisconnectToLobby\x12\r\n\x05\x64ummy\x18\x01 \x01(\x05\")\n\x18\x43\x43SUsrMsg_WarmupHasEnded\x12\r\n\x05\x64ummy\x18\x01 \x01(\x05\"%\n\x14\x43\x43SUsrMsg_ClientInfo\x12\r\n\x05\x64ummy\x18\x01 \x01(\x05*\x96\t\n\x16\x45\x43strike15UserMessages\x12\x12\n\x0e\x43S_UM_VGUIMenu\x10\x01\x12\x10\n\x0c\x43S_UM_Geiger\x10\x02\x12\x0f\n\x0b\x43S_UM_Train\x10\x03\x12\x11\n\rCS_UM_HudText\x10\x04\x12\x11\n\rCS_UM_SayText\x10\x05\x12\x12\n\x0e\x43S_UM_SayText2\x10\x06\x12\x11\n\rCS_UM_TextMsg\x10\x07\x12\x10\n\x0c\x43S_UM_HudMsg\x10\x08\x12\x12\n\x0e\x43S_UM_ResetHud\x10\t\x12\x13\n\x0f\x43S_UM_GameTitle\x10\n\x12\x0f\n\x0b\x43S_UM_Shake\x10\x0c\x12\x0e\n\nCS_UM_Fade\x10\r\x12\x10\n\x0c\x43S_UM_Rumble\x10\x0e\x12\x16\n\x12\x43S_UM_CloseCaption\x10\x0f\x12\x1c\n\x18\x43S_UM_CloseCaptionDirect\x10\x10\x12\x13\n\x0f\x43S_UM_SendAudio\x10\x11\x12\x12\n\x0e\x43S_UM_RawAudio\x10\x12\x12\x13\n\x0f\x43S_UM_VoiceMask\x10\x13\x12\x16\n\x12\x43S_UM_RequestState\x10\x14\x12\x10\n\x0c\x43S_UM_Damage\x10\x15\x12\x13\n\x0f\x43S_UM_RadioText\x10\x16\x12\x12\n\x0e\x43S_UM_HintText\x10\x17\x12\x15\n\x11\x43S_UM_KeyHintText\x10\x18\x12$\n CS_UM_ProcessSpottedEntityUpdate\x10\x19\x12\x16\n\x12\x43S_UM_ReloadEffect\x10\x1a\x12\x15\n\x11\x43S_UM_AdjustMoney\x10\x1b\x12\x19\n\x15\x43S_UM_UpdateTeamMoney\x10\x1c\x12\x1b\n\x17\x43S_UM_StopSpectatorMode\x10\x1d\x12\x11\n\rCS_UM_KillCam\x10\x1e\x12\x1a\n\x16\x43S_UM_DesiredTimescale\x10\x1f\x12\x1a\n\x16\x43S_UM_CurrentTimescale\x10 \x12\x1a\n\x16\x43S_UM_AchievementEvent\x10!\x12\x1c\n\x18\x43S_UM_MatchEndConditions\x10\"\x12\x1b\n\x17\x43S_UM_DisconnectToLobby\x10#\x12\x1a\n\x16\x43S_UM_DisplayInventory\x10%\x12\x18\n\x14\x43S_UM_WarmupHasEnded\x10&\x12\x14\n\x10\x43S_UM_ClientInfo\x10\'\x12\x18\n\x14\x43S_UM_CallVoteFailed\x10-\x12\x13\n\x0f\x43S_UM_VoteStart\x10.\x12\x12\n\x0e\x43S_UM_VotePass\x10/\x12\x14\n\x10\x43S_UM_VoteFailed\x10\x30\x12\x13\n\x0f\x43S_UM_VoteSetup\x10\x31\x12&\n\"CS_UM_SendLastKillerDamageToClient\x10\x33\x12\x14\n\x10\x43S_UM_ItemPickup\x10\x35\x12\x12\n\x0e\x43S_UM_ShowMenu\x10\x36\x12\x11\n\rCS_UM_BarTime\x10\x37\x12\x14\n\x10\x43S_UM_AmmoDenied\x10\x38\x12\x19\n\x15\x43S_UM_MarkAchievement\x10\x39\x12\x12\n\x0e\x43S_UM_ItemDrop\x10;\x12\x19\n\x15\x43S_UM_GlowPropTurnOff\x10<B\x05H\x01\x80\x01\x00')
 
 _ECSTRIKE15USERMESSAGES = _descriptor.EnumDescriptor(
   name='ECstrike15UserMessages',
-  full_name='ECstrike15UserMessages',
+  full_name='demoinfocsgo.proto.ECstrike15UserMessages',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -227,8 +227,8 @@ _ECSTRIKE15USERMESSAGES = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=4061,
-  serialized_end=5235,
+  serialized_start=4233,
+  serialized_end=5407,
 )
 
 ECstrike15UserMessages = enum_type_wrapper.EnumTypeWrapper(_ECSTRIKE15USERMESSAGES)
@@ -287,20 +287,20 @@ CS_UM_GlowPropTurnOff = 60
 
 _CCSUSRMSG_VGUIMENU_SUBKEY = _descriptor.Descriptor(
   name='Subkey',
-  full_name='CCSUsrMsg_VGUIMenu.Subkey',
+  full_name='demoinfocsgo.proto.CCSUsrMsg_VGUIMenu.Subkey',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='name', full_name='CCSUsrMsg_VGUIMenu.Subkey.name', index=0,
+      name='name', full_name='demoinfocsgo.proto.CCSUsrMsg_VGUIMenu.Subkey.name', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='str', full_name='CCSUsrMsg_VGUIMenu.Subkey.str', index=1,
+      name='str', full_name='demoinfocsgo.proto.CCSUsrMsg_VGUIMenu.Subkey.str', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
@@ -315,33 +315,33 @@ _CCSUSRMSG_VGUIMENU_SUBKEY = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=195,
-  serialized_end=230,
+  serialized_start=234,
+  serialized_end=269,
 )
 
 _CCSUSRMSG_VGUIMENU = _descriptor.Descriptor(
   name='CCSUsrMsg_VGUIMenu',
-  full_name='CCSUsrMsg_VGUIMenu',
+  full_name='demoinfocsgo.proto.CCSUsrMsg_VGUIMenu',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='name', full_name='CCSUsrMsg_VGUIMenu.name', index=0,
+      name='name', full_name='demoinfocsgo.proto.CCSUsrMsg_VGUIMenu.name', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='show', full_name='CCSUsrMsg_VGUIMenu.show', index=1,
+      name='show', full_name='demoinfocsgo.proto.CCSUsrMsg_VGUIMenu.show', index=1,
       number=2, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='subkeys', full_name='CCSUsrMsg_VGUIMenu.subkeys', index=2,
+      name='subkeys', full_name='demoinfocsgo.proto.CCSUsrMsg_VGUIMenu.subkeys', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -356,20 +356,20 @@ _CCSUSRMSG_VGUIMENU = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=100,
-  serialized_end=230,
+  serialized_start=120,
+  serialized_end=269,
 )
 
 
 _CCSUSRMSG_GEIGER = _descriptor.Descriptor(
   name='CCSUsrMsg_Geiger',
-  full_name='CCSUsrMsg_Geiger',
+  full_name='demoinfocsgo.proto.CCSUsrMsg_Geiger',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='range', full_name='CCSUsrMsg_Geiger.range', index=0,
+      name='range', full_name='demoinfocsgo.proto.CCSUsrMsg_Geiger.range', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -384,20 +384,20 @@ _CCSUSRMSG_GEIGER = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=232,
-  serialized_end=265,
+  serialized_start=271,
+  serialized_end=304,
 )
 
 
 _CCSUSRMSG_TRAIN = _descriptor.Descriptor(
   name='CCSUsrMsg_Train',
-  full_name='CCSUsrMsg_Train',
+  full_name='demoinfocsgo.proto.CCSUsrMsg_Train',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='train', full_name='CCSUsrMsg_Train.train', index=0,
+      name='train', full_name='demoinfocsgo.proto.CCSUsrMsg_Train.train', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -412,20 +412,20 @@ _CCSUSRMSG_TRAIN = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=267,
-  serialized_end=299,
+  serialized_start=306,
+  serialized_end=338,
 )
 
 
 _CCSUSRMSG_HUDTEXT = _descriptor.Descriptor(
   name='CCSUsrMsg_HudText',
-  full_name='CCSUsrMsg_HudText',
+  full_name='demoinfocsgo.proto.CCSUsrMsg_HudText',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='text', full_name='CCSUsrMsg_HudText.text', index=0,
+      name='text', full_name='demoinfocsgo.proto.CCSUsrMsg_HudText.text', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
@@ -440,41 +440,41 @@ _CCSUSRMSG_HUDTEXT = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=301,
-  serialized_end=334,
+  serialized_start=340,
+  serialized_end=373,
 )
 
 
 _CCSUSRMSG_SAYTEXT = _descriptor.Descriptor(
   name='CCSUsrMsg_SayText',
-  full_name='CCSUsrMsg_SayText',
+  full_name='demoinfocsgo.proto.CCSUsrMsg_SayText',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='ent_idx', full_name='CCSUsrMsg_SayText.ent_idx', index=0,
+      name='ent_idx', full_name='demoinfocsgo.proto.CCSUsrMsg_SayText.ent_idx', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='text', full_name='CCSUsrMsg_SayText.text', index=1,
+      name='text', full_name='demoinfocsgo.proto.CCSUsrMsg_SayText.text', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='chat', full_name='CCSUsrMsg_SayText.chat', index=2,
+      name='chat', full_name='demoinfocsgo.proto.CCSUsrMsg_SayText.chat', index=2,
       number=3, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='textallchat', full_name='CCSUsrMsg_SayText.textallchat', index=3,
+      name='textallchat', full_name='demoinfocsgo.proto.CCSUsrMsg_SayText.textallchat', index=3,
       number=4, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
@@ -489,48 +489,48 @@ _CCSUSRMSG_SAYTEXT = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=336,
-  serialized_end=421,
+  serialized_start=375,
+  serialized_end=460,
 )
 
 
 _CCSUSRMSG_SAYTEXT2 = _descriptor.Descriptor(
   name='CCSUsrMsg_SayText2',
-  full_name='CCSUsrMsg_SayText2',
+  full_name='demoinfocsgo.proto.CCSUsrMsg_SayText2',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='ent_idx', full_name='CCSUsrMsg_SayText2.ent_idx', index=0,
+      name='ent_idx', full_name='demoinfocsgo.proto.CCSUsrMsg_SayText2.ent_idx', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='chat', full_name='CCSUsrMsg_SayText2.chat', index=1,
+      name='chat', full_name='demoinfocsgo.proto.CCSUsrMsg_SayText2.chat', index=1,
       number=2, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='msg_name', full_name='CCSUsrMsg_SayText2.msg_name', index=2,
+      name='msg_name', full_name='demoinfocsgo.proto.CCSUsrMsg_SayText2.msg_name', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='params', full_name='CCSUsrMsg_SayText2.params', index=3,
+      name='params', full_name='demoinfocsgo.proto.CCSUsrMsg_SayText2.params', index=3,
       number=4, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='textallchat', full_name='CCSUsrMsg_SayText2.textallchat', index=4,
+      name='textallchat', full_name='demoinfocsgo.proto.CCSUsrMsg_SayText2.textallchat', index=4,
       number=5, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
@@ -545,27 +545,27 @@ _CCSUSRMSG_SAYTEXT2 = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=423,
-  serialized_end=529,
+  serialized_start=462,
+  serialized_end=568,
 )
 
 
 _CCSUSRMSG_TEXTMSG = _descriptor.Descriptor(
   name='CCSUsrMsg_TextMsg',
-  full_name='CCSUsrMsg_TextMsg',
+  full_name='demoinfocsgo.proto.CCSUsrMsg_TextMsg',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='msg_dst', full_name='CCSUsrMsg_TextMsg.msg_dst', index=0,
+      name='msg_dst', full_name='demoinfocsgo.proto.CCSUsrMsg_TextMsg.msg_dst', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='params', full_name='CCSUsrMsg_TextMsg.params', index=1,
+      name='params', full_name='demoinfocsgo.proto.CCSUsrMsg_TextMsg.params', index=1,
       number=3, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -580,83 +580,83 @@ _CCSUSRMSG_TEXTMSG = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=531,
-  serialized_end=583,
+  serialized_start=570,
+  serialized_end=622,
 )
 
 
 _CCSUSRMSG_HUDMSG = _descriptor.Descriptor(
   name='CCSUsrMsg_HudMsg',
-  full_name='CCSUsrMsg_HudMsg',
+  full_name='demoinfocsgo.proto.CCSUsrMsg_HudMsg',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='channel', full_name='CCSUsrMsg_HudMsg.channel', index=0,
+      name='channel', full_name='demoinfocsgo.proto.CCSUsrMsg_HudMsg.channel', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='pos', full_name='CCSUsrMsg_HudMsg.pos', index=1,
+      name='pos', full_name='demoinfocsgo.proto.CCSUsrMsg_HudMsg.pos', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='clr1', full_name='CCSUsrMsg_HudMsg.clr1', index=2,
+      name='clr1', full_name='demoinfocsgo.proto.CCSUsrMsg_HudMsg.clr1', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='clr2', full_name='CCSUsrMsg_HudMsg.clr2', index=3,
+      name='clr2', full_name='demoinfocsgo.proto.CCSUsrMsg_HudMsg.clr2', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='effect', full_name='CCSUsrMsg_HudMsg.effect', index=4,
+      name='effect', full_name='demoinfocsgo.proto.CCSUsrMsg_HudMsg.effect', index=4,
       number=5, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='fade_in_time', full_name='CCSUsrMsg_HudMsg.fade_in_time', index=5,
+      name='fade_in_time', full_name='demoinfocsgo.proto.CCSUsrMsg_HudMsg.fade_in_time', index=5,
       number=6, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='fade_out_time', full_name='CCSUsrMsg_HudMsg.fade_out_time', index=6,
+      name='fade_out_time', full_name='demoinfocsgo.proto.CCSUsrMsg_HudMsg.fade_out_time', index=6,
       number=7, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='hold_time', full_name='CCSUsrMsg_HudMsg.hold_time', index=7,
+      name='hold_time', full_name='demoinfocsgo.proto.CCSUsrMsg_HudMsg.hold_time', index=7,
       number=9, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='fx_time', full_name='CCSUsrMsg_HudMsg.fx_time', index=8,
+      name='fx_time', full_name='demoinfocsgo.proto.CCSUsrMsg_HudMsg.fx_time', index=8,
       number=10, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='text', full_name='CCSUsrMsg_HudMsg.text', index=9,
+      name='text', full_name='demoinfocsgo.proto.CCSUsrMsg_HudMsg.text', index=9,
       number=11, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
@@ -671,41 +671,41 @@ _CCSUSRMSG_HUDMSG = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=586,
-  serialized_end=810,
+  serialized_start=625,
+  serialized_end=906,
 )
 
 
 _CCSUSRMSG_SHAKE = _descriptor.Descriptor(
   name='CCSUsrMsg_Shake',
-  full_name='CCSUsrMsg_Shake',
+  full_name='demoinfocsgo.proto.CCSUsrMsg_Shake',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='command', full_name='CCSUsrMsg_Shake.command', index=0,
+      name='command', full_name='demoinfocsgo.proto.CCSUsrMsg_Shake.command', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='local_amplitude', full_name='CCSUsrMsg_Shake.local_amplitude', index=1,
+      name='local_amplitude', full_name='demoinfocsgo.proto.CCSUsrMsg_Shake.local_amplitude', index=1,
       number=2, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='frequency', full_name='CCSUsrMsg_Shake.frequency', index=2,
+      name='frequency', full_name='demoinfocsgo.proto.CCSUsrMsg_Shake.frequency', index=2,
       number=3, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='duration', full_name='CCSUsrMsg_Shake.duration', index=3,
+      name='duration', full_name='demoinfocsgo.proto.CCSUsrMsg_Shake.duration', index=3,
       number=4, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -720,41 +720,41 @@ _CCSUSRMSG_SHAKE = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=812,
-  serialized_end=908,
+  serialized_start=908,
+  serialized_end=1004,
 )
 
 
 _CCSUSRMSG_FADE = _descriptor.Descriptor(
   name='CCSUsrMsg_Fade',
-  full_name='CCSUsrMsg_Fade',
+  full_name='demoinfocsgo.proto.CCSUsrMsg_Fade',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='duration', full_name='CCSUsrMsg_Fade.duration', index=0,
+      name='duration', full_name='demoinfocsgo.proto.CCSUsrMsg_Fade.duration', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='hold_time', full_name='CCSUsrMsg_Fade.hold_time', index=1,
+      name='hold_time', full_name='demoinfocsgo.proto.CCSUsrMsg_Fade.hold_time', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='flags', full_name='CCSUsrMsg_Fade.flags', index=2,
+      name='flags', full_name='demoinfocsgo.proto.CCSUsrMsg_Fade.flags', index=2,
       number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='clr', full_name='CCSUsrMsg_Fade.clr', index=3,
+      name='clr', full_name='demoinfocsgo.proto.CCSUsrMsg_Fade.clr', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -769,34 +769,34 @@ _CCSUSRMSG_FADE = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=910,
-  serialized_end=1002,
+  serialized_start=1006,
+  serialized_end=1117,
 )
 
 
 _CCSUSRMSG_RUMBLE = _descriptor.Descriptor(
   name='CCSUsrMsg_Rumble',
-  full_name='CCSUsrMsg_Rumble',
+  full_name='demoinfocsgo.proto.CCSUsrMsg_Rumble',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='index', full_name='CCSUsrMsg_Rumble.index', index=0,
+      name='index', full_name='demoinfocsgo.proto.CCSUsrMsg_Rumble.index', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='data', full_name='CCSUsrMsg_Rumble.data', index=1,
+      name='data', full_name='demoinfocsgo.proto.CCSUsrMsg_Rumble.data', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='flags', full_name='CCSUsrMsg_Rumble.flags', index=2,
+      name='flags', full_name='demoinfocsgo.proto.CCSUsrMsg_Rumble.flags', index=2,
       number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -811,34 +811,34 @@ _CCSUSRMSG_RUMBLE = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1004,
-  serialized_end=1066,
+  serialized_start=1119,
+  serialized_end=1181,
 )
 
 
 _CCSUSRMSG_CLOSECAPTION = _descriptor.Descriptor(
   name='CCSUsrMsg_CloseCaption',
-  full_name='CCSUsrMsg_CloseCaption',
+  full_name='demoinfocsgo.proto.CCSUsrMsg_CloseCaption',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='hash', full_name='CCSUsrMsg_CloseCaption.hash', index=0,
+      name='hash', full_name='demoinfocsgo.proto.CCSUsrMsg_CloseCaption.hash', index=0,
       number=1, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='duration', full_name='CCSUsrMsg_CloseCaption.duration', index=1,
+      name='duration', full_name='demoinfocsgo.proto.CCSUsrMsg_CloseCaption.duration', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='from_player', full_name='CCSUsrMsg_CloseCaption.from_player', index=2,
+      name='from_player', full_name='demoinfocsgo.proto.CCSUsrMsg_CloseCaption.from_player', index=2,
       number=3, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
@@ -853,34 +853,34 @@ _CCSUSRMSG_CLOSECAPTION = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1068,
-  serialized_end=1145,
+  serialized_start=1183,
+  serialized_end=1260,
 )
 
 
 _CCSUSRMSG_CLOSECAPTIONDIRECT = _descriptor.Descriptor(
   name='CCSUsrMsg_CloseCaptionDirect',
-  full_name='CCSUsrMsg_CloseCaptionDirect',
+  full_name='demoinfocsgo.proto.CCSUsrMsg_CloseCaptionDirect',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='hash', full_name='CCSUsrMsg_CloseCaptionDirect.hash', index=0,
+      name='hash', full_name='demoinfocsgo.proto.CCSUsrMsg_CloseCaptionDirect.hash', index=0,
       number=1, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='duration', full_name='CCSUsrMsg_CloseCaptionDirect.duration', index=1,
+      name='duration', full_name='demoinfocsgo.proto.CCSUsrMsg_CloseCaptionDirect.duration', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='from_player', full_name='CCSUsrMsg_CloseCaptionDirect.from_player', index=2,
+      name='from_player', full_name='demoinfocsgo.proto.CCSUsrMsg_CloseCaptionDirect.from_player', index=2,
       number=3, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
@@ -895,20 +895,20 @@ _CCSUSRMSG_CLOSECAPTIONDIRECT = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1147,
-  serialized_end=1230,
+  serialized_start=1262,
+  serialized_end=1345,
 )
 
 
 _CCSUSRMSG_SENDAUDIO = _descriptor.Descriptor(
   name='CCSUsrMsg_SendAudio',
-  full_name='CCSUsrMsg_SendAudio',
+  full_name='demoinfocsgo.proto.CCSUsrMsg_SendAudio',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='radio_sound', full_name='CCSUsrMsg_SendAudio.radio_sound', index=0,
+      name='radio_sound', full_name='demoinfocsgo.proto.CCSUsrMsg_SendAudio.radio_sound', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
@@ -923,41 +923,41 @@ _CCSUSRMSG_SENDAUDIO = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1232,
-  serialized_end=1274,
+  serialized_start=1347,
+  serialized_end=1389,
 )
 
 
 _CCSUSRMSG_RAWAUDIO = _descriptor.Descriptor(
   name='CCSUsrMsg_RawAudio',
-  full_name='CCSUsrMsg_RawAudio',
+  full_name='demoinfocsgo.proto.CCSUsrMsg_RawAudio',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='pitch', full_name='CCSUsrMsg_RawAudio.pitch', index=0,
+      name='pitch', full_name='demoinfocsgo.proto.CCSUsrMsg_RawAudio.pitch', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='entidx', full_name='CCSUsrMsg_RawAudio.entidx', index=1,
+      name='entidx', full_name='demoinfocsgo.proto.CCSUsrMsg_RawAudio.entidx', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='duration', full_name='CCSUsrMsg_RawAudio.duration', index=2,
+      name='duration', full_name='demoinfocsgo.proto.CCSUsrMsg_RawAudio.duration', index=2,
       number=3, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='voice_filename', full_name='CCSUsrMsg_RawAudio.voice_filename', index=3,
+      name='voice_filename', full_name='demoinfocsgo.proto.CCSUsrMsg_RawAudio.voice_filename', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
@@ -972,27 +972,27 @@ _CCSUSRMSG_RAWAUDIO = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1276,
-  serialized_end=1369,
+  serialized_start=1391,
+  serialized_end=1484,
 )
 
 
 _CCSUSRMSG_VOICEMASK_PLAYERMASK = _descriptor.Descriptor(
   name='PlayerMask',
-  full_name='CCSUsrMsg_VoiceMask.PlayerMask',
+  full_name='demoinfocsgo.proto.CCSUsrMsg_VoiceMask.PlayerMask',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='game_rules_mask', full_name='CCSUsrMsg_VoiceMask.PlayerMask.game_rules_mask', index=0,
+      name='game_rules_mask', full_name='demoinfocsgo.proto.CCSUsrMsg_VoiceMask.PlayerMask.game_rules_mask', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='ban_masks', full_name='CCSUsrMsg_VoiceMask.PlayerMask.ban_masks', index=1,
+      name='ban_masks', full_name='demoinfocsgo.proto.CCSUsrMsg_VoiceMask.PlayerMask.ban_masks', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -1007,26 +1007,26 @@ _CCSUSRMSG_VOICEMASK_PLAYERMASK = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1477,
-  serialized_end=1533,
+  serialized_start=1611,
+  serialized_end=1667,
 )
 
 _CCSUSRMSG_VOICEMASK = _descriptor.Descriptor(
   name='CCSUsrMsg_VoiceMask',
-  full_name='CCSUsrMsg_VoiceMask',
+  full_name='demoinfocsgo.proto.CCSUsrMsg_VoiceMask',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='player_masks', full_name='CCSUsrMsg_VoiceMask.player_masks', index=0,
+      name='player_masks', full_name='demoinfocsgo.proto.CCSUsrMsg_VoiceMask.player_masks', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='player_mod_enable', full_name='CCSUsrMsg_VoiceMask.player_mod_enable', index=1,
+      name='player_mod_enable', full_name='demoinfocsgo.proto.CCSUsrMsg_VoiceMask.player_mod_enable', index=1,
       number=2, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
@@ -1041,27 +1041,27 @@ _CCSUSRMSG_VOICEMASK = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1372,
-  serialized_end=1533,
+  serialized_start=1487,
+  serialized_end=1667,
 )
 
 
 _CCSUSRMSG_DAMAGE = _descriptor.Descriptor(
   name='CCSUsrMsg_Damage',
-  full_name='CCSUsrMsg_Damage',
+  full_name='demoinfocsgo.proto.CCSUsrMsg_Damage',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='amount', full_name='CCSUsrMsg_Damage.amount', index=0,
+      name='amount', full_name='demoinfocsgo.proto.CCSUsrMsg_Damage.amount', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='inflictor_world_pos', full_name='CCSUsrMsg_Damage.inflictor_world_pos', index=1,
+      name='inflictor_world_pos', full_name='demoinfocsgo.proto.CCSUsrMsg_Damage.inflictor_world_pos', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -1076,41 +1076,41 @@ _CCSUSRMSG_DAMAGE = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1535,
-  serialized_end=1611,
+  serialized_start=1669,
+  serialized_end=1764,
 )
 
 
 _CCSUSRMSG_RADIOTEXT = _descriptor.Descriptor(
   name='CCSUsrMsg_RadioText',
-  full_name='CCSUsrMsg_RadioText',
+  full_name='demoinfocsgo.proto.CCSUsrMsg_RadioText',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='msg_dst', full_name='CCSUsrMsg_RadioText.msg_dst', index=0,
+      name='msg_dst', full_name='demoinfocsgo.proto.CCSUsrMsg_RadioText.msg_dst', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='client', full_name='CCSUsrMsg_RadioText.client', index=1,
+      name='client', full_name='demoinfocsgo.proto.CCSUsrMsg_RadioText.client', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='msg_name', full_name='CCSUsrMsg_RadioText.msg_name', index=2,
+      name='msg_name', full_name='demoinfocsgo.proto.CCSUsrMsg_RadioText.msg_name', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='params', full_name='CCSUsrMsg_RadioText.params', index=3,
+      name='params', full_name='demoinfocsgo.proto.CCSUsrMsg_RadioText.params', index=3,
       number=4, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -1125,20 +1125,20 @@ _CCSUSRMSG_RADIOTEXT = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1613,
-  serialized_end=1701,
+  serialized_start=1766,
+  serialized_end=1854,
 )
 
 
 _CCSUSRMSG_HINTTEXT = _descriptor.Descriptor(
   name='CCSUsrMsg_HintText',
-  full_name='CCSUsrMsg_HintText',
+  full_name='demoinfocsgo.proto.CCSUsrMsg_HintText',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='text', full_name='CCSUsrMsg_HintText.text', index=0,
+      name='text', full_name='demoinfocsgo.proto.CCSUsrMsg_HintText.text', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
@@ -1153,20 +1153,20 @@ _CCSUSRMSG_HINTTEXT = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1703,
-  serialized_end=1737,
+  serialized_start=1856,
+  serialized_end=1890,
 )
 
 
 _CCSUSRMSG_KEYHINTTEXT = _descriptor.Descriptor(
   name='CCSUsrMsg_KeyHintText',
-  full_name='CCSUsrMsg_KeyHintText',
+  full_name='demoinfocsgo.proto.CCSUsrMsg_KeyHintText',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='hints', full_name='CCSUsrMsg_KeyHintText.hints', index=0,
+      name='hints', full_name='demoinfocsgo.proto.CCSUsrMsg_KeyHintText.hints', index=0,
       number=1, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -1181,76 +1181,76 @@ _CCSUSRMSG_KEYHINTTEXT = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1739,
-  serialized_end=1777,
+  serialized_start=1892,
+  serialized_end=1930,
 )
 
 
 _CCSUSRMSG_PROCESSSPOTTEDENTITYUPDATE_SPOTTEDENTITYUPDATE = _descriptor.Descriptor(
   name='SpottedEntityUpdate',
-  full_name='CCSUsrMsg_ProcessSpottedEntityUpdate.SpottedEntityUpdate',
+  full_name='demoinfocsgo.proto.CCSUsrMsg_ProcessSpottedEntityUpdate.SpottedEntityUpdate',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='entity_idx', full_name='CCSUsrMsg_ProcessSpottedEntityUpdate.SpottedEntityUpdate.entity_idx', index=0,
+      name='entity_idx', full_name='demoinfocsgo.proto.CCSUsrMsg_ProcessSpottedEntityUpdate.SpottedEntityUpdate.entity_idx', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='class_id', full_name='CCSUsrMsg_ProcessSpottedEntityUpdate.SpottedEntityUpdate.class_id', index=1,
+      name='class_id', full_name='demoinfocsgo.proto.CCSUsrMsg_ProcessSpottedEntityUpdate.SpottedEntityUpdate.class_id', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='origin_x', full_name='CCSUsrMsg_ProcessSpottedEntityUpdate.SpottedEntityUpdate.origin_x', index=2,
+      name='origin_x', full_name='demoinfocsgo.proto.CCSUsrMsg_ProcessSpottedEntityUpdate.SpottedEntityUpdate.origin_x', index=2,
       number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='origin_y', full_name='CCSUsrMsg_ProcessSpottedEntityUpdate.SpottedEntityUpdate.origin_y', index=3,
+      name='origin_y', full_name='demoinfocsgo.proto.CCSUsrMsg_ProcessSpottedEntityUpdate.SpottedEntityUpdate.origin_y', index=3,
       number=4, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='origin_z', full_name='CCSUsrMsg_ProcessSpottedEntityUpdate.SpottedEntityUpdate.origin_z', index=4,
+      name='origin_z', full_name='demoinfocsgo.proto.CCSUsrMsg_ProcessSpottedEntityUpdate.SpottedEntityUpdate.origin_z', index=4,
       number=5, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='angle_y', full_name='CCSUsrMsg_ProcessSpottedEntityUpdate.SpottedEntityUpdate.angle_y', index=5,
+      name='angle_y', full_name='demoinfocsgo.proto.CCSUsrMsg_ProcessSpottedEntityUpdate.SpottedEntityUpdate.angle_y', index=5,
       number=6, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='defuser', full_name='CCSUsrMsg_ProcessSpottedEntityUpdate.SpottedEntityUpdate.defuser', index=6,
+      name='defuser', full_name='demoinfocsgo.proto.CCSUsrMsg_ProcessSpottedEntityUpdate.SpottedEntityUpdate.defuser', index=6,
       number=7, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='player_has_defuser', full_name='CCSUsrMsg_ProcessSpottedEntityUpdate.SpottedEntityUpdate.player_has_defuser', index=7,
+      name='player_has_defuser', full_name='demoinfocsgo.proto.CCSUsrMsg_ProcessSpottedEntityUpdate.SpottedEntityUpdate.player_has_defuser', index=7,
       number=8, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='player_has_c4', full_name='CCSUsrMsg_ProcessSpottedEntityUpdate.SpottedEntityUpdate.player_has_c4', index=8,
+      name='player_has_c4', full_name='demoinfocsgo.proto.CCSUsrMsg_ProcessSpottedEntityUpdate.SpottedEntityUpdate.player_has_c4', index=8,
       number=9, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
@@ -1265,26 +1265,26 @@ _CCSUSRMSG_PROCESSSPOTTEDENTITYUPDATE_SPOTTEDENTITYUPDATE = _descriptor.Descript
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1924,
-  serialized_end=2122,
+  serialized_start=2096,
+  serialized_end=2294,
 )
 
 _CCSUSRMSG_PROCESSSPOTTEDENTITYUPDATE = _descriptor.Descriptor(
   name='CCSUsrMsg_ProcessSpottedEntityUpdate',
-  full_name='CCSUsrMsg_ProcessSpottedEntityUpdate',
+  full_name='demoinfocsgo.proto.CCSUsrMsg_ProcessSpottedEntityUpdate',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='new_update', full_name='CCSUsrMsg_ProcessSpottedEntityUpdate.new_update', index=0,
+      name='new_update', full_name='demoinfocsgo.proto.CCSUsrMsg_ProcessSpottedEntityUpdate.new_update', index=0,
       number=1, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='entity_updates', full_name='CCSUsrMsg_ProcessSpottedEntityUpdate.entity_updates', index=1,
+      name='entity_updates', full_name='demoinfocsgo.proto.CCSUsrMsg_ProcessSpottedEntityUpdate.entity_updates', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -1299,27 +1299,27 @@ _CCSUSRMSG_PROCESSSPOTTEDENTITYUPDATE = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1780,
-  serialized_end=2122,
+  serialized_start=1933,
+  serialized_end=2294,
 )
 
 
 _CCSUSRMSG_RELOADEFFECT = _descriptor.Descriptor(
   name='CCSUsrMsg_ReloadEffect',
-  full_name='CCSUsrMsg_ReloadEffect',
+  full_name='demoinfocsgo.proto.CCSUsrMsg_ReloadEffect',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='entidx', full_name='CCSUsrMsg_ReloadEffect.entidx', index=0,
+      name='entidx', full_name='demoinfocsgo.proto.CCSUsrMsg_ReloadEffect.entidx', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='actanim', full_name='CCSUsrMsg_ReloadEffect.actanim', index=1,
+      name='actanim', full_name='demoinfocsgo.proto.CCSUsrMsg_ReloadEffect.actanim', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -1334,20 +1334,20 @@ _CCSUSRMSG_RELOADEFFECT = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2124,
-  serialized_end=2181,
+  serialized_start=2296,
+  serialized_end=2353,
 )
 
 
 _CCSUSRMSG_ADJUSTMONEY = _descriptor.Descriptor(
   name='CCSUsrMsg_AdjustMoney',
-  full_name='CCSUsrMsg_AdjustMoney',
+  full_name='demoinfocsgo.proto.CCSUsrMsg_AdjustMoney',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='amount', full_name='CCSUsrMsg_AdjustMoney.amount', index=0,
+      name='amount', full_name='demoinfocsgo.proto.CCSUsrMsg_AdjustMoney.amount', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -1362,34 +1362,34 @@ _CCSUSRMSG_ADJUSTMONEY = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2183,
-  serialized_end=2222,
+  serialized_start=2355,
+  serialized_end=2394,
 )
 
 
 _CCSUSRMSG_KILLCAM = _descriptor.Descriptor(
   name='CCSUsrMsg_KillCam',
-  full_name='CCSUsrMsg_KillCam',
+  full_name='demoinfocsgo.proto.CCSUsrMsg_KillCam',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='obs_mode', full_name='CCSUsrMsg_KillCam.obs_mode', index=0,
+      name='obs_mode', full_name='demoinfocsgo.proto.CCSUsrMsg_KillCam.obs_mode', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='first_target', full_name='CCSUsrMsg_KillCam.first_target', index=1,
+      name='first_target', full_name='demoinfocsgo.proto.CCSUsrMsg_KillCam.first_target', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='second_target', full_name='CCSUsrMsg_KillCam.second_target', index=2,
+      name='second_target', full_name='demoinfocsgo.proto.CCSUsrMsg_KillCam.second_target', index=2,
       number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -1404,41 +1404,41 @@ _CCSUSRMSG_KILLCAM = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2224,
-  serialized_end=2306,
+  serialized_start=2396,
+  serialized_end=2478,
 )
 
 
 _CCSUSRMSG_DESIREDTIMESCALE = _descriptor.Descriptor(
   name='CCSUsrMsg_DesiredTimescale',
-  full_name='CCSUsrMsg_DesiredTimescale',
+  full_name='demoinfocsgo.proto.CCSUsrMsg_DesiredTimescale',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='desired_timescale', full_name='CCSUsrMsg_DesiredTimescale.desired_timescale', index=0,
+      name='desired_timescale', full_name='demoinfocsgo.proto.CCSUsrMsg_DesiredTimescale.desired_timescale', index=0,
       number=1, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='duration_realtime_sec', full_name='CCSUsrMsg_DesiredTimescale.duration_realtime_sec', index=1,
+      name='duration_realtime_sec', full_name='demoinfocsgo.proto.CCSUsrMsg_DesiredTimescale.duration_realtime_sec', index=1,
       number=2, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='interpolator_type', full_name='CCSUsrMsg_DesiredTimescale.interpolator_type', index=2,
+      name='interpolator_type', full_name='demoinfocsgo.proto.CCSUsrMsg_DesiredTimescale.interpolator_type', index=2,
       number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='start_blend_time', full_name='CCSUsrMsg_DesiredTimescale.start_blend_time', index=3,
+      name='start_blend_time', full_name='demoinfocsgo.proto.CCSUsrMsg_DesiredTimescale.start_blend_time', index=3,
       number=4, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -1453,20 +1453,20 @@ _CCSUSRMSG_DESIREDTIMESCALE = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2309,
-  serialized_end=2448,
+  serialized_start=2481,
+  serialized_end=2620,
 )
 
 
 _CCSUSRMSG_CURRENTTIMESCALE = _descriptor.Descriptor(
   name='CCSUsrMsg_CurrentTimescale',
-  full_name='CCSUsrMsg_CurrentTimescale',
+  full_name='demoinfocsgo.proto.CCSUsrMsg_CurrentTimescale',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='cur_timescale', full_name='CCSUsrMsg_CurrentTimescale.cur_timescale', index=0,
+      name='cur_timescale', full_name='demoinfocsgo.proto.CCSUsrMsg_CurrentTimescale.cur_timescale', index=0,
       number=1, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -1481,34 +1481,34 @@ _CCSUSRMSG_CURRENTTIMESCALE = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2450,
-  serialized_end=2501,
+  serialized_start=2622,
+  serialized_end=2673,
 )
 
 
 _CCSUSRMSG_ACHIEVEMENTEVENT = _descriptor.Descriptor(
   name='CCSUsrMsg_AchievementEvent',
-  full_name='CCSUsrMsg_AchievementEvent',
+  full_name='demoinfocsgo.proto.CCSUsrMsg_AchievementEvent',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='achievement', full_name='CCSUsrMsg_AchievementEvent.achievement', index=0,
+      name='achievement', full_name='demoinfocsgo.proto.CCSUsrMsg_AchievementEvent.achievement', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='count', full_name='CCSUsrMsg_AchievementEvent.count', index=1,
+      name='count', full_name='demoinfocsgo.proto.CCSUsrMsg_AchievementEvent.count', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='user_id', full_name='CCSUsrMsg_AchievementEvent.user_id', index=2,
+      name='user_id', full_name='demoinfocsgo.proto.CCSUsrMsg_AchievementEvent.user_id', index=2,
       number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -1523,41 +1523,41 @@ _CCSUSRMSG_ACHIEVEMENTEVENT = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2503,
-  serialized_end=2584,
+  serialized_start=2675,
+  serialized_end=2756,
 )
 
 
 _CCSUSRMSG_MATCHENDCONDITIONS = _descriptor.Descriptor(
   name='CCSUsrMsg_MatchEndConditions',
-  full_name='CCSUsrMsg_MatchEndConditions',
+  full_name='demoinfocsgo.proto.CCSUsrMsg_MatchEndConditions',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='fraglimit', full_name='CCSUsrMsg_MatchEndConditions.fraglimit', index=0,
+      name='fraglimit', full_name='demoinfocsgo.proto.CCSUsrMsg_MatchEndConditions.fraglimit', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='mp_maxrounds', full_name='CCSUsrMsg_MatchEndConditions.mp_maxrounds', index=1,
+      name='mp_maxrounds', full_name='demoinfocsgo.proto.CCSUsrMsg_MatchEndConditions.mp_maxrounds', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='mp_winlimit', full_name='CCSUsrMsg_MatchEndConditions.mp_winlimit', index=2,
+      name='mp_winlimit', full_name='demoinfocsgo.proto.CCSUsrMsg_MatchEndConditions.mp_winlimit', index=2,
       number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='mp_timelimit', full_name='CCSUsrMsg_MatchEndConditions.mp_timelimit', index=3,
+      name='mp_timelimit', full_name='demoinfocsgo.proto.CCSUsrMsg_MatchEndConditions.mp_timelimit', index=3,
       number=4, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -1572,27 +1572,27 @@ _CCSUSRMSG_MATCHENDCONDITIONS = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2586,
-  serialized_end=2700,
+  serialized_start=2758,
+  serialized_end=2872,
 )
 
 
 _CCSUSRMSG_DISPLAYINVENTORY = _descriptor.Descriptor(
   name='CCSUsrMsg_DisplayInventory',
-  full_name='CCSUsrMsg_DisplayInventory',
+  full_name='demoinfocsgo.proto.CCSUsrMsg_DisplayInventory',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='display', full_name='CCSUsrMsg_DisplayInventory.display', index=0,
+      name='display', full_name='demoinfocsgo.proto.CCSUsrMsg_DisplayInventory.display', index=0,
       number=1, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='user_id', full_name='CCSUsrMsg_DisplayInventory.user_id', index=1,
+      name='user_id', full_name='demoinfocsgo.proto.CCSUsrMsg_DisplayInventory.user_id', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -1607,27 +1607,27 @@ _CCSUSRMSG_DISPLAYINVENTORY = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2702,
-  serialized_end=2764,
+  serialized_start=2874,
+  serialized_end=2936,
 )
 
 
 _CCSUSRMSG_CALLVOTEFAILED = _descriptor.Descriptor(
   name='CCSUsrMsg_CallVoteFailed',
-  full_name='CCSUsrMsg_CallVoteFailed',
+  full_name='demoinfocsgo.proto.CCSUsrMsg_CallVoteFailed',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='reason', full_name='CCSUsrMsg_CallVoteFailed.reason', index=0,
+      name='reason', full_name='demoinfocsgo.proto.CCSUsrMsg_CallVoteFailed.reason', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='time', full_name='CCSUsrMsg_CallVoteFailed.time', index=1,
+      name='time', full_name='demoinfocsgo.proto.CCSUsrMsg_CallVoteFailed.time', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -1642,62 +1642,62 @@ _CCSUSRMSG_CALLVOTEFAILED = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2766,
-  serialized_end=2822,
+  serialized_start=2938,
+  serialized_end=2994,
 )
 
 
 _CCSUSRMSG_VOTESTART = _descriptor.Descriptor(
   name='CCSUsrMsg_VoteStart',
-  full_name='CCSUsrMsg_VoteStart',
+  full_name='demoinfocsgo.proto.CCSUsrMsg_VoteStart',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='team', full_name='CCSUsrMsg_VoteStart.team', index=0,
+      name='team', full_name='demoinfocsgo.proto.CCSUsrMsg_VoteStart.team', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='ent_idx', full_name='CCSUsrMsg_VoteStart.ent_idx', index=1,
+      name='ent_idx', full_name='demoinfocsgo.proto.CCSUsrMsg_VoteStart.ent_idx', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='vote_type', full_name='CCSUsrMsg_VoteStart.vote_type', index=2,
+      name='vote_type', full_name='demoinfocsgo.proto.CCSUsrMsg_VoteStart.vote_type', index=2,
       number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='disp_str', full_name='CCSUsrMsg_VoteStart.disp_str', index=3,
+      name='disp_str', full_name='demoinfocsgo.proto.CCSUsrMsg_VoteStart.disp_str', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='details_str', full_name='CCSUsrMsg_VoteStart.details_str', index=4,
+      name='details_str', full_name='demoinfocsgo.proto.CCSUsrMsg_VoteStart.details_str', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='other_team_str', full_name='CCSUsrMsg_VoteStart.other_team_str', index=5,
+      name='other_team_str', full_name='demoinfocsgo.proto.CCSUsrMsg_VoteStart.other_team_str', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='is_yes_no_vote', full_name='CCSUsrMsg_VoteStart.is_yes_no_vote', index=6,
+      name='is_yes_no_vote', full_name='demoinfocsgo.proto.CCSUsrMsg_VoteStart.is_yes_no_vote', index=6,
       number=7, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
@@ -1712,41 +1712,41 @@ _CCSUSRMSG_VOTESTART = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2825,
-  serialized_end=2983,
+  serialized_start=2997,
+  serialized_end=3155,
 )
 
 
 _CCSUSRMSG_VOTEPASS = _descriptor.Descriptor(
   name='CCSUsrMsg_VotePass',
-  full_name='CCSUsrMsg_VotePass',
+  full_name='demoinfocsgo.proto.CCSUsrMsg_VotePass',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='team', full_name='CCSUsrMsg_VotePass.team', index=0,
+      name='team', full_name='demoinfocsgo.proto.CCSUsrMsg_VotePass.team', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='vote_type', full_name='CCSUsrMsg_VotePass.vote_type', index=1,
+      name='vote_type', full_name='demoinfocsgo.proto.CCSUsrMsg_VotePass.vote_type', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='disp_str', full_name='CCSUsrMsg_VotePass.disp_str', index=2,
+      name='disp_str', full_name='demoinfocsgo.proto.CCSUsrMsg_VotePass.disp_str', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='details_str', full_name='CCSUsrMsg_VotePass.details_str', index=3,
+      name='details_str', full_name='demoinfocsgo.proto.CCSUsrMsg_VotePass.details_str', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
@@ -1761,27 +1761,27 @@ _CCSUSRMSG_VOTEPASS = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2985,
-  serialized_end=3077,
+  serialized_start=3157,
+  serialized_end=3249,
 )
 
 
 _CCSUSRMSG_VOTEFAILED = _descriptor.Descriptor(
   name='CCSUsrMsg_VoteFailed',
-  full_name='CCSUsrMsg_VoteFailed',
+  full_name='demoinfocsgo.proto.CCSUsrMsg_VoteFailed',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='team', full_name='CCSUsrMsg_VoteFailed.team', index=0,
+      name='team', full_name='demoinfocsgo.proto.CCSUsrMsg_VoteFailed.team', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='reason', full_name='CCSUsrMsg_VoteFailed.reason', index=1,
+      name='reason', full_name='demoinfocsgo.proto.CCSUsrMsg_VoteFailed.reason', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -1796,20 +1796,20 @@ _CCSUSRMSG_VOTEFAILED = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3079,
-  serialized_end=3131,
+  serialized_start=3251,
+  serialized_end=3303,
 )
 
 
 _CCSUSRMSG_VOTESETUP = _descriptor.Descriptor(
   name='CCSUsrMsg_VoteSetup',
-  full_name='CCSUsrMsg_VoteSetup',
+  full_name='demoinfocsgo.proto.CCSUsrMsg_VoteSetup',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='potential_issues', full_name='CCSUsrMsg_VoteSetup.potential_issues', index=0,
+      name='potential_issues', full_name='demoinfocsgo.proto.CCSUsrMsg_VoteSetup.potential_issues', index=0,
       number=1, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -1824,41 +1824,41 @@ _CCSUSRMSG_VOTESETUP = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3133,
-  serialized_end=3180,
+  serialized_start=3305,
+  serialized_end=3352,
 )
 
 
 _CCSUSRMSG_SENDLASTKILLERDAMAGETOCLIENT = _descriptor.Descriptor(
   name='CCSUsrMsg_SendLastKillerDamageToClient',
-  full_name='CCSUsrMsg_SendLastKillerDamageToClient',
+  full_name='demoinfocsgo.proto.CCSUsrMsg_SendLastKillerDamageToClient',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='num_hits_given', full_name='CCSUsrMsg_SendLastKillerDamageToClient.num_hits_given', index=0,
+      name='num_hits_given', full_name='demoinfocsgo.proto.CCSUsrMsg_SendLastKillerDamageToClient.num_hits_given', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='damage_given', full_name='CCSUsrMsg_SendLastKillerDamageToClient.damage_given', index=1,
+      name='damage_given', full_name='demoinfocsgo.proto.CCSUsrMsg_SendLastKillerDamageToClient.damage_given', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='num_hits_taken', full_name='CCSUsrMsg_SendLastKillerDamageToClient.num_hits_taken', index=2,
+      name='num_hits_taken', full_name='demoinfocsgo.proto.CCSUsrMsg_SendLastKillerDamageToClient.num_hits_taken', index=2,
       number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='damage_taken', full_name='CCSUsrMsg_SendLastKillerDamageToClient.damage_taken', index=3,
+      name='damage_taken', full_name='demoinfocsgo.proto.CCSUsrMsg_SendLastKillerDamageToClient.damage_taken', index=3,
       number=4, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -1873,20 +1873,20 @@ _CCSUSRMSG_SENDLASTKILLERDAMAGETOCLIENT = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3183,
-  serialized_end=3315,
+  serialized_start=3355,
+  serialized_end=3487,
 )
 
 
 _CCSUSRMSG_ITEMPICKUP = _descriptor.Descriptor(
   name='CCSUsrMsg_ItemPickup',
-  full_name='CCSUsrMsg_ItemPickup',
+  full_name='demoinfocsgo.proto.CCSUsrMsg_ItemPickup',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='item', full_name='CCSUsrMsg_ItemPickup.item', index=0,
+      name='item', full_name='demoinfocsgo.proto.CCSUsrMsg_ItemPickup.item', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
@@ -1901,34 +1901,34 @@ _CCSUSRMSG_ITEMPICKUP = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3317,
-  serialized_end=3353,
+  serialized_start=3489,
+  serialized_end=3525,
 )
 
 
 _CCSUSRMSG_SHOWMENU = _descriptor.Descriptor(
   name='CCSUsrMsg_ShowMenu',
-  full_name='CCSUsrMsg_ShowMenu',
+  full_name='demoinfocsgo.proto.CCSUsrMsg_ShowMenu',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='bits_valid_slots', full_name='CCSUsrMsg_ShowMenu.bits_valid_slots', index=0,
+      name='bits_valid_slots', full_name='demoinfocsgo.proto.CCSUsrMsg_ShowMenu.bits_valid_slots', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='display_time', full_name='CCSUsrMsg_ShowMenu.display_time', index=1,
+      name='display_time', full_name='demoinfocsgo.proto.CCSUsrMsg_ShowMenu.display_time', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='menu_string', full_name='CCSUsrMsg_ShowMenu.menu_string', index=2,
+      name='menu_string', full_name='demoinfocsgo.proto.CCSUsrMsg_ShowMenu.menu_string', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
@@ -1943,20 +1943,20 @@ _CCSUSRMSG_SHOWMENU = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3355,
-  serialized_end=3444,
+  serialized_start=3527,
+  serialized_end=3616,
 )
 
 
 _CCSUSRMSG_BARTIME = _descriptor.Descriptor(
   name='CCSUsrMsg_BarTime',
-  full_name='CCSUsrMsg_BarTime',
+  full_name='demoinfocsgo.proto.CCSUsrMsg_BarTime',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='time', full_name='CCSUsrMsg_BarTime.time', index=0,
+      name='time', full_name='demoinfocsgo.proto.CCSUsrMsg_BarTime.time', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
@@ -1971,20 +1971,20 @@ _CCSUSRMSG_BARTIME = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3446,
-  serialized_end=3479,
+  serialized_start=3618,
+  serialized_end=3651,
 )
 
 
 _CCSUSRMSG_AMMODENIED = _descriptor.Descriptor(
   name='CCSUsrMsg_AmmoDenied',
-  full_name='CCSUsrMsg_AmmoDenied',
+  full_name='demoinfocsgo.proto.CCSUsrMsg_AmmoDenied',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='ammoIdx', full_name='CCSUsrMsg_AmmoDenied.ammoIdx', index=0,
+      name='ammoIdx', full_name='demoinfocsgo.proto.CCSUsrMsg_AmmoDenied.ammoIdx', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -1999,20 +1999,20 @@ _CCSUSRMSG_AMMODENIED = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3481,
-  serialized_end=3520,
+  serialized_start=3653,
+  serialized_end=3692,
 )
 
 
 _CCSUSRMSG_MARKACHIEVEMENT = _descriptor.Descriptor(
   name='CCSUsrMsg_MarkAchievement',
-  full_name='CCSUsrMsg_MarkAchievement',
+  full_name='demoinfocsgo.proto.CCSUsrMsg_MarkAchievement',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='achievement', full_name='CCSUsrMsg_MarkAchievement.achievement', index=0,
+      name='achievement', full_name='demoinfocsgo.proto.CCSUsrMsg_MarkAchievement.achievement', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
@@ -2027,27 +2027,27 @@ _CCSUSRMSG_MARKACHIEVEMENT = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3522,
-  serialized_end=3570,
+  serialized_start=3694,
+  serialized_end=3742,
 )
 
 
 _CCSUSRMSG_ITEMDROP = _descriptor.Descriptor(
   name='CCSUsrMsg_ItemDrop',
-  full_name='CCSUsrMsg_ItemDrop',
+  full_name='demoinfocsgo.proto.CCSUsrMsg_ItemDrop',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='itemid', full_name='CCSUsrMsg_ItemDrop.itemid', index=0,
+      name='itemid', full_name='demoinfocsgo.proto.CCSUsrMsg_ItemDrop.itemid', index=0,
       number=1, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='death', full_name='CCSUsrMsg_ItemDrop.death', index=1,
+      name='death', full_name='demoinfocsgo.proto.CCSUsrMsg_ItemDrop.death', index=1,
       number=2, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
@@ -2062,20 +2062,20 @@ _CCSUSRMSG_ITEMDROP = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3572,
-  serialized_end=3623,
+  serialized_start=3744,
+  serialized_end=3795,
 )
 
 
 _CCSUSRMSG_GLOWPROPTURNOFF = _descriptor.Descriptor(
   name='CCSUsrMsg_GlowPropTurnOff',
-  full_name='CCSUsrMsg_GlowPropTurnOff',
+  full_name='demoinfocsgo.proto.CCSUsrMsg_GlowPropTurnOff',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='entidx', full_name='CCSUsrMsg_GlowPropTurnOff.entidx', index=0,
+      name='entidx', full_name='demoinfocsgo.proto.CCSUsrMsg_GlowPropTurnOff.entidx', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -2090,41 +2090,41 @@ _CCSUSRMSG_GLOWPROPTURNOFF = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3625,
-  serialized_end=3668,
+  serialized_start=3797,
+  serialized_end=3840,
 )
 
 
 _CCSUSRMSG_ROUNDBACKUPFILENAMES = _descriptor.Descriptor(
   name='CCSUsrMsg_RoundBackupFilenames',
-  full_name='CCSUsrMsg_RoundBackupFilenames',
+  full_name='demoinfocsgo.proto.CCSUsrMsg_RoundBackupFilenames',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='count', full_name='CCSUsrMsg_RoundBackupFilenames.count', index=0,
+      name='count', full_name='demoinfocsgo.proto.CCSUsrMsg_RoundBackupFilenames.count', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='index', full_name='CCSUsrMsg_RoundBackupFilenames.index', index=1,
+      name='index', full_name='demoinfocsgo.proto.CCSUsrMsg_RoundBackupFilenames.index', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='filename', full_name='CCSUsrMsg_RoundBackupFilenames.filename', index=2,
+      name='filename', full_name='demoinfocsgo.proto.CCSUsrMsg_RoundBackupFilenames.filename', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='nicename', full_name='CCSUsrMsg_RoundBackupFilenames.nicename', index=3,
+      name='nicename', full_name='demoinfocsgo.proto.CCSUsrMsg_RoundBackupFilenames.nicename', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
@@ -2139,20 +2139,20 @@ _CCSUSRMSG_ROUNDBACKUPFILENAMES = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3670,
-  serialized_end=3768,
+  serialized_start=3842,
+  serialized_end=3940,
 )
 
 
 _CCSUSRMSG_RESETHUD = _descriptor.Descriptor(
   name='CCSUsrMsg_ResetHud',
-  full_name='CCSUsrMsg_ResetHud',
+  full_name='demoinfocsgo.proto.CCSUsrMsg_ResetHud',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='reset', full_name='CCSUsrMsg_ResetHud.reset', index=0,
+      name='reset', full_name='demoinfocsgo.proto.CCSUsrMsg_ResetHud.reset', index=0,
       number=1, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
@@ -2167,20 +2167,20 @@ _CCSUSRMSG_RESETHUD = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3770,
-  serialized_end=3805,
+  serialized_start=3942,
+  serialized_end=3977,
 )
 
 
 _CCSUSRMSG_GAMETITLE = _descriptor.Descriptor(
   name='CCSUsrMsg_GameTitle',
-  full_name='CCSUsrMsg_GameTitle',
+  full_name='demoinfocsgo.proto.CCSUsrMsg_GameTitle',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='dummy', full_name='CCSUsrMsg_GameTitle.dummy', index=0,
+      name='dummy', full_name='demoinfocsgo.proto.CCSUsrMsg_GameTitle.dummy', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -2195,20 +2195,20 @@ _CCSUSRMSG_GAMETITLE = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3807,
-  serialized_end=3843,
+  serialized_start=3979,
+  serialized_end=4015,
 )
 
 
 _CCSUSRMSG_REQUESTSTATE = _descriptor.Descriptor(
   name='CCSUsrMsg_RequestState',
-  full_name='CCSUsrMsg_RequestState',
+  full_name='demoinfocsgo.proto.CCSUsrMsg_RequestState',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='dummy', full_name='CCSUsrMsg_RequestState.dummy', index=0,
+      name='dummy', full_name='demoinfocsgo.proto.CCSUsrMsg_RequestState.dummy', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -2223,20 +2223,20 @@ _CCSUSRMSG_REQUESTSTATE = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3845,
-  serialized_end=3884,
+  serialized_start=4017,
+  serialized_end=4056,
 )
 
 
 _CCSUSRMSG_STOPSPECTATORMODE = _descriptor.Descriptor(
   name='CCSUsrMsg_StopSpectatorMode',
-  full_name='CCSUsrMsg_StopSpectatorMode',
+  full_name='demoinfocsgo.proto.CCSUsrMsg_StopSpectatorMode',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='dummy', full_name='CCSUsrMsg_StopSpectatorMode.dummy', index=0,
+      name='dummy', full_name='demoinfocsgo.proto.CCSUsrMsg_StopSpectatorMode.dummy', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -2251,20 +2251,20 @@ _CCSUSRMSG_STOPSPECTATORMODE = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3886,
-  serialized_end=3930,
+  serialized_start=4058,
+  serialized_end=4102,
 )
 
 
 _CCSUSRMSG_DISCONNECTTOLOBBY = _descriptor.Descriptor(
   name='CCSUsrMsg_DisconnectToLobby',
-  full_name='CCSUsrMsg_DisconnectToLobby',
+  full_name='demoinfocsgo.proto.CCSUsrMsg_DisconnectToLobby',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='dummy', full_name='CCSUsrMsg_DisconnectToLobby.dummy', index=0,
+      name='dummy', full_name='demoinfocsgo.proto.CCSUsrMsg_DisconnectToLobby.dummy', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -2279,20 +2279,20 @@ _CCSUSRMSG_DISCONNECTTOLOBBY = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3932,
-  serialized_end=3976,
+  serialized_start=4104,
+  serialized_end=4148,
 )
 
 
 _CCSUSRMSG_WARMUPHASENDED = _descriptor.Descriptor(
   name='CCSUsrMsg_WarmupHasEnded',
-  full_name='CCSUsrMsg_WarmupHasEnded',
+  full_name='demoinfocsgo.proto.CCSUsrMsg_WarmupHasEnded',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='dummy', full_name='CCSUsrMsg_WarmupHasEnded.dummy', index=0,
+      name='dummy', full_name='demoinfocsgo.proto.CCSUsrMsg_WarmupHasEnded.dummy', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -2307,20 +2307,20 @@ _CCSUSRMSG_WARMUPHASENDED = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3978,
-  serialized_end=4019,
+  serialized_start=4150,
+  serialized_end=4191,
 )
 
 
 _CCSUSRMSG_CLIENTINFO = _descriptor.Descriptor(
   name='CCSUsrMsg_ClientInfo',
-  full_name='CCSUsrMsg_ClientInfo',
+  full_name='demoinfocsgo.proto.CCSUsrMsg_ClientInfo',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='dummy', full_name='CCSUsrMsg_ClientInfo.dummy', index=0,
+      name='dummy', full_name='demoinfocsgo.proto.CCSUsrMsg_ClientInfo.dummy', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -2335,8 +2335,8 @@ _CCSUSRMSG_CLIENTINFO = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=4021,
-  serialized_end=4058,
+  serialized_start=4193,
+  serialized_end=4230,
 )
 
 _CCSUSRMSG_VGUIMENU_SUBKEY.containing_type = _CCSUSRMSG_VGUIMENU;
@@ -2408,94 +2408,94 @@ class CCSUsrMsg_VGUIMenu(_message.Message):
     __metaclass__ = _reflection.GeneratedProtocolMessageType
     DESCRIPTOR = _CCSUSRMSG_VGUIMENU_SUBKEY
 
-    # @@protoc_insertion_point(class_scope:CCSUsrMsg_VGUIMenu.Subkey)
+    # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CCSUsrMsg_VGUIMenu.Subkey)
   DESCRIPTOR = _CCSUSRMSG_VGUIMENU
 
-  # @@protoc_insertion_point(class_scope:CCSUsrMsg_VGUIMenu)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CCSUsrMsg_VGUIMenu)
 
 class CCSUsrMsg_Geiger(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CCSUSRMSG_GEIGER
 
-  # @@protoc_insertion_point(class_scope:CCSUsrMsg_Geiger)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CCSUsrMsg_Geiger)
 
 class CCSUsrMsg_Train(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CCSUSRMSG_TRAIN
 
-  # @@protoc_insertion_point(class_scope:CCSUsrMsg_Train)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CCSUsrMsg_Train)
 
 class CCSUsrMsg_HudText(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CCSUSRMSG_HUDTEXT
 
-  # @@protoc_insertion_point(class_scope:CCSUsrMsg_HudText)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CCSUsrMsg_HudText)
 
 class CCSUsrMsg_SayText(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CCSUSRMSG_SAYTEXT
 
-  # @@protoc_insertion_point(class_scope:CCSUsrMsg_SayText)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CCSUsrMsg_SayText)
 
 class CCSUsrMsg_SayText2(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CCSUSRMSG_SAYTEXT2
 
-  # @@protoc_insertion_point(class_scope:CCSUsrMsg_SayText2)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CCSUsrMsg_SayText2)
 
 class CCSUsrMsg_TextMsg(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CCSUSRMSG_TEXTMSG
 
-  # @@protoc_insertion_point(class_scope:CCSUsrMsg_TextMsg)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CCSUsrMsg_TextMsg)
 
 class CCSUsrMsg_HudMsg(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CCSUSRMSG_HUDMSG
 
-  # @@protoc_insertion_point(class_scope:CCSUsrMsg_HudMsg)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CCSUsrMsg_HudMsg)
 
 class CCSUsrMsg_Shake(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CCSUSRMSG_SHAKE
 
-  # @@protoc_insertion_point(class_scope:CCSUsrMsg_Shake)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CCSUsrMsg_Shake)
 
 class CCSUsrMsg_Fade(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CCSUSRMSG_FADE
 
-  # @@protoc_insertion_point(class_scope:CCSUsrMsg_Fade)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CCSUsrMsg_Fade)
 
 class CCSUsrMsg_Rumble(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CCSUSRMSG_RUMBLE
 
-  # @@protoc_insertion_point(class_scope:CCSUsrMsg_Rumble)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CCSUsrMsg_Rumble)
 
 class CCSUsrMsg_CloseCaption(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CCSUSRMSG_CLOSECAPTION
 
-  # @@protoc_insertion_point(class_scope:CCSUsrMsg_CloseCaption)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CCSUsrMsg_CloseCaption)
 
 class CCSUsrMsg_CloseCaptionDirect(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CCSUSRMSG_CLOSECAPTIONDIRECT
 
-  # @@protoc_insertion_point(class_scope:CCSUsrMsg_CloseCaptionDirect)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CCSUsrMsg_CloseCaptionDirect)
 
 class CCSUsrMsg_SendAudio(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CCSUSRMSG_SENDAUDIO
 
-  # @@protoc_insertion_point(class_scope:CCSUsrMsg_SendAudio)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CCSUsrMsg_SendAudio)
 
 class CCSUsrMsg_RawAudio(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CCSUSRMSG_RAWAUDIO
 
-  # @@protoc_insertion_point(class_scope:CCSUsrMsg_RawAudio)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CCSUsrMsg_RawAudio)
 
 class CCSUsrMsg_VoiceMask(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
@@ -2504,34 +2504,34 @@ class CCSUsrMsg_VoiceMask(_message.Message):
     __metaclass__ = _reflection.GeneratedProtocolMessageType
     DESCRIPTOR = _CCSUSRMSG_VOICEMASK_PLAYERMASK
 
-    # @@protoc_insertion_point(class_scope:CCSUsrMsg_VoiceMask.PlayerMask)
+    # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CCSUsrMsg_VoiceMask.PlayerMask)
   DESCRIPTOR = _CCSUSRMSG_VOICEMASK
 
-  # @@protoc_insertion_point(class_scope:CCSUsrMsg_VoiceMask)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CCSUsrMsg_VoiceMask)
 
 class CCSUsrMsg_Damage(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CCSUSRMSG_DAMAGE
 
-  # @@protoc_insertion_point(class_scope:CCSUsrMsg_Damage)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CCSUsrMsg_Damage)
 
 class CCSUsrMsg_RadioText(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CCSUSRMSG_RADIOTEXT
 
-  # @@protoc_insertion_point(class_scope:CCSUsrMsg_RadioText)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CCSUsrMsg_RadioText)
 
 class CCSUsrMsg_HintText(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CCSUSRMSG_HINTTEXT
 
-  # @@protoc_insertion_point(class_scope:CCSUsrMsg_HintText)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CCSUsrMsg_HintText)
 
 class CCSUsrMsg_KeyHintText(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CCSUSRMSG_KEYHINTTEXT
 
-  # @@protoc_insertion_point(class_scope:CCSUsrMsg_KeyHintText)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CCSUsrMsg_KeyHintText)
 
 class CCSUsrMsg_ProcessSpottedEntityUpdate(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
@@ -2540,184 +2540,184 @@ class CCSUsrMsg_ProcessSpottedEntityUpdate(_message.Message):
     __metaclass__ = _reflection.GeneratedProtocolMessageType
     DESCRIPTOR = _CCSUSRMSG_PROCESSSPOTTEDENTITYUPDATE_SPOTTEDENTITYUPDATE
 
-    # @@protoc_insertion_point(class_scope:CCSUsrMsg_ProcessSpottedEntityUpdate.SpottedEntityUpdate)
+    # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CCSUsrMsg_ProcessSpottedEntityUpdate.SpottedEntityUpdate)
   DESCRIPTOR = _CCSUSRMSG_PROCESSSPOTTEDENTITYUPDATE
 
-  # @@protoc_insertion_point(class_scope:CCSUsrMsg_ProcessSpottedEntityUpdate)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CCSUsrMsg_ProcessSpottedEntityUpdate)
 
 class CCSUsrMsg_ReloadEffect(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CCSUSRMSG_RELOADEFFECT
 
-  # @@protoc_insertion_point(class_scope:CCSUsrMsg_ReloadEffect)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CCSUsrMsg_ReloadEffect)
 
 class CCSUsrMsg_AdjustMoney(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CCSUSRMSG_ADJUSTMONEY
 
-  # @@protoc_insertion_point(class_scope:CCSUsrMsg_AdjustMoney)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CCSUsrMsg_AdjustMoney)
 
 class CCSUsrMsg_KillCam(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CCSUSRMSG_KILLCAM
 
-  # @@protoc_insertion_point(class_scope:CCSUsrMsg_KillCam)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CCSUsrMsg_KillCam)
 
 class CCSUsrMsg_DesiredTimescale(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CCSUSRMSG_DESIREDTIMESCALE
 
-  # @@protoc_insertion_point(class_scope:CCSUsrMsg_DesiredTimescale)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CCSUsrMsg_DesiredTimescale)
 
 class CCSUsrMsg_CurrentTimescale(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CCSUSRMSG_CURRENTTIMESCALE
 
-  # @@protoc_insertion_point(class_scope:CCSUsrMsg_CurrentTimescale)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CCSUsrMsg_CurrentTimescale)
 
 class CCSUsrMsg_AchievementEvent(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CCSUSRMSG_ACHIEVEMENTEVENT
 
-  # @@protoc_insertion_point(class_scope:CCSUsrMsg_AchievementEvent)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CCSUsrMsg_AchievementEvent)
 
 class CCSUsrMsg_MatchEndConditions(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CCSUSRMSG_MATCHENDCONDITIONS
 
-  # @@protoc_insertion_point(class_scope:CCSUsrMsg_MatchEndConditions)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CCSUsrMsg_MatchEndConditions)
 
 class CCSUsrMsg_DisplayInventory(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CCSUSRMSG_DISPLAYINVENTORY
 
-  # @@protoc_insertion_point(class_scope:CCSUsrMsg_DisplayInventory)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CCSUsrMsg_DisplayInventory)
 
 class CCSUsrMsg_CallVoteFailed(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CCSUSRMSG_CALLVOTEFAILED
 
-  # @@protoc_insertion_point(class_scope:CCSUsrMsg_CallVoteFailed)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CCSUsrMsg_CallVoteFailed)
 
 class CCSUsrMsg_VoteStart(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CCSUSRMSG_VOTESTART
 
-  # @@protoc_insertion_point(class_scope:CCSUsrMsg_VoteStart)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CCSUsrMsg_VoteStart)
 
 class CCSUsrMsg_VotePass(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CCSUSRMSG_VOTEPASS
 
-  # @@protoc_insertion_point(class_scope:CCSUsrMsg_VotePass)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CCSUsrMsg_VotePass)
 
 class CCSUsrMsg_VoteFailed(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CCSUSRMSG_VOTEFAILED
 
-  # @@protoc_insertion_point(class_scope:CCSUsrMsg_VoteFailed)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CCSUsrMsg_VoteFailed)
 
 class CCSUsrMsg_VoteSetup(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CCSUSRMSG_VOTESETUP
 
-  # @@protoc_insertion_point(class_scope:CCSUsrMsg_VoteSetup)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CCSUsrMsg_VoteSetup)
 
 class CCSUsrMsg_SendLastKillerDamageToClient(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CCSUSRMSG_SENDLASTKILLERDAMAGETOCLIENT
 
-  # @@protoc_insertion_point(class_scope:CCSUsrMsg_SendLastKillerDamageToClient)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CCSUsrMsg_SendLastKillerDamageToClient)
 
 class CCSUsrMsg_ItemPickup(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CCSUSRMSG_ITEMPICKUP
 
-  # @@protoc_insertion_point(class_scope:CCSUsrMsg_ItemPickup)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CCSUsrMsg_ItemPickup)
 
 class CCSUsrMsg_ShowMenu(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CCSUSRMSG_SHOWMENU
 
-  # @@protoc_insertion_point(class_scope:CCSUsrMsg_ShowMenu)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CCSUsrMsg_ShowMenu)
 
 class CCSUsrMsg_BarTime(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CCSUSRMSG_BARTIME
 
-  # @@protoc_insertion_point(class_scope:CCSUsrMsg_BarTime)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CCSUsrMsg_BarTime)
 
 class CCSUsrMsg_AmmoDenied(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CCSUSRMSG_AMMODENIED
 
-  # @@protoc_insertion_point(class_scope:CCSUsrMsg_AmmoDenied)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CCSUsrMsg_AmmoDenied)
 
 class CCSUsrMsg_MarkAchievement(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CCSUSRMSG_MARKACHIEVEMENT
 
-  # @@protoc_insertion_point(class_scope:CCSUsrMsg_MarkAchievement)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CCSUsrMsg_MarkAchievement)
 
 class CCSUsrMsg_ItemDrop(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CCSUSRMSG_ITEMDROP
 
-  # @@protoc_insertion_point(class_scope:CCSUsrMsg_ItemDrop)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CCSUsrMsg_ItemDrop)
 
 class CCSUsrMsg_GlowPropTurnOff(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CCSUSRMSG_GLOWPROPTURNOFF
 
-  # @@protoc_insertion_point(class_scope:CCSUsrMsg_GlowPropTurnOff)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CCSUsrMsg_GlowPropTurnOff)
 
 class CCSUsrMsg_RoundBackupFilenames(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CCSUSRMSG_ROUNDBACKUPFILENAMES
 
-  # @@protoc_insertion_point(class_scope:CCSUsrMsg_RoundBackupFilenames)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CCSUsrMsg_RoundBackupFilenames)
 
 class CCSUsrMsg_ResetHud(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CCSUSRMSG_RESETHUD
 
-  # @@protoc_insertion_point(class_scope:CCSUsrMsg_ResetHud)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CCSUsrMsg_ResetHud)
 
 class CCSUsrMsg_GameTitle(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CCSUSRMSG_GAMETITLE
 
-  # @@protoc_insertion_point(class_scope:CCSUsrMsg_GameTitle)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CCSUsrMsg_GameTitle)
 
 class CCSUsrMsg_RequestState(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CCSUSRMSG_REQUESTSTATE
 
-  # @@protoc_insertion_point(class_scope:CCSUsrMsg_RequestState)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CCSUsrMsg_RequestState)
 
 class CCSUsrMsg_StopSpectatorMode(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CCSUSRMSG_STOPSPECTATORMODE
 
-  # @@protoc_insertion_point(class_scope:CCSUsrMsg_StopSpectatorMode)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CCSUsrMsg_StopSpectatorMode)
 
 class CCSUsrMsg_DisconnectToLobby(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CCSUSRMSG_DISCONNECTTOLOBBY
 
-  # @@protoc_insertion_point(class_scope:CCSUsrMsg_DisconnectToLobby)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CCSUsrMsg_DisconnectToLobby)
 
 class CCSUsrMsg_WarmupHasEnded(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CCSUSRMSG_WARMUPHASENDED
 
-  # @@protoc_insertion_point(class_scope:CCSUsrMsg_WarmupHasEnded)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CCSUsrMsg_WarmupHasEnded)
 
 class CCSUsrMsg_ClientInfo(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CCSUSRMSG_CLIENTINFO
 
-  # @@protoc_insertion_point(class_scope:CCSUsrMsg_ClientInfo)
+  # @@protoc_insertion_point(class_scope:demoinfocsgo.proto.CCSUsrMsg_ClientInfo)
 
 
 DESCRIPTOR.has_options = True

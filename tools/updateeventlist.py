@@ -5,8 +5,8 @@ Created on Jul 12, 2014
 
 @author: Chris
 '''
-from demodump import DemoDump
-from netmessages_public_pb2 import svc_GameEventList, CSVCMsg_GameEventList
+from demoinfocsgo.demodump import DemoDump
+from demoinfocsgo.proto.netmessages_public_pb2 import svc_GameEventList, CSVCMsg_GameEventList
 import sys
 import json
 
@@ -38,7 +38,7 @@ if __name__ == '__main__':
     filename = sys.argv[1]
     
     if len(sys.argv) <= 1:
-        print "main.py demofile.dem"
+        print "updateeventlist.py demofile.dem"
         sys.exit()        
         
     if demo.open(filename):
@@ -47,6 +47,6 @@ if __name__ == '__main__':
         demo.dump()
         json_data = json.dumps(events, indent=4)
         print json_data
-        f = open("data/game_events.txt", "w")
+        f = open("../data/game_events.txt", "w")
         f.write(json_data)
         print "Saved to file data/game_events.txt"

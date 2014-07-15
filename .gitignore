@@ -1,5 +1,7 @@
 .project
 .pydevproject
 *.pyc
+
+
+demos/*.*
 *.dem
-packets/*.*

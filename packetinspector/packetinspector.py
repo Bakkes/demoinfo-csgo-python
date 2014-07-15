@@ -3,9 +3,8 @@ Created on Jul 15, 2014
 
 @author: Chris
 '''
-
-from demodump import DemoDump
-from netmessages_public_pb2 import *
+from demoinfocsgo.demodump import DemoDump
+from demoinfocsgo.proto.netmessages_public_pb2 import *
 import json
 _DUMPED_TYPES = {
                     net_NOP: ("CNETMsg_NOP"),
@@ -81,11 +80,11 @@ class PacketGUI(object):
     def __init__(self):
         pass
     
-    def open(self):
+    def open(self, filename):
         app = QtGui.QApplication(sys.argv)
         
         self.ex = Ui_MainWindow()
-        self.tablemodel = TickTableModel(JSONDumper("gotv.dem"), parent=self.ex.tableView)
+        self.tablemodel = TickTableModel(JSONDumper(filename), parent=self.ex.tableView)
         
         self.ex.tableView.setSortingEnabled(True)
         
@@ -171,17 +170,12 @@ class TickTableModel(QtCore.QAbstractTableModel):
             return QtCore.QVariant(self.headerdata[col])
         return QtCore.QVariant()
 
-    def sort(self, Ncol, order):
-        """Sort table by given column number.
-        """
-        self.emit(QtCore.SIGNAL("layoutAboutToBeChanged()"))
-        self.arraydata = sorted(self.arraydata, key=operator.itemgetter(Ncol))        
-        if order == QtCore.Qt.DescendingOrder:
-            self.arraydata.reverse()
-        self.emit(QtCore.SIGNAL("layoutChanged()"))
 
 if __name__ == '__main__':
+    if sys.argv <= 2:
+        print "Usage: packetinspector.py demofile.dem"
+        sys.exit()
+        
+    filename = sys.argv[1]
     gui = PacketGUI()
-    gui.open()
-    #
-    pass
+    gui.open(filename)

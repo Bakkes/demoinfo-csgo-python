@@ -1,4 +1,5 @@
 '''
+THIS IS CURRENTLY JUST A TEST CLASS
 Created on Jul 13, 2014
 
 @author: Chris
