@@ -9,6 +9,7 @@ from demoinfocsgo.demodump import DemoDump
 from demoinfocsgo.proto.netmessages_public_pb2 import svc_GameEventList, CSVCMsg_GameEventList
 import sys
 import json
+import collections
 
 events = {}
 _GAMEEVENT_TYPES = {2:"string",
@@ -29,9 +30,10 @@ def on_list_received(msg, data):
                              "ID": desc.eventid,
                              "name": desc.name,
                              "params": {}
-                                }
+                            }
         for key in desc.keys:
             events[desc.name]["params"][key.name] = _GAMEEVENT_TYPES[key.type + 1]
+    
 
 if __name__ == '__main__':
     demo = DemoDump()
@@ -45,7 +47,8 @@ if __name__ == '__main__':
         print "Beginning parsing"
         demo.register_on_netmsg(svc_GameEventList, on_list_received)
         demo.dump()
-        json_data = json.dumps(events, indent=4)
+        ordered = collections.OrderedDict(sorted(events.items()))
+        json_data = json.dumps(ordered, indent=4)
         print json_data
         f = open("../data/game_events.txt", "w")
         f.write(json_data)

@@ -222,9 +222,9 @@ class DemoDump(object):
     def _handle_classinfo(self, cmd, data):
         info = CSVCMsg_ClassInfo()
         info.ParseFromString(data)
-        print "CLASS INFO COUNT: %s, CREATE ON CLIENT: %r" % (len(info.classes), info.create_on_client)
-        for c in info.classes:
-            print "%i: %s, %s" % (c.class_id, c.data_table_name, c.class_name)
+        #print "CLASS INFO COUNT: %s, CREATE ON CLIENT: %r" % (len(info.classes), info.create_on_client)
+        #for c in info.classes:
+        #    print "%i: %s, %s" % (c.class_id, c.data_table_name, c.class_name)
                 
     def _handle_demo_packet(self):
         info = self.demofile.read_cmd_info()
