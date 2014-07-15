@@ -73,7 +73,7 @@ class DemoDump(object):
                         }
         self.USER_MESSAGES = {}
         self.GAME_EVENTS = {}
-        
+        self.current_tick = 0
         self.descriptors = {}
         self.register_on_netmsg(svc_GameEvent, self._handle_gameevent)
         self.register_on_netmsg(svc_GameEventList, self._handle_gameeventlist)
@@ -82,6 +82,7 @@ class DemoDump(object):
         self.register_on_netmsg(svc_SendTable, self._send_table)
         self.register_on_netmsg(svc_UpdateStringTable, self._update_stringtable)
         self.register_on_netmsg(svc_ClassInfo, self._handle_classinfo)
+        self.register_on_netmsg(net_Tick, self._handle_tick)
         
     def open(self, filename):
         '''
@@ -124,6 +125,10 @@ class DemoDump(object):
         '''
         finished = False
         while not finished:
+            import random
+            if random.Random().randint(1, 50) == 33:
+                break
+            
             cmd, tick, playerslot = self.demofile.read_cmd_header()
             # print "%i - %i - % i " % (cmd, tick, playerslot)
             if cmd == DemoMessage.SYNCTICK:
@@ -142,6 +147,11 @@ class DemoDump(object):
                 self.demofile.read_user_cmd()
             elif cmd == DemoMessage.SIGNON or cmd == DemoMessage.PACKET:
                 self._handle_demo_packet()
+    
+    def _handle_tick(self, cmd, data):
+        tickinfo = CNETMsg_Tick()
+        tickinfo.ParseFromString(data)
+        self.current_tick = tickinfo.tick
     
     def _server_info_update(self, cmd, data):
         info = CSVCMsg_ServerInfo()
