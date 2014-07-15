@@ -16,7 +16,7 @@ _GAMEEVENT_TYPES = {2:"val_string",
                    7:"val_bool",
                    8:"val_uint64",
                    9:"val_wstring"}
-            
+ 
 class GameEvent(object):
     '''
     Object that is passed when a game event is fired, for all game events, see: data/game_events.txt
@@ -135,6 +135,7 @@ class DemoDump(object):
                 self.demofile.read_raw_data()
             elif cmd == DemoMessage.DATATABLES:
                 self.demofile.read_raw_data()
+
             elif cmd == DemoMessage.STRINGTABLES:
                 self.demofile.read_raw_data()
             elif cmd == DemoMessage.USERCMD:
@@ -236,6 +237,7 @@ class DemoDump(object):
             data = buf[index:index + size]
             if cmd in self.NET_MSG:
                 for callback in self.NET_MSG[cmd]:
+                    
                     callback(cmd, data);
                     
             index = index + size
