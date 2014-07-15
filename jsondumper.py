@@ -59,7 +59,7 @@ class JSONDumper(object):
         del data.descriptor
         v = {"name": name, "id": id}
         v["params"] = data.__dict__
-        dictz = {"type": "GameEvent", "data": v}
+        dictz = {"type": "GameEvent (%s)" % name, "data": v}
         if self.callback is not None:
             self.callback(dictz)
     
@@ -95,8 +95,6 @@ class PacketGUI(object):
 
         self.ex.tableView.resizeColumnsToContents()
         self.ex.show()
-
-        print "test"
         sys.exit(app.exec_())
     
     def selection_changed(self, current, previous):
@@ -107,13 +105,7 @@ class PacketGUI(object):
         pitems = QtGui.QTreeWidgetItem(self.ex.treeView)
         pitems.setText(0, selected_item.type)
         self.get_recursive(selected_item.data, pitems)
-        """
-        pitems=QTreeWidgetItem(treeWidget)
-pitems.setText(0,parent)
-for child in clist:
-citems=QTreeWidgetItem(pitems)
-citems.setText(0,child)
-        """
+
     def get_recursive(self, data, parent):
         if isinstance(data, basestring):
             citems= QtGui.QTreeWidgetItem(parent)
@@ -144,9 +136,6 @@ class DemoModel(object):
     
 class TickTableModel(QtCore.QAbstractTableModel): 
     def __init__(self, jsondumper, parent=None, *args): 
-        """ datain: a list of lists
-            headerdata: a list of strings
-        """
         QtCore.QAbstractTableModel.__init__(self, parent, *args) 
         self.jsondumper = jsondumper
         self.jsondumper.callback = self.on_dictitem
@@ -156,9 +145,7 @@ class TickTableModel(QtCore.QAbstractTableModel):
         
  
     def on_dictitem(self, dict):
-        
         self.items.append(DemoModel(self.jsondumper.demo.current_tick, dict["type"], 0, dict["data"]))
-        #print json.dumps(dict, skipkeys=4)
         
     def rowCount(self, parent): 
         return len(self.items) 
@@ -167,7 +154,6 @@ class TickTableModel(QtCore.QAbstractTableModel):
         return len(self.headerdata)
  
     def data(self, index, role): 
-
         if not index.isValid(): 
             return QtCore.QVariant() 
         elif role != QtCore.Qt.DisplayRole: 
@@ -187,12 +173,12 @@ class TickTableModel(QtCore.QAbstractTableModel):
 
     def sort(self, Ncol, order):
         """Sort table by given column number.
-        
+        """
         self.emit(QtCore.SIGNAL("layoutAboutToBeChanged()"))
         self.arraydata = sorted(self.arraydata, key=operator.itemgetter(Ncol))        
         if order == QtCore.Qt.DescendingOrder:
             self.arraydata.reverse()
-        self.emit(QtCore.SIGNAL("layoutChanged()"))"""
+        self.emit(QtCore.SIGNAL("layoutChanged()"))
 
 if __name__ == '__main__':
     gui = PacketGUI()
