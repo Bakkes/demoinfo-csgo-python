@@ -125,10 +125,6 @@ class DemoDump(object):
         '''
         finished = False
         while not finished:
-            import random
-            if random.Random().randint(1, 50) == 33:
-                break
-            
             cmd, tick, playerslot = self.demofile.read_cmd_header()
             # print "%i - %i - % i " % (cmd, tick, playerslot)
             if cmd == DemoMessage.SYNCTICK:
