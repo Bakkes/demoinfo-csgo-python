@@ -90,153 +90,46 @@ class PacketGUI(object):
     def selection_changed(self, current, previous):
         selected_item = self.tablemodel.items[current.row()]
         
-        self.ex.treeView.setModel(selected_item.treeview_model)
+        self.ex.treeView.setHeaderLabels([selected_item.type])
+        self.ex.treeView.clear()
+        pitems = QtGui.QTreeWidgetItem(self.ex.treeView)
+        pitems.setText(0, selected_item.type)
+        self.get_recursive(selected_item.data, pitems)
+        """
+        pitems=QTreeWidgetItem(treeWidget)
+pitems.setText(0,parent)
+for child in clist:
+citems=QTreeWidgetItem(pitems)
+citems.setText(0,child)
+        """
+    def get_recursive(self, data, parent):
+        if isinstance(data, basestring):
+            citems= QtGui.QTreeWidgetItem(parent)
+            citems.setText(0, QtCore.QString(data))
+        elif (type(data) == list and not isinstance(data, basestring)):
+            for item in data:
+                self.get_recursive(item, parent)
+        else:
+            dictz = dict(data)
+            
+            for k, v in dictz.items():
+                citems= QtGui.QTreeWidgetItem(parent)
+                if type(v) == dict or (type(v) == list and not isinstance(v, basestring)):
+                    citems.setText(0, QtCore.QString(k))
+                    self.get_recursive(v, citems)
+                else:
+                    citems.setText(0, QtCore.QString("{key}: {value}".format(key=k, value=v)))
         
+        
+            
 class DemoModel(object):
     def __init__(self, tick, type, size, data):
         self.tick = tick
         self.type = type
         self.size = size
         self.data = data
-        
-    @property
-    def treeview_model(self):
-        model = JSONTreeModel(self.data)
-        model.setupModelData()
-        return model
+
     
-class KVPair(object):
-    def __init__(self, key, value):
-        self.key = key
-        self.value = value
-        
-        
-class TreeItem(object):
-    '''
-    a python object used to return row/column data, and keep note of
-    it's parents and/or children
-    '''
-    def __init__(self, kvpair, header, parentItem):
-        self.kvpair = kvpair
-        self.parentItem = parentItem
-        self.header = header
-        self.childItems = []
-
-    def appendChild(self, item):
-        self.childItems.append(item)
-
-    def child(self, row):
-        return self.childItems[row]
-
-    def childCount(self):
-        return len(self.childItems)
-
-    def columnCount(self):
-        return 1
-    
-    def data(self, column):
-        if self.kvpair == None:
-            if column == 0:
-                return QtCore.QVariant(self.header)              
-        else:
-            if column == 0:
-                return QtCore.QVariant("{key}: {value}".format(key=self.item.key, value=self.item.value))
-            
-        return QtCore.QVariant()
-
-    def parent(self):
-        return self.parentItem
-    
-    def row(self):
-        if self.parentItem:
-            return self.parentItem.childItems.index(self)
-        return 0
-
-HORIZONTAL_HEADERS = ("")
-class JSONTreeModel(QtCore.QAbstractItemModel):
-    def __init__(self, data, parent=None):
-        super(JSONTreeModel, self).__init__(parent)
-        self.item_data = data
-    def columnCount(self, parent=None):
-        if parent and parent.isValid():
-            return parent.internalPointer().columnCount()
-        else:
-            return len(HORIZONTAL_HEADERS)
-        
-    def data(self, index, role):
-        if not index.isValid():
-            return QtCore.QVariant()
-        print "DATA"
-        item = index.internalPointer()
-        if role == QtCore.Qt.DisplayRole:
-            return item.data(index.column())
-        if role == QtCore.Qt.UserRole:
-            if item:
-                return "{key}: {value}".format(key=item.key, value=item.value)
-
-        return QtCore.QVariant()
-    
-    def headerData(self, column, orientation, role):
-        if (orientation == QtCore.Qt.Horizontal and
-        role == QtCore.Qt.DisplayRole):
-            try:
-                return QtCore.QVariant(HORIZONTAL_HEADERS[column])
-            except IndexError:
-                pass
-
-        return QtCore.QVariant()
-
-    def index(self, row, column, parent):
-        if not self.hasIndex(row, column, parent):
-            return QtCore.QModelIndex()
-
-        if not parent.isValid():
-            parentItem = self.rootItem
-        else:
-            parentItem = parent.internalPointer()
-
-        print "row %i" % row
-        childItem = parentItem.child(row)
-        if childItem:
-            return self.createIndex(row, column, childItem)
-        else:
-            return QtCore.QModelIndex()
-
-    def parent(self, index):
-        if not index.isValid():
-            return QtCore.QModelIndex()
-
-        childItem = index.internalPointer()
-        if not childItem:
-            return QtCore.QModelIndex()
-        
-        parentItem = childItem.parent()
-
-        if parentItem == self.rootItem:
-            return QtCore.QModelIndex()
-
-        return self.createIndex(parentItem.row(), 0, parentItem)
-
-    def rowCount(self, parent=QtCore.QModelIndex()):
-        if parent.column() > 0:
-            return 0
-        if not parent.isValid():
-            p_Item = self.rootItem
-        else:
-            p_Item = parent.internalPointer()
-        print "item count: %i" % p_Item.childCount()
-        return p_Item.childCount()
-    
-    def setupModelData(self):
-        self.rootItem = TreeItem(KVPair("A", "B"), "", None)
-        self.parents = {0: self.rootItem}
-        self.rootItem.appendChild(TreeItem(KVPair("A1", "B1"), "", self.rootItem))
-        print "setup"
-    
-    def calc_tree(self, data):
-        return
-            
-            
 class TickTableModel(QtCore.QAbstractTableModel): 
     def __init__(self, jsondumper, parent=None, *args): 
         """ datain: a list of lists

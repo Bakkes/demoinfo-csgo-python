@@ -38,7 +38,7 @@ class Ui_MainWindow(QtGui.QMainWindow):
         self.tableView.setSelectionBehavior(QtGui.QAbstractItemView.SelectRows)
         self.tableView.setObjectName(_fromUtf8("tableView"))
         self.tableView.verticalHeader().setVisible(False)
-        self.treeView = QtGui.QTreeView(self.centralwidget)
+        self.treeView = QtGui.QTreeWidget(self.centralwidget)
         self.treeView.setGeometry(QtCore.QRect(0, 280, 851, 271))
         self.treeView.setObjectName(_fromUtf8("treeView"))
         MainWindow.setCentralWidget(self.centralwidget)
