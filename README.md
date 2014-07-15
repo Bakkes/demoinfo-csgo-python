@@ -7,7 +7,7 @@ It currently currently has the following features:
 - Registering a callback when a net or svc message is found.
 - Registering a callback when a certain game event happened (see [examples/highlightfinder.py](https://github.com/Bakkes/demoinfo-csgo-python/blob/master/examples/highlightfinder.py) and [data/game_events.txt](https://github.com/Bakkes/demoinfo-csgo-python/blob/master/data/game_events.txt))
 
-Things still to do are:
+TODO:
 - Parsing usermessages
 - Parsing stringtables
 
