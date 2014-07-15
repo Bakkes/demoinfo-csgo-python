@@ -5,7 +5,12 @@ Created on Jul 15, 2014
 '''
 from demoinfocsgo.demodump import DemoDump
 from demoinfocsgo.proto.netmessages_public_pb2 import *
-import json
+from protojson.pbliteserializer import PbLiteSerializer
+
+import sys
+from PyQt4 import QtGui, QtCore
+from maingui import Ui_MainWindow
+
 _DUMPED_TYPES = {
                     net_NOP: ("CNETMsg_NOP"),
                     net_Disconnect: ("CNETMsg_Disconnect"),
@@ -37,8 +42,6 @@ _DUMPED_TYPES = {
                     svc_GameEventList: ("CSVCMsg_GameEventList"),
                     svc_GetCvarValue: ("CSVCMsg_GetCvarValue")
                  }
-
-from protojson.pbliteserializer import PbLiteSerializer
 
 class JSONDumper(object):
     def __init__(self, filename):
@@ -73,9 +76,7 @@ class JSONDumper(object):
         if self.callback is not None:
             self.callback(dict)
         
-import sys
-from PyQt4 import QtGui, QtCore
-from maingui import Ui_MainWindow
+
 class PacketGUI(object):  
     def __init__(self):
         pass

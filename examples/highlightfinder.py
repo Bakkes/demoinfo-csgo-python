@@ -19,7 +19,6 @@ class Player(object):
         self.deaths = 0
         self.assists = 0
         
-        
         self.kills_this_round = 0
         self.clutch_kills = 0
         self.is_connected = True
@@ -88,12 +87,10 @@ class HighlightFinder(object):
             if player.is_alive and player.team == data.winner and self.count_alive(player.team) == 1 and self.count_alive(self.invert_team(player.team)) == 0 and player.clutch_kills >= 2:
                 self.highlights.append("%s clutched a 1v%i in round %i" % (player.name, player.clutch_kills, self.current_round))
         
-        
     def player_death(self, data):
         self.players[data.userid].deaths += 1
         self.players[data.userid].is_alive = False
         
-            
         if data.userid != data.attacker:  # not suicide?
             self.players[data.attacker].kills += 1
             self.players[data.attacker].kills_this_round += 1  # used for finding highlights
@@ -130,7 +127,6 @@ class HighlightFinder(object):
     
     
 if __name__ == '__main__':
-    # demo = DemoDump()
     filename = sys.argv[1]
     
     if len(sys.argv) <= 1:
