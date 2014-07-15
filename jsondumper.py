@@ -89,6 +89,7 @@ class PacketGUI(object):
     
     def selection_changed(self, current, previous):
         selected_item = self.tablemodel.items[current.row()]
+        
         self.ex.treeView.setModel(selected_item.treeview_model)
         
 class DemoModel(object):
@@ -194,6 +195,7 @@ class JSONTreeModel(QtCore.QAbstractItemModel):
         else:
             parentItem = parent.internalPointer()
 
+        print "row %i" % row
         childItem = parentItem.child(row)
         if childItem:
             return self.createIndex(row, column, childItem)
@@ -222,6 +224,7 @@ class JSONTreeModel(QtCore.QAbstractItemModel):
             p_Item = self.rootItem
         else:
             p_Item = parent.internalPointer()
+        print "item count: %i" % p_Item.childCount()
         return p_Item.childCount()
     
     def setupModelData(self):
