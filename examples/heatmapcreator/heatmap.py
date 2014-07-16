@@ -132,7 +132,7 @@ MAPS = {
         }
 
 class HeatmapGenerator(object):
-    def __init__(self, filename):
+    def __init__(self, filename, filter=None):
         self.demo = DemoDump()
         self.match = Match(self.demo)
         self.demo.open(filename)
@@ -143,25 +143,38 @@ class HeatmapGenerator(object):
         self.map_overview.get_image() #Set size, make a fix for this later
         self.demo.register_on_gameevent(40, self.game_start)
         
+        self.filter = filter
+        
+        for i in range(0, 50):
+            self.smoke_points[i] = []
+            self.flash_points[i] = []
+        
     def game_start(self, data):
         self.demo.register_on_gameevent(36, self.round_start)
         self.demo.register_on_gameevent(152, self.on_smoke)
         self.demo.register_on_gameevent(151, self.on_flash)
         
     def on_smoke(self, data):
-        x, y = self.map_overview.convert_point(data.x, data.y)
-        self.smoke_points[self.match.current_round].append((x, y, self.match.players[data.userid].team))
+        player = self.match.players[data.userid]
+        if not filter or (data.userid == self.filter or player.networkid == filter or player.name == filter):
+            x, y = self.map_overview.convert_point(data.x, data.y)
+            self.smoke_points[self.match.current_round].append((x, y, self.match.players[data.userid].team))
     
     def on_flash(self, data):
-        x, y = self.map_overview.convert_point(data.x, data.y)
-        self.flash_points[self.match.current_round].append((x, y, self.match.players[data.userid].team))
+        player = self.match.players[data.userid]
+        if not filter or (data.userid == self.filter or player.networkid == filter or player.name == filter):
+            x, y = self.map_overview.convert_point(data.x, data.y)
+            self.flash_points[self.match.current_round].append((x, y, self.match.players[data.userid].team))
 
     def round_start(self, data):
         self.smoke_points[self.match.current_round] = []
         self.flash_points[self.match.current_round] = []
         
+
     def dump(self):
         self.demo.dump()
+        for p, v in self.match.players.items():
+            print vars(v)
         self.dump_halves(self.smoke_points, "smoke_first_half", "smoke_second_half")
         self.dump_halves(self.flash_points, "flash_first_half", "flash_second_half")
         
@@ -187,26 +200,14 @@ class HeatmapGenerator(object):
         sh_img.save("%s.png" % second_half_name)
         
 if __name__ == "__main__":
-    filename = sys.argv[1]
     
     if len(sys.argv) <= 1:
         print "heatmap.py demofile.dem"
-        sys.exit()        
+        sys.exit()   
         
-    hmg = HeatmapGenerator(sys.argv[1])
+    filename = sys.argv[1]     
+    if len(sys.argv) >= 3:
+        filter = sys.argv[2]
+        
+    hmg = HeatmapGenerator(sys.argv[1], filter)
     hmg.dump()
-    sys.exit()
-    
-    hmp = HeatmapGenerator(filename)
-    hmp.generate()
-    
-    
-    pts = []
-    for x in range(400):
-        pts.append((random.random(), random.random() ))
-
-    print "Processing %d points..." % len(pts)
-
-    hm = heatmap.Heatmap()
-    img = hm.heatmap(pts)
-    img.save("classic.png")
