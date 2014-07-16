@@ -143,11 +143,10 @@ class HeatmapGenerator(object):
         self.map_overview.get_image() #Set size, make a fix for this later
         self.demo.register_on_gameevent(40, self.game_start)
         
-    
     def game_start(self, data):
-        self.demo.register_on_gameevent(152, self.on_smoke)
         self.demo.register_on_gameevent(36, self.round_start)
-        self.demo.register_on_gameevent(42, self.round_end)
+        self.demo.register_on_gameevent(152, self.on_smoke)
+        self.demo.register_on_gameevent(151, self.on_flash)
         
     def on_smoke(self, data):
         x, y = self.map_overview.convert_point(data.x, data.y)
@@ -155,26 +154,18 @@ class HeatmapGenerator(object):
     
     def on_flash(self, data):
         x, y = self.map_overview.convert_point(data.x, data.y)
-        self.flash_points[self.match.current_round].append((x, y, self.players[data.userid].team))
+        self.flash_points[self.match.current_round].append((x, y, self.match.players[data.userid].team))
 
     def round_start(self, data):
         self.smoke_points[self.match.current_round] = []
         self.flash_points[self.match.current_round] = []
         
-            
-    def round_end(self, data):
-        pass
-        return
-        copy = self.im.copy()
-        draw = ImageDraw.Draw(copy)
-        r = 2
-        for p in self.points:
-            color = (255,0, 0, 200) if p[2] == 2  else (0,0, 255, 200) #
-            draw.ellipse((p[0]-r, p[1]-r, p[0]+r, p[1]+r), fill=color)
-        copy.save("rounds/%i.png" % self.current_round)
-        
     def dump(self):
         self.demo.dump()
+        self.dump_halves(self.smoke_points, "smoke_first_half", "smoke_second_half")
+        self.dump_halves(self.flash_points, "flash_first_half", "flash_second_half")
+        
+    def dump_halves(self, points, first_half_name, second_half_name):
         fh_img = self.map_overview.get_image()
         sh_img = self.map_overview.get_image()
         fh_draw = ImageDraw.Draw(fh_img)
@@ -183,18 +174,17 @@ class HeatmapGenerator(object):
         ellipse_range = 2
         #first half
         for i in range(1, 16):
-            for p in self.smoke_points[i]:
+            for p in points[i]:
                 color = (255,0, 0, 200) if p[2] == 2  else (0,0, 255, 200)
                 fh_draw.ellipse((p[0]-ellipse_range, p[1]-ellipse_range, p[0]+ellipse_range, p[1]+ellipse_range), fill=color)
         
-        fh_img.save("first_half.png")
+        fh_img.save("%s.png" % first_half_name)
         
         for i in range(16, self.match.current_round + 1):
-            for p in self.smoke_points[i]:
+            for p in points[i]:
                 color = (255,0, 0, 200) if p[2] == 2  else (0,0, 255, 200)
                 sh_draw.ellipse((p[0]-ellipse_range, p[1]-ellipse_range, p[0]+ellipse_range, p[1]+ellipse_range), fill=color)
-        sh_img.save("second_half.png")
-        
+        sh_img.save("%s.png" % second_half_name)
         
 if __name__ == "__main__":
     filename = sys.argv[1]
