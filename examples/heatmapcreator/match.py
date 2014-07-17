@@ -30,34 +30,47 @@ class Match(object):
     """
     def __init__(self, demodump):
         self.demo = demodump
-        self.demo.register_on_gameevent(40, self.game_start)
+        self.demo.register_on_gameevent("round_announce_match_start", self.game_start)
         self.current_round = 0
         self.players = {}
-        self.demo.register_on_gameevent(7, self.player_connected)
-        self.demo.register_on_gameevent(8, self.player_connected)
-        self.demo.register_on_gameevent(9, self.player_disconnected)
-        self.demo.register_on_gameevent(21, self.player_join_team)
+        self.demo.register_on_gameevent("player_connect", self.player_connected)
+        self.demo.register_on_gameevent("player_info", self.player_connected)
+        self.demo.register_on_gameevent("player_disconnect", self.player_disconnected)
+        self.demo.register_on_gameevent("player_team", self.player_join_team)
+        self.demo.register_on_gameevent("player_connect_full", self.player_connected_full)
     
     def player_connected(self, data):
         if data.userid not in self.players.keys():
             self.players[data.userid] = Player(data.index, data.name, data.userid, data.networkid)
         self.players[data.userid].is_connected = True
+        self.players[data.userid].index = data.index
+        self.players[data.userid].name = data.name
+        self.players[data.userid].userid = data.userid
+        self.players[data.userid].networkid = data.networkid
+       
         
+    def player_connected_full(self, data):
+        if data.userid not in self.players:
+            self.players[data.userid] = Player(data.index, "ERR", data.userid, "ERR")
+    
     def player_disconnected(self, data):
         if data.networkid == 'BOT':  # if bot, just remove
-            self.players.pop(data.userid, None)
+            pass
+            #self.players.pop(data.userid, None)
         else:
             self.players[data.userid].is_connected = False
     
     def player_join_team(self, data):
         if data.team == 0:  # disconnect?
             return
+        if data.userid not in self.players:
+            self.players[data.userid] = Player(-1, "ERR", data.userid, "ERR")
         self.players[data.userid].team = data.team
     
     def game_start(self, data):
         self.current_round = 0
-        self.demo.register_on_gameevent(36, self.round_start)
-        self.demo.register_on_gameevent(42, self.round_end)
+        self.demo.register_on_gameevent("round_start", self.round_start)
+        self.demo.register_on_gameevent("round_end", self.round_end)
         
     def round_start(self, data):
         self.current_round += 1

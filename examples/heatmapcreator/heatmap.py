@@ -141,7 +141,7 @@ class HeatmapGenerator(object):
         self.flash_points = {}
         self.map_overview = MAPS[self.mapname]()
         self.map_overview.get_image() #Set size, make a fix for this later
-        self.demo.register_on_gameevent(40, self.game_start)
+        self.demo.register_on_gameevent("round_announce_match_start", self.game_start)
         
         self.filter = filter
         
@@ -150,17 +150,23 @@ class HeatmapGenerator(object):
             self.flash_points[i] = []
         
     def game_start(self, data):
-        self.demo.register_on_gameevent(36, self.round_start)
-        self.demo.register_on_gameevent(152, self.on_smoke)
-        self.demo.register_on_gameevent(151, self.on_flash)
+        self.demo.register_on_gameevent("round_start", self.round_start)
+        self.demo.register_on_gameevent("smokegrenade_detonate", self.on_smoke)
+        self.demo.register_on_gameevent("flashbang_detonate", self.on_flash)
         
     def on_smoke(self, data):
+        if data.userid not in self.match.players: #Find out later
+            print "ERROR: %i not found in player" % data.userid
+            return
         player = self.match.players[data.userid]
         if not filter or (data.userid == self.filter or player.networkid == filter or player.name == filter):
             x, y = self.map_overview.convert_point(data.x, data.y)
             self.smoke_points[self.match.current_round].append((x, y, self.match.players[data.userid].team))
     
     def on_flash(self, data):
+        if data.userid not in self.match.players:
+            print "ERROR: %i not found in player" % data.userid
+            return
         player = self.match.players[data.userid]
         if not filter or (data.userid == self.filter or player.networkid == filter or player.name == filter):
             x, y = self.map_overview.convert_point(data.x, data.y)
@@ -173,8 +179,6 @@ class HeatmapGenerator(object):
 
     def dump(self):
         self.demo.dump()
-        for p, v in self.match.players.items():
-            print vars(v)
         self.dump_halves(self.smoke_points, "smoke_first_half", "smoke_second_half")
         self.dump_halves(self.flash_points, "flash_first_half", "flash_second_half")
         
@@ -211,3 +215,4 @@ if __name__ == "__main__":
         
     hmg = HeatmapGenerator(sys.argv[1], filter)
     hmg.dump()
+    print "Done"

@@ -104,10 +104,10 @@ class DemoDump(object):
     def register_on_gameevent(self, msg, callback):
         '''
         Will register a callback to call when the given game event is called.
-        PLEASE NOTE, msg param must be the ID of the game event, NOT the name!
+        Can give ID or name, SHOULD USE NAME, BECAUSE IDS CHANGE (?)
         Game events can be found in data/game_events.txt
         '''
-        if not msg in self.GAME_EVENTS:
+        if msg not in self.GAME_EVENTS:
             self.GAME_EVENTS[msg] = []
         self.GAME_EVENTS[msg].append(callback)
     
@@ -171,9 +171,15 @@ class DemoDump(object):
         '''
         gameevent = CSVCMsg_GameEvent()
         gameevent.ParseFromString(data)
-        if gameevent.eventid in self.GAME_EVENTS:
+        if gameevent.eventid in self.GAME_EVENTS :
             event = GameEvent(gameevent, self.descriptors[gameevent.eventid])
             for callback in self.GAME_EVENTS[event.raw.eventid]:
+                callback(event)
+                
+        name = self.descriptors[gameevent.eventid][1]
+        if name in self.GAME_EVENTS:
+            event = GameEvent(gameevent, self.descriptors[gameevent.eventid])
+            for callback in self.GAME_EVENTS[name]:
                 callback(event)
          
     stringtable_data = {}
