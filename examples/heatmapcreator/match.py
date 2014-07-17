@@ -38,6 +38,20 @@ class Match(object):
         self.demo.register_on_gameevent("player_disconnect", self.player_disconnected)
         self.demo.register_on_gameevent("player_team", self.player_join_team)
         self.demo.register_on_gameevent("player_connect_full", self.player_connected_full)
+        self.demo.register_on_gameevent("round_start", self.round_start)
+        self.demo.register_on_gameevent("round_end", self.round_end)
+        self.demo.register_on_gameevent("item_purchase", self.item_purchase)
+        self.demo.register_on_gameevent("player_spawn", self.player_spawn)
+        
+    def item_purchase(self, data): #to update recent teams
+        if data.userid not in self.players.keys():
+            self.players[data.userid] = Player(-1, "PURCHASE", data.userid, "ERR")
+        self.players[data.userid].team = data.team
+    
+    def player_spawn(self, data):
+        if data.userid not in self.players.keys():
+            self.players[data.userid] = Player(-1, "SPAWN", data.userid, "ERR")
+        self.players[data.userid].team = data.teamnum
     
     def player_connected(self, data):
         if data.userid not in self.players.keys():
@@ -47,11 +61,10 @@ class Match(object):
         self.players[data.userid].name = data.name
         self.players[data.userid].userid = data.userid
         self.players[data.userid].networkid = data.networkid
-       
-        
+
     def player_connected_full(self, data):
         if data.userid not in self.players:
-            self.players[data.userid] = Player(data.index, "ERR", data.userid, "ERR")
+            self.players[data.userid] = Player(data.index, "CONNECTED_FULL", data.userid, "ERR")
     
     def player_disconnected(self, data):
         if data.networkid == 'BOT':  # if bot, just remove
@@ -64,13 +77,11 @@ class Match(object):
         if data.team == 0:  # disconnect?
             return
         if data.userid not in self.players:
-            self.players[data.userid] = Player(-1, "ERR", data.userid, "ERR")
+            self.players[data.userid] = Player(-1, "JOIN_TEAM", data.userid, "ERR")
         self.players[data.userid].team = data.team
     
     def game_start(self, data):
         self.current_round = 0
-        self.demo.register_on_gameevent("round_start", self.round_start)
-        self.demo.register_on_gameevent("round_end", self.round_end)
         
     def round_start(self, data):
         self.current_round += 1

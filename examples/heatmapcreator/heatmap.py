@@ -141,32 +141,43 @@ class HeatmapGenerator(object):
         self.flash_points = {}
         self.map_overview = MAPS[self.mapname]()
         self.map_overview.get_image() #Set size, make a fix for this later
-        self.demo.register_on_gameevent("round_announce_match_start", self.game_start)
-        
+        self.demo.register_on_gameevent("round_announce_match_start", self.reset)
+
+        self.demo.register_on_gameevent("round_start", self.round_start)
+        self.demo.register_on_gameevent("smokegrenade_detonate", self.on_smoke)
+        self.demo.register_on_gameevent("flashbang_detonate", self.on_flash)
+    
+
         self.filter = filter
         
         for i in range(0, 50):
             self.smoke_points[i] = []
             self.flash_points[i] = []
         
-    def game_start(self, data):
-        self.demo.register_on_gameevent("round_start", self.round_start)
-        self.demo.register_on_gameevent("smokegrenade_detonate", self.on_smoke)
-        self.demo.register_on_gameevent("flashbang_detonate", self.on_flash)
+    def reset(self, ignore=None):
+        for i in range(0, 50):
+            self.smoke_points[i] = []
+            self.flash_points[i] = []
+        self.current_round = 0
         
     def on_smoke(self, data):
-        if data.userid not in self.match.players: #Find out later
-            print "ERROR: %i not found in player" % data.userid
+        if self.match.current_round == 0:
             return
+        if data.userid not in self.match.players.keys(): #Find out later
+            print "ERROR: %i not found in player array" % data.userid
+            data.userid = self.match.players[self.match.players.keys()[0]].userid
+        
         player = self.match.players[data.userid]
         if not filter or (data.userid == self.filter or player.networkid == filter or player.name == filter):
             x, y = self.map_overview.convert_point(data.x, data.y)
             self.smoke_points[self.match.current_round].append((x, y, self.match.players[data.userid].team))
     
     def on_flash(self, data):
-        if data.userid not in self.match.players:
-            print "ERROR: %i not found in player" % data.userid
+        if self.match.current_round == 0:
             return
+        if data.userid not in self.match.players.keys():
+            print "ERROR: %i not found in player array" % data.userid
+            data.userid = self.match.players[self.match.players.keys()[0]].userid
         player = self.match.players[data.userid]
         if not filter or (data.userid == self.filter or player.networkid == filter or player.name == filter):
             x, y = self.map_overview.convert_point(data.x, data.y)
@@ -187,6 +198,8 @@ class HeatmapGenerator(object):
         sh_img = self.map_overview.get_image()
         fh_draw = ImageDraw.Draw(fh_img)
         sh_draw = ImageDraw.Draw(sh_img)
+        
+        print "Total rounds %i" % self.match.current_round
         
         ellipse_range = 2
         #first half
@@ -209,7 +222,8 @@ if __name__ == "__main__":
         print "heatmap.py demofile.dem"
         sys.exit()   
         
-    filename = sys.argv[1]     
+    filename = sys.argv[1]    
+    filter = None 
     if len(sys.argv) >= 3:
         filter = sys.argv[2]
         
