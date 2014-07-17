@@ -146,7 +146,6 @@ class HeatmapGenerator(object):
         self.demo.register_on_gameevent("round_start", self.round_start)
         self.demo.register_on_gameevent("smokegrenade_detonate", self.on_smoke)
         self.demo.register_on_gameevent("flashbang_detonate", self.on_flash)
-    
 
         self.filter = filter
         
@@ -192,14 +191,17 @@ class HeatmapGenerator(object):
         self.demo.dump()
         self.dump_halves(self.smoke_points, "smoke_first_half", "smoke_second_half")
         self.dump_halves(self.flash_points, "flash_first_half", "flash_second_half")
-        
+        for userid, player in self.match.players.items():
+            print vars(player)
+            
+        print "Total rounds %i" % self.match.current_round
+        print self.match.team_score
     def dump_halves(self, points, first_half_name, second_half_name):
         fh_img = self.map_overview.get_image()
         sh_img = self.map_overview.get_image()
         fh_draw = ImageDraw.Draw(fh_img)
         sh_draw = ImageDraw.Draw(sh_img)
         
-        print "Total rounds %i" % self.match.current_round
         
         ellipse_range = 2
         #first half

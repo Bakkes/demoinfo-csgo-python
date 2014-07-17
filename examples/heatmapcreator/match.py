@@ -15,13 +15,18 @@ class Player(object):
         self.name = name
         self.userid = userid
         self.networkid = networkid
+
+        self.is_connected = True
+        self.team = 0  # 2 is T, 3 is CT?
+        
+        self.reset_stats()
+        
+    def reset_stats(self):
         self.kills = 0
         self.deaths = 0
         self.assists = 0
-        self.kills_this_round = 0
-        self.is_connected = True
-        self.is_alive = False
-        self.team = 0  # 2 is T, 3 is CT?
+        self.headshots = 0
+        self.suicides = 0
  
 
 class Match(object):
@@ -33,6 +38,7 @@ class Match(object):
         self.demo.register_on_gameevent("round_announce_match_start", self.game_start)
         self.current_round = 0
         self.players = {}
+        self.team_score = [[0, 0], [0, 0]]
         self.demo.register_on_gameevent("player_connect", self.player_connected)
         self.demo.register_on_gameevent("player_info", self.player_connected)
         self.demo.register_on_gameevent("player_disconnect", self.player_disconnected)
@@ -42,7 +48,26 @@ class Match(object):
         self.demo.register_on_gameevent("round_end", self.round_end)
         self.demo.register_on_gameevent("item_purchase", self.item_purchase)
         self.demo.register_on_gameevent("player_spawn", self.player_spawn)
+        self.demo.register_on_gameevent("player_death", self.player_death)
         
+        
+    def player_death(self, data):
+        if data.userid not in self.players:
+            print "Player %i died, but could not be found" % data.userid
+            return
+        self.players[data.userid].deaths += 1
+        
+        if data.userid != data.attacker:  # not suicide?
+            self.players[data.attacker].kills += 1
+            if data.headshot:
+                self.players[data.attacker].headshots += 1
+        else:
+            self.players[data.attacker].suicides += 1
+            
+            
+        if data.assister != 0:  # someone assisted
+            self.players[data.assister].assists += 1
+            
     def item_purchase(self, data): #to update recent teams
         if data.userid not in self.players.keys():
             self.players[data.userid] = Player(-1, "PURCHASE", data.userid, "ERR")
@@ -52,7 +77,7 @@ class Match(object):
         if data.userid not in self.players.keys():
             self.players[data.userid] = Player(-1, "SPAWN", data.userid, "ERR")
         self.players[data.userid].team = data.teamnum
-    
+        
     def player_connected(self, data):
         if data.userid not in self.players.keys():
             self.players[data.userid] = Player(data.index, data.name, data.userid, data.networkid)
@@ -72,6 +97,8 @@ class Match(object):
             #self.players.pop(data.userid, None)
         else:
             self.players[data.userid].is_connected = False
+            self.players[data.userid].networkid = data.networkid
+            self.players[data.userid].name = data.name
     
     def player_join_team(self, data):
         if data.team == 0:  # disconnect?
@@ -82,9 +109,16 @@ class Match(object):
     
     def game_start(self, data):
         self.current_round = 0
+        self.team_score = [[0, 0], [0, 0]]
+        for index, player in self.players.items():
+            player.reset_stats()
         
+        
+    
     def round_start(self, data):
         self.current_round += 1
                
     def round_end(self, data):
+        half = self.current_round >= 15
+        self.team_score[half][data.winner-2] += 1 #T = index 0, CT = index 1
         pass
