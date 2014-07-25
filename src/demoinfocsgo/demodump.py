@@ -22,10 +22,10 @@ class GameEvent(object):
     Object that is passed when a game event is fired, for all game events, see: data/game_events.txt
     '''
     
-    def __init__(self, raw, descriptor):
+    def __init__(self, raw, descriptor, name):
         self.raw = raw
         self.descriptor = descriptor
-        
+        self.name = name
         # convert the val_ stuff to actual property names
         index = 0
         for keyname in self.descriptor[3]:
@@ -171,14 +171,15 @@ class DemoDump(object):
         '''
         gameevent = CSVCMsg_GameEvent()
         gameevent.ParseFromString(data)
+        name = self.descriptors[gameevent.eventid][1]
         if gameevent.eventid in self.GAME_EVENTS :
-            event = GameEvent(gameevent, self.descriptors[gameevent.eventid])
+            event = GameEvent(gameevent, self.descriptors[gameevent.eventid], name)
             for callback in self.GAME_EVENTS[event.raw.eventid]:
                 callback(event)
                 
-        name = self.descriptors[gameevent.eventid][1]
+        
         if name in self.GAME_EVENTS:
-            event = GameEvent(gameevent, self.descriptors[gameevent.eventid])
+            event = GameEvent(gameevent, self.descriptors[gameevent.eventid], name)
             for callback in self.GAME_EVENTS[name]:
                 callback(event)
          

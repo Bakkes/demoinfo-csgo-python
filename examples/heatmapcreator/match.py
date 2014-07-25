@@ -49,21 +49,26 @@ class Match(object):
         self.demo.register_on_gameevent("item_purchase", self.item_purchase)
         self.demo.register_on_gameevent("player_spawn", self.player_spawn)
         self.demo.register_on_gameevent("player_death", self.player_death)
+        self.demo.register_on_gameevent("player_changename", self.namechange)
         
-        
+    def namechange(self, data):
+        print "[%i] %s changed name to %s" % (data.userid, data.oldname, data.newname)
     def player_death(self, data):
         if data.userid not in self.players:
             print "Player %i died, but could not be found" % data.userid
             return
+        
         self.players[data.userid].deaths += 1
         
-        if data.userid != data.attacker:  # not suicide?
+        if data.attacker not in self.players:
+            return
+        
+        if data.userid != data.attacker:  # not suicide? maybe check for same team?
             self.players[data.attacker].kills += 1
             if data.headshot:
                 self.players[data.attacker].headshots += 1
         else:
             self.players[data.attacker].suicides += 1
-            
             
         if data.assister != 0:  # someone assisted
             self.players[data.assister].assists += 1
@@ -108,12 +113,11 @@ class Match(object):
         self.players[data.userid].team = data.team
     
     def game_start(self, data):
+        print self.team_score[0][0] + self.team_score[0][1]
         self.current_round = 0
         self.team_score = [[0, 0], [0, 0]]
         for index, player in self.players.items():
             player.reset_stats()
-        
-        
     
     def round_start(self, data):
         self.current_round += 1

@@ -13,6 +13,7 @@ import sys
 import math
 from PIL import Image
 from PIL import ImageDraw
+import argparse
 
 
 
@@ -132,34 +133,39 @@ MAPS = {
         }
 
 class HeatmapGenerator(object):
+    
     def __init__(self, filename, filter=None):
         self.demo = DemoDump()
         self.match = Match(self.demo)
         self.demo.open(filename)
         self.mapname = self.demo.demofile.demoheader.mapname
-        self.smoke_points = {}
-        self.flash_points = {}
         self.map_overview = MAPS[self.mapname]()
+        self.events = []
+        self.event_points = {}
         self.map_overview.get_image() #Set size, make a fix for this later
         self.demo.register_on_gameevent("round_announce_match_start", self.reset)
 
         self.demo.register_on_gameevent("round_start", self.round_start)
-        self.demo.register_on_gameevent("smokegrenade_detonate", self.on_smoke)
-        self.demo.register_on_gameevent("flashbang_detonate", self.on_flash)
+        #self.demo.register_on_gameevent("smokegrenade_detonate", self.on_smoke)
+        #self.demo.register_on_gameevent("flashbang_detonate", self.on_flash)
 
         self.filter = filter
         
+    def add_event(self, event_name):
+        self.events.append(event_name)
+        self.event_points[event_name] = {}
         for i in range(0, 50):
-            self.smoke_points[i] = []
-            self.flash_points[i] = []
+            self.event_points[event_name][i] = []
+        self.demo.register_on_gameevent(event_name, self.on_event)
         
     def reset(self, ignore=None):
         for i in range(0, 50):
-            self.smoke_points[i] = []
-            self.flash_points[i] = []
+            for event in self.events:
+                self.event_points[event][i] = []
         self.current_round = 0
         
-    def on_smoke(self, data):
+        
+    def on_event(self, data):
         if self.match.current_round == 0:
             return
         if data.userid not in self.match.players.keys(): #Find out later
@@ -167,35 +173,25 @@ class HeatmapGenerator(object):
             data.userid = self.match.players[self.match.players.keys()[0]].userid
         
         player = self.match.players[data.userid]
-        if not filter or (data.userid == self.filter or player.networkid == filter or player.name == filter):
+        if self.filter is None or (str(data.userid) == self.filter or player.networkid == filter or player.name == filter):
             x, y = self.map_overview.convert_point(data.x, data.y)
-            self.smoke_points[self.match.current_round].append((x, y, self.match.players[data.userid].team))
-    
-    def on_flash(self, data):
-        if self.match.current_round == 0:
-            return
-        if data.userid not in self.match.players.keys():
-            print "ERROR: %i not found in player array" % data.userid
-            data.userid = self.match.players[self.match.players.keys()[0]].userid
-        player = self.match.players[data.userid]
-        if not filter or (data.userid == self.filter or player.networkid == filter or player.name == filter):
-            x, y = self.map_overview.convert_point(data.x, data.y)
-            self.flash_points[self.match.current_round].append((x, y, self.match.players[data.userid].team))
-
+            self.event_points[data.name][self.match.current_round].append((x, y, self.match.players[data.userid].team))
+        
     def round_start(self, data):
-        self.smoke_points[self.match.current_round] = []
-        self.flash_points[self.match.current_round] = []
+        for event in self.events:
+            self.event_points[event][self.match.current_round] = []
         
 
     def dump(self):
         self.demo.dump()
-        self.dump_halves(self.smoke_points, "smoke_first_half", "smoke_second_half")
-        self.dump_halves(self.flash_points, "flash_first_half", "flash_second_half")
+        for event in self.events:
+            self.dump_halves(self.event_points[event], "%s_first_half" % event, "%s_second_half" % event)
         for userid, player in self.match.players.items():
             print vars(player)
             
         print "Total rounds %i" % self.match.current_round
         print self.match.team_score
+        
     def dump_halves(self, points, first_half_name, second_half_name):
         fh_img = self.map_overview.get_image()
         sh_img = self.map_overview.get_image()
@@ -219,16 +215,19 @@ class HeatmapGenerator(object):
         sh_img.save("%s.png" % second_half_name)
         
 if __name__ == "__main__":
-    
+
     if len(sys.argv) <= 1:
         print "heatmap.py demofile.dem"
         sys.exit()   
         
-    filename = sys.argv[1]    
-    filter = None 
-    if len(sys.argv) >= 3:
-        filter = sys.argv[2]
+    parser = argparse.ArgumentParser(description='Create a heatmap from certain game events')
+    parser.add_argument('-f', '--file', required=True, help="demo file to parse")
+    parser.add_argument('-e', '--events', required=True, nargs='+', help="list of game events a heatmap needs to be generated from")
+    parser.add_argument('--filter', required=False, help="userfilter to use")
+
+    args = parser.parse_args()
         
-    hmg = HeatmapGenerator(sys.argv[1], filter)
+    hmg = HeatmapGenerator(args.file, args.filter)
+    [hmg.add_event(x) for x in args.events]
     hmg.dump()
     print "Done"
