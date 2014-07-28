@@ -215,11 +215,6 @@ class HeatmapGenerator(object):
         sh_img.save("%s.png" % second_half_name)
         
 if __name__ == "__main__":
-
-    if len(sys.argv) <= 1:
-        print "heatmap.py demofile.dem"
-        sys.exit()   
-        
     parser = argparse.ArgumentParser(description='Create a heatmap from certain game events')
     parser.add_argument('-f', '--file', required=True, help="demo file to parse")
     parser.add_argument('-e', '--events', required=True, nargs='+', help="list of game events a heatmap needs to be generated from")
