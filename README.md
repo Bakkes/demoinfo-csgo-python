@@ -19,7 +19,7 @@ demo.open("gotv.dem") #open a demo file
 
 #register on events
 demo.register_on_netmsg(net_SetConVar, on_list_received) #net_SetConVar = net message id, 2nd param is callback
-demo.register_on_gameevent(7, player_connected) #7 = game event id (see data/game_events.txt), 2nd param is callback
+demo.register_on_gameevent("player_connect", player_connected) #player_connect = game event name (see data/game_events.txt), 2nd param is callback
 
 demo.dump() #start analyzing the demo
 ```
