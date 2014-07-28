@@ -51,7 +51,7 @@ class JSONDumper(object):
         if self.demo.open(filename):
             for t in _DUMPED_TYPES:
                 self.demo.register_on_netmsg(t, self.on_netmsg)
-            for i in range(1, 10000):
+            for i in range(0, 10000):
                 self.demo.register_on_gameevent(i, self.on_event)
     
     def on_event(self, data):
