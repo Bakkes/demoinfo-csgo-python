@@ -6,7 +6,7 @@ Created on Jul 12, 2014
 @author: Chris
 '''
 from demoinfocsgo.demodump import DemoDump
-from demoinfocsgo.proto.netmessages_public_pb2 import svc_GameEventList, CSVCMsg_GameEventList
+from demoinfocsgo.proto.netmessages_pb2 import svc_GameEventList, CSVCMsg_GameEventList
 import sys
 import json
 import collections
