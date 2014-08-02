@@ -149,8 +149,13 @@ class DemoDump(object):
         umsg = CSVCMsg_UserMessage()
         umsg.ParseFromString(data)
         name = ECstrike15UserMessages.Name(umsg.msg_type)
+        if umsg.msg_type == 61:
+            print "61"
+            f = open ("61.bin", "w")
+            f.write(data)
+            f.close()
         callback_name = name.replace("CS_UM_", "")
-        if callback_name in self.USER_MESSAGES or True:
+        if callback_name in self.USER_MESSAGES:
             name = name.replace("CS_UM_", "CCSUsrMsg_")
             item = eval(name)()
             item.ParseFromString(umsg.msg_data)
