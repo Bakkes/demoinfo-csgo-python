@@ -1,6 +1,6 @@
 '''
 Created on Aug 2, 2014
-
+Uses SteamKit's ProtobufDumper (https://github.com/SteamRE/SteamKit/tree/master/Resources/ProtobufDumper)
 @author: Chris
 '''
 import sys, os, subprocess, shutil
