@@ -4,7 +4,7 @@ Created on Jul 15, 2014
 @author: Chris
 '''
 from demoinfocsgo.demodump import DemoDump
-from demoinfocsgo.proto.netmessages_public_pb2 import *
+from demoinfocsgo.proto.netmessages_pb2 import *
 from protojson.pbliteserializer import PbLiteSerializer
 
 import sys

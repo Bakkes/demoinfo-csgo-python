@@ -4,8 +4,8 @@ Created on Jul 11, 2014
 @author: Chris
 '''
 from demoinfocsgo.demofile import DemoFile, DemoMessage
-from demoinfocsgo.proto.netmessages_public_pb2 import *
-from demoinfocsgo.proto.cstrike15_usermessages_public_pb2 import *
+from demoinfocsgo.proto.netmessages_pb2 import *
+from demoinfocsgo.proto.cstrike15_usermessages_pb2 import *
 import struct
 
 _GAMEEVENT_TYPES = {2:"val_string",
@@ -149,11 +149,6 @@ class DemoDump(object):
         umsg = CSVCMsg_UserMessage()
         umsg.ParseFromString(data)
         name = ECstrike15UserMessages.Name(umsg.msg_type)
-        if umsg.msg_type == 61:
-            print "61"
-            f = open ("61.bin", "w")
-            f.write(data)
-            f.close()
         callback_name = name.replace("CS_UM_", "")
         if callback_name in self.USER_MESSAGES:
             name = name.replace("CS_UM_", "CCSUsrMsg_")
