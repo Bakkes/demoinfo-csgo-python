@@ -77,6 +77,7 @@ class DemoDump(object):
         self.descriptors = {}
         self.register_on_netmsg(svc_GameEvent, self._handle_gameevent)
         self.register_on_netmsg(svc_GameEventList, self._handle_gameeventlist)
+        self.register_on_netmsg(svc_UserMessage, self._handle_usermessage)
         self.register_on_netmsg(svc_ServerInfo, self._server_info_update)
         self.register_on_netmsg(svc_CreateStringTable, self._server_create_stringtable)
         self.register_on_netmsg(svc_SendTable, self._send_table)
@@ -144,6 +145,18 @@ class DemoDump(object):
             elif cmd == DemoMessage.SIGNON or cmd == DemoMessage.PACKET:
                 self._handle_demo_packet()
     
+    def _handle_usermessage(self, cmd, data):
+        umsg = CSVCMsg_UserMessage()
+        umsg.ParseFromString(data)
+        name = ECstrike15UserMessages.Name(umsg.msg_type)
+        callback_name = name.replace("CS_UM_", "")
+        if callback_name in self.USER_MESSAGES or True:
+            name = name.replace("CS_UM_", "CCSUsrMsg_")
+            item = eval(name)()
+            item.ParseFromString(umsg.msg_data)
+            for callback in self.USER_MESSAGES[callback_name]:
+                callback(item)
+                
     def _handle_tick(self, cmd, data):
         tickinfo = CNETMsg_Tick()
         tickinfo.ParseFromString(data)
